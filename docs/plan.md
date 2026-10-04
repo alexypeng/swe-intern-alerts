@@ -113,7 +113,10 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 ### Workflow
 
-- `.github/workflows/poll.yml`, triggered by `schedule: */15 * * * *` (UTC) and `workflow_dispatch`.
+- `.github/workflows/poll.yml`, triggered by `schedule: 7,22,37,52 * * * *` (every 15 minutes, off the top of the hour when GitHub is busiest) and `workflow_dispatch`.
+- If checking for the `state` branch fails for any reason other than "branch doesn't exist", the run fails instead of starting with empty state.
+- The state commit sets its author per command (`git -c`) and never changes global git config.
+- `.github/workflows/test.yml` runs the tests on pushes to `main` and on pull requests.
 - `permissions: contents: write`, one `concurrency` group with `cancel-in-progress: false`, and `timeout-minutes: 10`.
 - **Steps:**
   1. Check out `main`.

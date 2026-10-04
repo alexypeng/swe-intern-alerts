@@ -1,0 +1,77 @@
+name: Poll internships
+
+on:
+  schedule:
+    # Every 15 minutes, off the top of the hour (GitHub's busiest time for scheduled runs).
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write # push state.json to the state branch
+
+concurrency:
+  group: poll
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v10
+
+      - name: Load state
+        run: |
+          set +e
+          git ls-remote --exit-code --heads origin state > /dev/null
+          status=$?
+          set -e
+          if [ "$status" -eq 2 ]; then
+            echo "No state branch yet: starting empty (every board gets a silent first poll)."
+          elif [ "$status" -ne 0 ]; then
+            echo "::error::Could not check for the state branch (git exit $status)."
+            exit 1
+          else
+            git fetch --depth=1 origin state
+            git show FETCH_HEAD:state.json > state.json
+            echo "Loaded state.json from the state branch."
+          fi
+
+      - name: Poll and post
+        run: uv run --frozen --no-dev python -m intern_alerts
+        env:
+          WEBHOOK_SWE: ${{ secrets.WEBHOOK_SWE }}
+          WEBHOOK_DATA_ML: ${{ secrets.WEBHOOK_DATA_ML }}
+          WEBHOOK_HARDWARE: ${{ secrets.WEBHOOK_HARDWARE }}
+          WEBHOOK_QUANT: ${{ secrets.WEBHOOK_QUANT }}
+          WEBHOOK_OTHER_ENG: ${{ secrets.WEBHOOK_OTHER_ENG }}
+          WEBHOOK_PRODUCT: ${{ secrets.WEBHOOK_PRODUCT }}
+
+      - name: Save state
+        # Runs even if posting failed, so messages that did send are not announced again.
+        if: always()
+        run: |
+          if [ ! -f state.json ]; then
+            echo "No state.json to save."
+            exit 0
+          fi
+          if git ls-remote --exit-code --heads origin state > /dev/null; then
+            git fetch --depth=1 origin state
+            git worktree add --detach "$RUNNER_TEMP/state" FETCH_HEAD
+          else
+            git worktree add --orphan -b state "$RUNNER_TEMP/state"
+          fi
+          cp state.json "$RUNNER_TEMP/state/state.json"
+          cd "$RUNNER_TEMP/state"
+          git add state.json
+          if git diff --cached --quiet; then
+            echo "State unchanged."
+            exit 0
+          fi
+          # Identity for this commit only; never touches global git config.
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Update state"
+          git push origin HEAD:state
