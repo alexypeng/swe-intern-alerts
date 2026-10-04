@@ -6,7 +6,7 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 - Poll sources roughly every 15 minutes. The goal is to surface new postings as soon as possible.
 - Announce only postings not announced before.
-- One Discord channel per job type (e.g. SWE, data/ML, firmware/electrical).
+- One Discord channel per job type: SWE, data/ML, hardware/firmware, quant, other engineering, product.
 - Within each message, group postings under region headers.
 
 ## Decisions
@@ -14,7 +14,7 @@ A scheduled job that finds new internship postings and announces them in Discord
 ### Sources
 
 - **Ashby and Greenhouse:** poll only the company boards on a manually maintained approved list.
-- **Simplify:** take only postings labelled FAANG+. These are not filtered by the approved list.
+- **Simplify:** take only postings from FAANG+ companies. These are not filtered by the approved list. The FAANG+ company list is manually maintained in this project, since Simplify's data has no FAANG+ field.
 
 ### Runtime and Discord
 
@@ -47,8 +47,72 @@ A scheduled job that finds new internship postings and announces them in Discord
   - first-seen time
 - **Boards section:** maps each board key (e.g. `greenhouse:stripe`, `ashby:<company>`, `simplify:faang`) to its first successful poll time. A board is marked only after a successful fetch. A board with no entry gets a silent first poll.
 
+### Classification
+
+- **Channels:** SWE, data/ML, hardware/firmware, quant, other engineering, product. There is no catch-all channel. A posting matching no channel is ignored, and a posting matching several goes to every matching channel.
+- **Simplify job type:** from Simplify's `category`:
+  - `Software` / `Software Engineering` → SWE
+  - `AI/ML/Data` / `Data Science, AI & Machine Learning` → data/ML
+  - `Hardware` / `Hardware Engineering` → hardware/firmware
+  - `Quant` / `Quantitative Finance` → quant
+  - `Product` / `Product Management` → product
+- **Greenhouse/Ashby job type:** case-insensitive keyword match on the title. Short keywords match on word boundaries. Starting keyword lists:
+  - **SWE:** software, swe, sde, developer, backend, frontend, full stack, mobile, ios, android, infrastructure, devops, sre, security engineer
+  - **data/ML:** machine learning, ml, ai, data science, data scientist, data engineer, data analyst, data analytics, research scientist
+  - **hardware/firmware:** hardware, firmware, embedded, electrical, asic, fpga, rtl, chip, silicon, pcb, rf
+  - **quant:** quant, quantitative, trading, trader
+  - **other engineering:** mechanical, civil, chemical, aerospace, manufacturing, industrial, materials, test engineer, quality
+  - **product:** product manager, product management, apm, product design
+- **Intern detection:**
+  - Ashby: `employmentType == "Intern"`.
+  - Greenhouse: title matches `\b(intern|internship|co-op|coop)s?\b`, case-insensitive.
+- **Regions:** Canada, US, UK, Europe, Remote, parsed with a lookup table: country names, US states and abbreviations, Canadian provinces, major cities and city abbreviations (`NYC`, `SF`), European countries.
+  - Plain `Remote` goes under Remote. Remote-in-a-country (e.g. `Remote (US)`) goes under Remote only if that country is in one of the listed regions, so `Remote (India)` is dropped.
+  - A posting spanning several regions appears under each.
+  - Locations outside these regions, or not recognized, are dropped.
+- **Ignored and dropped postings** (no channel match or no region) are **not** recorded as seen, so they are announced once a rule later matches them.
+- Unrecognized location strings are printed in the workflow log.
+
+### Discord messages
+
+- Plain-text Markdown (no embeds), one batch per job-type channel per run.
+- Postings are grouped under region headers in the order US, Canada, Europe, UK, Remote. Empty regions are skipped.
+- **Posting format:** `**Company** — [Title](<url>)`, then a line with the locations and the source's posted date (e.g. `Seattle, WA · NYC · Oct 4`). The `<…>` around the URL suppresses link previews.
+- A posting in several regions shows its full location list under each region header.
+- Within a region, newest posted date first.
+- If a batch exceeds Discord's 2,000-character limit, split after the last posting that fits. Region headers are not repeated in continuation messages.
+- On HTTP `429`, wait the time Discord specifies and retry the same message.
+- A posting is recorded as seen only after its message is posted successfully.
+
+### Config
+
+- `config.toml` at the repo root holds:
+  - `simplify_url`: the listings URL, which changes each hiring cycle.
+  - `faang_plus`: lowercase company names, matched case-insensitively against Simplify's `company_name`. Seeded from Simplify's current list.
+  - `[[boards]]` entries, each with `source` (`greenhouse` or `ashby`), `slug` (the board ID in the API URL), and `name` (display name, also used as the company name for dedup).
+- Webhook URLs are GitHub repository secrets, one per channel: `WEBHOOK_SWE`, `WEBHOOK_DATA_ML`, `WEBHOOK_HARDWARE`, `WEBHOOK_QUANT`, `WEBHOOK_OTHER_ENG`, `WEBHOOK_PRODUCT`. The workflow passes them to the program as environment variables.
+- If any webhook secret is missing, the run exits with an error naming it, before fetching anything.
+
+### Workflow
+
+- `.github/workflows/poll.yml`, triggered by `schedule: */15 * * * *` (UTC) and `workflow_dispatch`.
+- `permissions: contents: write`, one `concurrency` group with `cancel-in-progress: false`, and `timeout-minutes: 10`.
+- **Steps:**
+  1. Check out `main`.
+  2. Set up uv.
+  3. Load state: fetch the `state` branch. If it exists, copy its `state.json` into place; if not (first run), start with empty state. Empty state means every board gets a silent first poll.
+  4. Run the program with the `WEBHOOK_*` secrets as environment variables.
+  5. Commit `state.json` to the `state` branch as `github-actions[bot]`, only if it changed. The first run creates `state` as a branch with no shared history. This step runs even if the program failed.
+- The program writes `state.json` after each channel's messages are posted, so a crash partway through doesn't cause re-announcements.
+- **Risk:** GitHub disables scheduled workflows in public repos after 60 days without repository activity. It's unverified whether the workflow's own commits count. Re-enable from the Actions tab if it happens.
+
+## Source facts (checked 2026-10-04)
+
+- **Simplify:** `https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json`, one JSON array (~16.9k entries, ~4.4k with `active` and `is_visible` true). Fields include `id` (UUID), `company_name`, `title`, `url` (original application URL), `locations` (list of strings, often abbreviated like `NYC`, `SF`), `category` (mostly `Software`, `AI/ML/Data`, `Hardware`, `Product`, `Quant`), `terms`, `active`, `is_visible`, `date_posted`, `date_updated` (Unix seconds). The repo name changes each hiring cycle.
+- **Simplify FAANG+:** not a field in the data. Simplify's README generator marks a listing 🔥 when `company_name.lower()` is in a hardcoded `FAANG_PLUS` set in `list_updater/constants.py`.
+- **Greenhouse:** `https://boards-api.greenhouse.io/v1/boards/<board>/jobs` (`?content=true` adds descriptions). Fields include `id`, `title`, `location.name` (one free-text string), `absolute_url`, `departments`, `offices`, `first_published`, `updated_at`. No employment-type field, so interns must be found by title. `absolute_url` may be on the company's own domain with the job ID in a query parameter (e.g. `https://stripe.com/jobs/search?gh_jid=8194291`), and Simplify uses the same URL, so URL normalization must keep such parameters.
+- **Ashby:** `https://api.ashbyhq.com/posting-api/job-board/<board>`. Fields include `id` (UUID), `title`, `department`, `team`, `employmentType` (e.g. `Intern`), `location`, `secondaryLocations`, structured `address.postalAddress` (country/region/locality), `isRemote`, `workplaceType`, `jobUrl`, `publishedAt`.
+
 ## Open questions
 
-- How Simplify's data marks FAANG+ postings, and whether it includes the original job URL (unverified).
-- How each posting is classified into a job type and a region.
-- Message format and handling of Discord's webhook message-length and rate limits.
+- Code structure: modules and how responsibilities are split.
