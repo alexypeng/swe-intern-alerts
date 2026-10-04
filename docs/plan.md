@@ -13,12 +13,23 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 ### Sources
 
-- **Ashby and Greenhouse:** poll only the company boards on a manually maintained approved list.
-- **Simplify:** take only postings from FAANG+ companies. These are not filtered by the approved list. The FAANG+ company list is manually maintained in this project, since Simplify's data has no FAANG+ field.
+- **Company sources (primary):** poll the company boards on a manually maintained approved list. Greenhouse and Ashby are built. More platforms come later, most reliable first:
+  1. Lever, SmartRecruiters
+  2. Workday
+  3. Amazon, Eightfold
+  4. Apple
+  5. Google (HTML), Meta (rotating GraphQL), custom sites
+  6. Microsoft, which blocks datacenter IPs, so it needs the Raspberry Pi host
+- **Simplify (slower fallback):** take postings from companies on the manually maintained FAANG+ list. Simplify lags company boards by hours, so it only catches what direct sources can't fetch yet. The duplicate check skips its copies of postings already seen directly.
+- **Build order:** get the core pipeline working end to end with Greenhouse, Ashby, and Simplify before adding platforms.
+
+- No filtering by internship term. The silent first poll keeps existing old-term postings from being announced.
 
 ### Runtime and Discord
 
 - Runs as a scheduled job on GitHub Actions that starts, polls, posts, and exits. It is not an always-on process.
+- "As soon as possible" means within about an hour. After deploying, check the real gaps between scheduled runs in the Actions history.
+- Planned later move: a Raspberry Pi on a home connection, to reach Microsoft and get exact timing. The Python program only reads and writes a local `state.json`, so the move changes only what runs it, not the code.
 - Posts to Discord via channel webhooks, not a gateway bot account.
 
 ### Stack
@@ -124,7 +135,10 @@ A scheduled job that finds new internship postings and announces them in Discord
 - **Simplify:** `https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json`, one JSON array (~16.9k entries, ~4.4k with `active` and `is_visible` true). Fields include `id` (UUID), `company_name`, `title`, `url` (original application URL), `locations` (list of strings, often abbreviated like `NYC`, `SF`), `category` (mostly `Software`, `AI/ML/Data`, `Hardware`, `Product`, `Quant`), `terms`, `active`, `is_visible`, `date_posted`, `date_updated` (Unix seconds). The repo name changes each hiring cycle.
 - **Simplify FAANG+:** not a field in the data. Simplify's README generator marks a listing 🔥 when `company_name.lower()` is in a hardcoded `FAANG_PLUS` set in `list_updater/constants.py`.
 - **Greenhouse:** `https://boards-api.greenhouse.io/v1/boards/<board>/jobs` (`?content=true` adds descriptions). Fields include `id`, `title`, `location.name` (one free-text string), `absolute_url`, `departments`, `offices`, `first_published`, `updated_at`. No employment-type field, so interns must be found by title. `absolute_url` may be on the company's own domain with the job ID in a query parameter (e.g. `https://stripe.com/jobs/search?gh_jid=8194291`), and Simplify uses the same URL, so URL normalization must keep such parameters.
+- **Simplify latency:** `listings.json` is committed about every 30 minutes (gaps up to 5 hours observed). For 8 Stripe internships on both Simplify and Greenhouse, Simplify's `date_posted` was 6.7–10.9 hours after Greenhouse's `first_published` (median ~7 hours).
 - **Ashby:** `https://api.ashbyhq.com/posting-api/job-board/<board>`. Fields include `id` (UUID), `title`, `department`, `team`, `employmentType` (e.g. `Intern`), `location`, `secondaryLocations`, structured `address.postalAddress` (country/region/locality), `isRemote`, `workplaceType`, `jobUrl`, `publishedAt`.
 
 ## Open questions
+
+- When Workday is added: check that Simplify's Workday URLs normalize to the same value as fetched ones.
 
