@@ -1,0 +1,155 @@
+[
+ {
+  "source": "Simplify",
+  "category": "Software",
+  "company_name": "Stripe",
+  "id": "7e914cf5-64bf-41bb-a680-71b7d7df80f6",
+  "title": "Software Engineer Intern - Summer or Winter",
+  "active": true,
+  "terms": [
+   "Summer 2026",
+   "Winter 2027"
+  ],
+  "date_updated": 1788254249,
+  "date_posted": 1788254097,
+  "url": "https://stripe.com/jobs/search?gh_jid=8128745",
+  "locations": [
+   "Seattle, WA",
+   "SF",
+   "NYC"
+  ],
+  "company_url": "https://simplify.jobs/c/Stripe",
+  "is_visible": true,
+  "sponsorship": "Other",
+  "degrees": [
+   "Bachelor's",
+   "Master's"
+  ]
+ },
+ {
+  "source": "Simplify",
+  "category": "Software",
+  "company_name": "Stripe",
+  "id": "7bce6045-fde1-44d3-b2cc-1f56ae0dec16",
+  "title": "Software Engineer Intern - Summer or Winter",
+  "active": true,
+  "terms": [
+   "Summer 2026",
+   "Winter 2027"
+  ],
+  "date_updated": 1788254244,
+  "date_posted": 1788254093,
+  "url": "https://stripe.com/jobs/search?gh_jid=8130805",
+  "locations": [
+   "Toronto, ON, Canada"
+  ],
+  "company_url": "https://simplify.jobs/c/Stripe",
+  "is_visible": true,
+  "sponsorship": "Other",
+  "degrees": [
+   "Bachelor's",
+   "Master's"
+  ]
+ },
+ {
+  "source": "Simplify",
+  "category": "Software",
+  "company_name": "Google",
+  "id": "b67c806f-262a-4ec2-8ed1-de44ffbca035",
+  "title": "Software Engineer Intern - MS",
+  "active": false,
+  "terms": [
+   "Summer 2027"
+  ],
+  "date_updated": 1784591882,
+  "date_posted": 1784591786,
+  "url": "https://www.google.com/about/careers/applications/jobs/results/95141459539174086",
+  "locations": [
+   "Palo Alto, CA",
+   "Cambridge, MA",
+   "Madison, WI",
+   "Seattle, WA",
+   "Houston, TX",
+   "SF",
+   "Austin, TX",
+   "LA",
+   "San Jose, CA",
+   "Irvine, CA",
+   "San Carlos, CA",
+   "Raleigh, NC",
+   "San Bruno, CA",
+   "Redmond, WA",
+   "Durham, NC",
+   "Santa Cruz, CA",
+   "Chicago, IL",
+   "Goleta, CA",
+   "Pittsburgh, PA",
+   "Kirkland, WA",
+   "Reston, VA",
+   "NYC",
+   "Bellevue, WA",
+   "Sunnyvale, CA",
+   "Mountain View, CA",
+   "Portland, OR",
+   "Boulder, CO",
+   "Atlanta, GA",
+   "San Diego, CA"
+  ],
+  "company_url": "https://simplify.jobs/c/Google",
+  "is_visible": true,
+  "sponsorship": "Other",
+  "degrees": [
+   "Master's"
+  ]
+ },
+ {
+  "source": "Simplify",
+  "category": "Software",
+  "company_name": "RTX",
+  "id": "a167d0aa-3bb9-4b88-84a5-ee03be6a494f",
+  "title": "Conversion Systems Engineer 1 Intern",
+  "active": true,
+  "terms": [
+   "Fall 2026"
+  ],
+  "date_updated": 1787034165,
+  "date_posted": 1786924800,
+  "url": "https://globalhr.wd5.myworkdayjobs.com/fr-CA/Private_Posting_No_TMP/job/US-IA-CEDAR-RAPIDS-130--5350-C-Ave-NE--BLDG-130/Intern-Conversion-Systems-Engineer-I--Onsite-_01866850",
+  "locations": [
+   "Cedar Rapids, IA"
+  ],
+  "company_url": "https://simplify.jobs/c/RTX",
+  "is_visible": true,
+  "sponsorship": "Other",
+  "degrees": [
+   "Bachelor's"
+  ]
+ },
+ {
+  "source": "Simplify",
+  "category": "Software",
+  "company_name": "Stripe",
+  "id": "00000000-0000-0000-0000-000000000001",
+  "title": "Hidden Listing",
+  "active": true,
+  "terms": [
+   "Summer 2026",
+   "Winter 2027"
+  ],
+  "date_updated": 1788254249,
+  "date_posted": 1788254097,
+  "url": "https://stripe.com/jobs/search?gh_jid=8128745",
+  "locations": [
+   "Seattle, WA",
+   "SF",
+   "NYC"
+  ],
+  "company_url": "https://simplify.jobs/c/Stripe",
+  "is_visible": false,
+  "sponsorship": "Other",
+  "degrees": [
+   "Bachelor's",
+   "Master's"
+  ]
+ }
+]

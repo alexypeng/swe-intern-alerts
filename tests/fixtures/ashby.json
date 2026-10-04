@@ -1,0 +1,128 @@
+{
+ "apiVersion": "1",
+ "jobs": [
+  {
+   "id": "b39ceb08-a0a7-4f8b-a760-2fb88e209956",
+   "title": "Applied Scientist Intern",
+   "department": "Data",
+   "team": "Emerging Talent - Data",
+   "employmentType": "Intern",
+   "location": "New York, NY (HQ)",
+   "shouldDisplayCompensationOnJobPostings": true,
+   "secondaryLocations": [],
+   "publishedAt": "2026-09-15T01:44:04.643+00:00",
+   "isListed": true,
+   "isRemote": true,
+   "workplaceType": "Hybrid",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "NY",
+     "addressCountry": "USA",
+     "addressLocality": "New York City"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/ramp/b39ceb08-a0a7-4f8b-a760-2fb88e209956",
+   "applyUrl": "https://jobs.ashbyhq.com/ramp/b39ceb08-a0a7-4f8b-a760-2fb88e209956/application"
+  },
+  {
+   "id": "34413f8d-26bf-4bbc-8ade-eb309a0e2245",
+   "title": " Security Engineer, Cloud",
+   "department": "Engineering",
+   "team": "Backend",
+   "employmentType": "FullTime",
+   "location": "New York, NY (HQ)",
+   "shouldDisplayCompensationOnJobPostings": true,
+   "secondaryLocations": [
+    {
+     "location": "Remote (Canada)",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Canada"
+      }
+     }
+    },
+    {
+     "location": "Remote (US)",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "United States"
+      }
+     }
+    },
+    {
+     "location": "Miami, FL",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Florida",
+       "addressCountry": "USA",
+       "addressLocality": "Miami"
+      }
+     }
+    }
+   ],
+   "publishedAt": "2026-04-07T17:12:35.753+00:00",
+   "isListed": true,
+   "isRemote": true,
+   "workplaceType": "Hybrid",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "NY",
+     "addressCountry": "USA",
+     "addressLocality": "New York City"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245",
+   "applyUrl": "https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245/application"
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000000",
+   "title": "Unlisted Role",
+   "department": "Engineering",
+   "team": "Backend",
+   "employmentType": "FullTime",
+   "location": "New York, NY (HQ)",
+   "shouldDisplayCompensationOnJobPostings": true,
+   "secondaryLocations": [
+    {
+     "location": "Remote (Canada)",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "Canada"
+      }
+     }
+    },
+    {
+     "location": "Remote (US)",
+     "address": {
+      "postalAddress": {
+       "addressCountry": "United States"
+      }
+     }
+    },
+    {
+     "location": "Miami, FL",
+     "address": {
+      "postalAddress": {
+       "addressRegion": "Florida",
+       "addressCountry": "USA",
+       "addressLocality": "Miami"
+      }
+     }
+    }
+   ],
+   "publishedAt": "2026-04-07T17:12:35.753+00:00",
+   "isListed": false,
+   "isRemote": true,
+   "workplaceType": "Hybrid",
+   "address": {
+    "postalAddress": {
+     "addressRegion": "NY",
+     "addressCountry": "USA",
+     "addressLocality": "New York City"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245",
+   "applyUrl": "https://jobs.ashbyhq.com/ramp/34413f8d-26bf-4bbc-8ade-eb309a0e2245/application"
+  }
+ ]
+}
