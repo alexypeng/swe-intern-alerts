@@ -106,6 +106,19 @@ A scheduled job that finds new internship postings and announces them in Discord
 - The program writes `state.json` after each channel's messages are posted, so a crash partway through doesn't cause re-announcements.
 - **Risk:** GitHub disables scheduled workflows in public repos after 60 days without repository activity. It's unverified whether the workflow's own commits count. Re-enable from the Actions tab if it happens.
 
+### Code structure
+
+- `main.py`: runs the steps in order; holds no logic of its own.
+- `config.py`: loads `config.toml` and webhook env vars, and fails fast on a missing secret.
+- `models.py`: the shared `Posting` shape every source returns.
+- `sources/`: one module per source (`simplify.py`, `greenhouse.py`, `ashby.py`), each returning `Posting`s.
+- `classify.py`: intern detection, job type, region.
+- `dedup.py`: checks postings against state (ID → URL → company + title + location).
+- `normalize.py`: URL and company/title/location normalization, shared by dedup and state.
+- `state.py`: load, save, and prune `state.json`, and track polled boards.
+- `format.py`: builds channel messages with region headers and the 2,000-character split.
+- `post.py`: sends messages to webhooks and handles `429`.
+
 ## Source facts (checked 2026-10-04)
 
 - **Simplify:** `https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json`, one JSON array (~16.9k entries, ~4.4k with `active` and `is_visible` true). Fields include `id` (UUID), `company_name`, `title`, `url` (original application URL), `locations` (list of strings, often abbreviated like `NYC`, `SF`), `category` (mostly `Software`, `AI/ML/Data`, `Hardware`, `Product`, `Quant`), `terms`, `active`, `is_visible`, `date_posted`, `date_updated` (Unix seconds). The repo name changes each hiring cycle.
@@ -115,4 +128,3 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 ## Open questions
 
-- Code structure: modules and how responsibilities are split.
