@@ -97,7 +97,10 @@ A scheduled job that finds new internship postings and announces them in Discord
 - Within a region, newest posted date first.
 - If a batch exceeds Discord's 2,000-character limit, split after the last posting that fits. Region headers are not repeated in continuation messages.
 - On HTTP `429`, wait the time Discord specifies and retry the same message.
-- A posting is recorded as seen only after its message is posted successfully.
+- A posting is recorded as seen only after the message where it first appears is posted successfully. State is saved after each message.
+- Long location lists show the first 3 and then `+N more`.
+- Markdown characters in company names and titles are escaped.
+- Messages are sent with `allowed_mentions: {"parse": []}`, so nothing can ping.
 
 ### Config
 
