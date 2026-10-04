@@ -2,8 +2,8 @@ name: Poll internships
 
 on:
   schedule:
-    # Every 15 minutes, off the top of the hour (GitHub's busiest time for scheduled runs).
-    - cron: "7,22,37,52 * * * *"
+    # Every 20 minutes, off the top of the hour (GitHub's busiest time for scheduled runs).
+    - cron: "7,27,47 * * * *"
   workflow_dispatch:
 
 permissions:

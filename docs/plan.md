@@ -4,7 +4,7 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 ## Requirements
 
-- Poll sources roughly every 15 minutes. The goal is to surface new postings as soon as possible.
+- Poll sources every 20 minutes. The goal is to surface new postings as soon as possible.
 - Announce only postings not announced before.
 - One Discord channel per job type: SWE, data/ML, hardware/firmware, quant, other engineering, product.
 - Within each message, group postings under region headers.
@@ -113,7 +113,7 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 ### Workflow
 
-- `.github/workflows/poll.yml`, triggered by `schedule: 7,22,37,52 * * * *` (every 15 minutes, off the top of the hour when GitHub is busiest) and `workflow_dispatch`.
+- `.github/workflows/poll.yml`, triggered by `schedule: 7,27,47 * * * *` (every 20 minutes, off the top of the hour when GitHub is busiest) and `workflow_dispatch`.
 - If checking for the `state` branch fails for any reason other than "branch doesn't exist", the run fails instead of starting with empty state.
 - The state commit sets its author per command (`git -c`) and never changes global git config.
 - `.github/workflows/test.yml` runs the tests on pushes to `main` and on pull requests.
