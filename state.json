@@ -1,0 +1,3594 @@
+{
+ "version": 1,
+ "boards": {
+  "ashby:ramp": "2026-10-04T23:51:26Z",
+  "greenhouse:stripe": "2026-10-04T23:51:26Z",
+  "simplify:faang": "2026-10-04T23:51:26Z"
+ },
+ "postings": [
+  {
+   "company": "stripe",
+   "job_id": "8194291",
+   "url": "https://stripe.com/jobs/search?gh_jid=8194291",
+   "title": "data analyst intern",
+   "location": "new york seattle south san francisco hq",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "stripe",
+   "job_id": "8194287",
+   "url": "https://stripe.com/jobs/search?gh_jid=8194287",
+   "title": "data analyst intern",
+   "location": "toronto",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "stripe",
+   "job_id": "8130867",
+   "url": "https://stripe.com/jobs/search?gh_jid=8130867",
+   "title": "software engineer intern",
+   "location": "london",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "stripe",
+   "job_id": "8130807",
+   "url": "https://stripe.com/jobs/search?gh_jid=8130807",
+   "title": "software engineer intern",
+   "location": "bucharest",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "stripe",
+   "job_id": "8130805",
+   "url": "https://stripe.com/jobs/search?gh_jid=8130805",
+   "title": "software engineer intern summer or winter",
+   "location": "toronto",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "stripe",
+   "job_id": "8128745",
+   "url": "https://stripe.com/jobs/search?gh_jid=8128745",
+   "title": "software engineer intern summer or winter",
+   "location": "san francisco seattle new york city",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "stripe",
+   "job_id": "8097801",
+   "url": "https://stripe.com/jobs/search?gh_jid=8097801",
+   "title": "software engineer intern summer or winter",
+   "location": "dublin",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "ramp",
+   "job_id": "a13ae586-f4cb-4385-8822-c42b9b54ed74",
+   "url": "https://jobs.ashbyhq.com/ramp/a13ae586-f4cb-4385-8822-c42b9b54ed74",
+   "title": "software engineer internship frontend",
+   "location": "new york ny hq",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "ramp",
+   "job_id": "acf6b28d-767f-483f-8ff2-114620cd7e04",
+   "url": "https://jobs.ashbyhq.com/ramp/acf6b28d-767f-483f-8ff2-114620cd7e04",
+   "title": "software engineering intern backend",
+   "location": "new york ny hq",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "ramp",
+   "job_id": "fcf118cc-521a-4a62-9d13-945e5b6e3cb8",
+   "url": "https://jobs.ashbyhq.com/ramp/fcf118cc-521a-4a62-9d13-945e5b6e3cb8",
+   "title": "software engineering intern android",
+   "location": "new york ny hq",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "ramp",
+   "job_id": "b66be397-240b-41a6-9b05-493299b270a9",
+   "url": "https://jobs.ashbyhq.com/ramp/b66be397-240b-41a6-9b05-493299b270a9",
+   "title": "software engineering intern ios",
+   "location": "new york ny hq",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "9b2c8392-e286-400e-95e9-809d118e367e",
+   "url": "https://jobs.bytedance.com/en/position/7605524889478842677/detail",
+   "title": "benefits operation data analyst project intern",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "2e4bcf86-ac79-4bab-97c9-17d24636cb96",
+   "url": "https://lifeattiktok.com/search/7611950589973186821",
+   "title": "ai product operations intern",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "2202e642-993c-409e-9a28-010a98bbeafc",
+   "url": "https://lifeattiktok.com/search/7610543185362372917",
+   "title": "data scientist intern tiktok integrity and safety 2026 summer",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "69e6a885-ba62-4040-becf-35815be46d4e",
+   "url": "https://jobs.lever.co/palantir/ac0dc094-2480-43c2-8495-26ade227ff4f/apply",
+   "title": "forward deployed software engineer intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "df86468a-0723-4315-bf56-0803134d3889",
+   "url": "https://lifeattiktok.com/search/7616659899507591477",
+   "title": "data analyst project intern",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "466fb8d5-0978-48fe-bbfe-b0bdb2df53aa",
+   "url": "https://lifeattiktok.com/search/7620775575152462085",
+   "title": "data analyst project intern data science",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "799037f7-5af0-47ab-9dc8-b77d7a0fa096",
+   "url": "https://lifeattiktok.com/search/7621299118434961669",
+   "title": "software engineer project intern content ai infrastructure",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "ea9475c0-e1a5-49fd-aa4c-d3989ac5c9b7",
+   "url": "https://jobs.bytedance.com/en/position/7623541709721307445/detail",
+   "title": "student researcher large language model",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "77ff658e-cabb-48be-9248-a271f5f898ff",
+   "url": "https://jobs.bytedance.com/en/position/7623552947364317445/detail",
+   "title": "student researcher ai foundation model infrastructure",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "5ee0c221-6808-401f-9d4e-a8e71f60785b",
+   "url": "https://jobs.bytedance.com/en/position/7623551375612627253/detail",
+   "title": "student researcher speech foundation model",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "38db92f9-6338-4caa-b797-e738cda127b9",
+   "url": "https://jobs.bytedance.com/en/position/7623548747208739077/detail",
+   "title": "student researcher",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "73b43840-d6dc-4026-acc9-485fffbb96dd",
+   "url": "https://lifeattiktok.com/search/7624284785283746053",
+   "title": "software engineer project intern model infrastructure",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "anthropic",
+   "job_id": "0d633297-0371-40a5-bcfe-d66992c2ba79",
+   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5183051008",
+   "title": "anthropic fellows program ml systems performance",
+   "location": "london uk; remote in canada; remote in usa; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "80da4b08-dbef-443a-8cb9-63547e51becf",
+   "url": "https://lifeattiktok.com/search/7630767896739154229",
+   "title": "data analyst project intern tiktok shop data science",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "1ed2eb99-0aad-44c5-a7ec-2987bd71cfc3",
+   "url": "https://lifeattiktok.com/search/7631277919231625525",
+   "title": "data product manager project intern monetization",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "ab243f13-7a16-4917-8e5c-23226aa7ad38",
+   "url": "https://lifeattiktok.com/search/7634027348048709941",
+   "title": "product manager project intern ads interface and platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "salesforce",
+   "job_id": "3cb45823-f475-44c7-aaca-4a1335faf6ff",
+   "url": "https://salesforce.wd12.myworkdayjobs.com/Futureforce_Internships/job/California---San-Francisco/Summer-2027-Intern---Software-Engineer_JR340771",
+   "title": "software engineer intern",
+   "location": "atlanta ga; bellevue wa; burlington ma; indianapolis in; nyc; palo alto ca; seattle wa; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "7107711b-0874-460d-932c-0c0d7b729f42",
+   "url": "https://jobs.lever.co/palantir/5c4c65c5-77da-4d36-856c-4ade87631019/apply",
+   "title": "year at palantir intern forward deployed software engineer",
+   "location": "washington dc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "e5bf0800-58fa-41cf-bba9-7799f4f540f5",
+   "url": "https://jobs.lever.co/palantir/e6789b17-62fb-4226-a079-f8c17ff19e2d/apply",
+   "title": "year at palantir intern forward deployed software engineer commercial",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "563916cf-2297-4c6b-93cc-b171f73555c4",
+   "url": "https://jobs.lever.co/palantir/655f9937-a4ce-4e7d-80e2-a6659af07329/apply",
+   "title": "palantir intern software engineer",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "441050ea-b57f-4448-ae69-2a4a8646229f",
+   "url": "https://jobs.lever.co/palantir/5c7bb70c-83ea-43e7-8055-0c8f319f4333/apply",
+   "title": "year at palantir intern forward deployed software engineer",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "542ac711-82de-42c9-8876-dc0553d0a585",
+   "url": "https://jobs.bytedance.com/en/position/7641703558211586309/detail",
+   "title": "machine learning engineer intern security data",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "oracle",
+   "job_id": "fd404e0e-48f5-40a5-bcb9-7db3833a26f7",
+   "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/job/334348",
+   "title": "product manager intern ovip",
+   "location": "kansas city mo",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "oracle",
+   "job_id": "7f652134-0291-4759-8e6a-e499a01587af",
+   "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/job/334325",
+   "title": "software engineer intern",
+   "location": "santa clara ca; seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "oracle",
+   "job_id": "95ecb2a1-6a8f-4c29-b971-2b3713f37046",
+   "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/job/334333",
+   "title": "software engineer intern ovip",
+   "location": "austin tx; nashville tn; united states",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "526d01e5-61df-44da-b2e9-feac9226e326",
+   "url": "https://jobs.apple.com/en-us/details/200663968",
+   "title": "undergrad engineering intern",
+   "location": "united states",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "9dc730cf-7fa0-4052-b285-b1301c4db9e7",
+   "url": "https://jobs.apple.com/en-us/details/200664785",
+   "title": "software undergrad engineer intern",
+   "location": "united states",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "9de9af2d-fdd8-4a02-8964-7ef816980d72",
+   "url": "https://jobs.apple.com/en-us/details/200663981",
+   "title": "hardware engineering intern",
+   "location": "united states",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "6a306828-3b85-47ed-89fe-3f0f61322ac7",
+   "url": "https://jobs.apple.com/en-us/details/200664780",
+   "title": "machine learning and artificial intelligence undergraduate intern",
+   "location": "united states",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "b69a7f3f-5920-4831-b1a3-ba378a3af4aa",
+   "url": "https://jobs.bytedance.com/en/position/7642762054696896773/detail",
+   "title": "research scientist intern seed responsible ai",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "52ee1de2-11b1-4e37-a1a0-6903f7dd9b9b",
+   "url": "https://lifeattiktok.com/search/7644719084681234741",
+   "title": "data science intern tiktok shop supply chain logistics",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "630f6c80-efb2-4a6c-9c00-0dbd2f998d26",
+   "url": "https://tesla.com/careers/search/job/257048",
+   "title": "physics engine development intern physics engine development engineer optimus",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "65d7082a-180e-4d87-914c-87e9e3d15ae0",
+   "url": "https://tesla.com/careers/search/job/253454",
+   "title": "reinforcement learning engineer intern reinforcement learning engineer optimus",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "47768da2-8643-4881-8249-a78543064605",
+   "url": "https://lifeattiktok.com/search/7646621925436131637",
+   "title": "ai software engineer intern transaction platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "fe77f108-84fc-48fd-bc64-dfd8921d203f",
+   "url": "https://jobs.lever.co/palantir/cccfe1bd-f15b-4fe5-b044-c793e7961c1b/apply",
+   "title": "forward deployed software engineer intern defense tech",
+   "location": "washington dc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "0503901e-622f-4d1b-b7f9-29d44e59eaab",
+   "url": "https://jobs.lever.co/palantir/e6ff8bf2-135e-474d-ad37-24f490ae1dd2/apply",
+   "title": "forward deployed software engineer intern us government",
+   "location": "washington dc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "779f212c-f34e-4260-b5af-2e54a8c159fb",
+   "url": "https://lifeattiktok.com/search/7530513185797359880",
+   "title": "software engineer project intern platform efficiency",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "e1cb71b6-18fc-4d48-9c80-55c54bb62a50",
+   "url": "https://jobs.lever.co/palantir/7d69cf8a-06fd-4f05-bd84-27149db29c4d/apply",
+   "title": "software engineer intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "da1074aa-7344-4ad3-9b53-078f1dbd2edc",
+   "url": "https://jobs.lever.co/palantir/373eb939-6f57-4836-8479-be79a5e07249/apply",
+   "title": "software engineer intern",
+   "location": "denver co",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "d0302d05-c84f-4a36-a91e-cc293f08604e",
+   "url": "https://jobs.lever.co/palantir/e27af7ab-41fc-40c9-b31d-02c6cb1c505c/apply",
+   "title": "software engineer intern",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "4a30dd71-73a0-48c8-9e4a-9422a6952920",
+   "url": "https://jobs.lever.co/palantir/f17e98d0-046a-4e6e-9d65-ed0b12dd0ff7/apply",
+   "title": "software engineer intern defense tech",
+   "location": "washington dc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "0f0aeb67-6d9f-4204-85d7-29cb04386943",
+   "url": "https://jobs.lever.co/palantir/bdcfb29f-4f27-42de-933f-7f83a359b9f0/apply",
+   "title": "software engineer intern",
+   "location": "washington dc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "ffc1f08c-7dd5-4fce-986e-2e3b824aabb4",
+   "url": "https://jobs.lever.co/palantir/d5486403-c050-4920-b2e0-91b69b61ebb2/apply",
+   "title": "forward deployed software engineer intern commercial",
+   "location": "chicago il",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "6f48a60c-c53f-4258-9d61-02f627a6072a",
+   "url": "https://jobs.lever.co/palantir/75cc1c09-8ebd-44c8-b3bc-d122cd1fecb3/apply",
+   "title": "palantir software engineer intern forward deployed software engineer commercial",
+   "location": "chicago il",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "33da215d-313a-45b7-8ad3-bde21b250ffe",
+   "url": "https://jobs.lever.co/palantir/373367a9-3160-49d8-b7af-2efec062fad1/apply",
+   "title": "software engineer intern production infrastructure",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "2c1046a7-cf40-410a-bf96-843e6e4db629",
+   "url": "https://jobs.lever.co/palantir/3ab9e715-1ea9-4c6c-ad50-7340eac14e86/apply",
+   "title": "software engineer intern production infrastructure",
+   "location": "washington dc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "eed44008-bc56-4a68-9f65-0b98b4876804",
+   "url": "https://jobs.lever.co/palantir/4d29249a-d7e8-4c39-880d-3b35d7b2f6f6/apply",
+   "title": "forward deployed software engineer intern commercial",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "ea21f599-680e-4822-8289-fe0af38a4bfe",
+   "url": "https://jobs.lever.co/palantir/09846827-b931-4a9f-bd64-c3bb8860187b/apply",
+   "title": "privacy and civil liberties software engineer intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "904269e6-581d-458f-9376-a8c3d9e74a98",
+   "url": "https://tesla.com/careers/search/job/275494",
+   "title": "rl engineer intern rl engineer tesla ai",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "5288f66e-452b-4ae7-a62d-12249dce5312",
+   "url": "https://tesla.com/careers/search/job/275331",
+   "title": "machine learning intern ai engineer tesla ai",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "bdac1050-d452-49f0-95e7-93ed2722fd24",
+   "url": "https://lifeattiktok.com/search/7657640284071954741",
+   "title": "product solutions and operations project intern commerce ads",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "c8c5aa40-1271-42fb-937f-a311fcaf917d",
+   "url": "https://jobs.lever.co/palantir/a483f41b-0da9-42ea-8ed6-cbf6eb93cc6d/apply",
+   "title": "software engineer intern defense tech",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "01a5ff88-29a2-4b09-9814-582b4e1fe212",
+   "url": "https://jobs.lever.co/palantir/8bcf4f33-0a79-4248-bbfd-49ac4be9dd8e/apply",
+   "title": "software engineer intern defense tech",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "4762de7d-d90a-4004-bf12-486138c11efc",
+   "url": "https://amazon.jobs/en/jobs/3188438/software-development-engineer-apprentice-military-veterans",
+   "title": "software development engineer apprentice military veterans",
+   "location": "arlington va; bellevue wa; cupertino ca; denver co",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "ae507b57-02d4-4bfc-a7e8-6e6d6c0a6521",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=6883068002",
+   "title": "product management intern",
+   "location": "bellevue wa; mountain view ca; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "google",
+   "job_id": "817799e0-f2c4-4c4c-8634-508da3e89b72",
+   "url": "https://google.com/about/careers/applications/jobs/results/113855697199735494",
+   "title": "student researcher",
+   "location": "kitchener on canada; toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "f1381efc-bd99-480d-b226-47a4c8e911f0",
+   "url": "https://jobs.apple.com/en-us/details/200673612",
+   "title": "applied data solutions program intern",
+   "location": "austin tx",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "0fe46774-0c06-4ab5-94e3-f5f8af293290",
+   "url": "https://tesla.com/careers/search/job/278578",
+   "title": "software engineer intern software engineer ai infrastructure",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "bd5985bd-7c09-4dfe-b27f-46d6f0d3418a",
+   "url": "https://jobs.lever.co/palantir/599b1907-aba1-4303-837b-66e69a521636/apply",
+   "title": "forward deployed software engineer intern commercial",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "930b6c2c-a5c0-4871-a545-bf43ae8c31a9",
+   "url": "https://jobs.lever.co/palantir/76a60923-bb49-40f5-b061-7c7eb1299602/apply",
+   "title": "software engineer intern",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "4696ce14-3ae8-4ed6-80e1-61072ce87544",
+   "url": "https://jobs.lever.co/palantir/26e23f5d-083b-45aa-b223-1a6e43d960bf/apply",
+   "title": "forward deployed software engineer intern",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "b7198b61-27db-46c1-8155-5a5bdb14370f",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556953113",
+   "title": "product manager intern",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "9019bee1-e862-4a98-8ce2-db27dfc5283a",
+   "url": "https://lifeattiktok.com/search/7668642761473902901",
+   "title": "software engineer intern creative intelligence and brand innovation",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "69040dc4-2a49-4a97-8a41-75f8926c7b5a",
+   "url": "https://lifeattiktok.com/search/7667338938890930437",
+   "title": "machine learning engineer intern",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "55417269-0302-4607-96a4-1ed2b420ba05",
+   "url": "https://lifeattiktok.com/search/7662684280234232117",
+   "title": "software engineer intern trust and safety engineering",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "53d06972-e847-4ab6-baf8-27f2642beba6",
+   "url": "https://lifeattiktok.com/search/7668581636242016565",
+   "title": "software engineer intern",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "1c50abfc-6825-4aa2-8dff-f244f74c75bf",
+   "url": "https://lifeattiktok.com/search/7665475460339665157",
+   "title": "machine learning engineer intern search quality",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "db960900-01f6-4f01-9c82-84153cdf5547",
+   "url": "https://lifeattiktok.com/search/7667935565120112949",
+   "title": "backend software engineer intern",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "07a9c26b-bccd-44eb-8314-fee1a7513235",
+   "url": "https://lifeattiktok.com/search/7668582031916435717",
+   "title": "software engineer intern ads measurement signal and privacy",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "06c11bb5-43c4-40be-8e95-f79d8f4b6ee6",
+   "url": "https://lifeattiktok.com/search/7667934860750063925",
+   "title": "backend software engineer intern innovative growth",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "8db73e59-868b-443c-ae94-c136c0561141",
+   "url": "https://lifeattiktok.com/search/7667935738190465285",
+   "title": "artificial intelligence engineer intern client architecture",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "2e35f7c5-6439-4055-8645-1f6e1035fcd6",
+   "url": "https://lifeattiktok.com/search/7667934302872537397",
+   "title": "backend software engineer intern digital content center",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "c03b7a2c-d1b6-4e44-bfc8-e638eeb45dac",
+   "url": "https://lifeattiktok.com/search/7667935399050692917",
+   "title": "software engineer intern social friending",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b39e7951-0395-4c53-8303-28b2f26bd237",
+   "url": "https://lifeattiktok.com/search/7668582146236631349",
+   "title": "software engineer intern data architecture e commerce",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b810a416-7ff9-4dd2-9bee-5b5b5ca5e317",
+   "url": "https://lifeattiktok.com/search/7667935739300792629",
+   "title": "frontend engineer intern open platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "8f05dd2f-befa-4ddd-8488-134b03cc716d",
+   "url": "https://lifeattiktok.com/search/7668445566565321013",
+   "title": "software engineer intern agentic creation effect platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "53a8204a-f36a-48a4-acc6-87134c891a73",
+   "url": "https://lifeattiktok.com/search/7668582086899763461",
+   "title": "software engineer intern",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "21843187-b30d-4873-8247-27a9a3d7b05d",
+   "url": "https://lifeattiktok.com/search/7668584161852229893",
+   "title": "frontend software engineer intern ads measurement signal and privacy",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "7ebfe14e-9cc5-4d58-a36d-60f66838f248",
+   "url": "https://lifeattiktok.com/search/7668584916620527925",
+   "title": "software engineer intern business integrity",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "aedd360d-23ce-4970-aa0b-45302887e26f",
+   "url": "https://jobs.bytedance.com/en/position/7668373268886161669/detail",
+   "title": "software engineer intern",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "7a3479e6-fa2c-40d9-b917-c42922bfeaf1",
+   "url": "https://jobs.bytedance.com/en/position/7668374190764050741/detail",
+   "title": "software engineer intern distributed nosql database systems",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "9fe00265-7716-44f9-bc43-1017aa863220",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556951950",
+   "title": "software engineer intern coreai",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "14e4cecc-8df0-4784-b302-5fa8e96fae39",
+   "url": "https://lifeattiktok.com/search/7668202602270951733",
+   "title": "research engineer intern monetization technology business integrity",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "aa3ae48a-c50e-4ccf-ad24-b0dee7dbdabc",
+   "url": "https://lifeattiktok.com/search/7668202600147552517",
+   "title": "research scientist intern monetization technology business integrity",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "samsara",
+   "job_id": "db36b892-52d0-41cd-a477-521af6328b70",
+   "url": "https://samsara.com/company/careers/roles/8082091?gh_jid=8082091",
+   "title": "software engineering intern",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "spacex",
+   "job_id": "6339287b-3f1f-45ea-964d-65549925660a",
+   "url": "https://job-boards.greenhouse.io/spacex/jobs/8621757002",
+   "title": "software engineering intern co op",
+   "location": "bastrop tx; brownsville tx; cape canaveral fl; hawthorne ca; irvine ca; mcgregor tx; palo alto ca; redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "spacex",
+   "job_id": "36c3e2e6-475a-4ffb-adad-e6d9a2dcc94e",
+   "url": "https://job-boards.greenhouse.io/spacex/jobs/8621763002",
+   "title": "silicon engineer intern co op",
+   "location": "irvine ca; palo alto ca; redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "spacex",
+   "job_id": "9bf4727a-804d-4ee8-8c44-0eeec2960987",
+   "url": "https://job-boards.greenhouse.io/spacex/jobs/8621756002",
+   "title": "software engineer intern co op",
+   "location": "bastrop tx; brownsville tx; cape canaveral fl; hawthorne ca; irvine ca; mcgregor tx; palo alto ca; redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "25286ad8-8260-4a0d-9ab1-89a677c29b20",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556922929",
+   "title": "software engineer ai ml llm intern",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "4fa5508b-be5b-43c6-8651-fcb4753d6e99",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556922931",
+   "title": "software engineer intern data platform analytics",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "b412b084-36e9-45e2-b3a0-561c4336e62e",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556922930",
+   "title": "software engineer security identity intern",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "ed31bd8d-9acf-436c-9628-1d4c79959bac",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556922922",
+   "title": "full stack product engineer intern web services",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "7e143f06-1c28-41b7-9291-53a869d86325",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556922923",
+   "title": "software engineer intern cloud distributed backend",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "8b95003b-f01d-4d6b-a4d2-1e4c6d890df5",
+   "url": "https://lifeattiktok.com/search/7669711844487399685",
+   "title": "software engineer intern global crm",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "4ef18c97-61e7-45fb-96b5-55d9163a1786",
+   "url": "https://lifeattiktok.com/search/7668725183121000757",
+   "title": "software engineer intern effects performance",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "04eb8758-e0be-4ae4-aca7-40e1626d3e24",
+   "url": "https://lifeattiktok.com/search/7667935633764370741",
+   "title": "backend software engineer intern product infrastructure",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b8f5c841-1a67-4b15-bb05-70d871b0ab77",
+   "url": "https://lifeattiktok.com/search/7668834837268138293",
+   "title": "backend software engineer intern global e commerce",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "6fa46b99-9c48-44b2-8d38-e17ef2651837",
+   "url": "https://lifeattiktok.com/search/7669705785962727733",
+   "title": "software engineer intern ads interface",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "44dacd86-f76d-414d-9cb5-9dd6a0211b2d",
+   "url": "https://lifeattiktok.com/search/7669700361976809733",
+   "title": "machine learning engineer intern ads signal measurement",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "08be4cf5-fcc4-47ed-82fc-2dc64c84d1b4",
+   "url": "https://lifeattiktok.com/search/7668834837268416821",
+   "title": "backend software engineer intern global e commerce",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "14af9b4a-6b3e-473b-844f-542a89afb184",
+   "url": "https://lifeattiktok.com/search/7667874197682899205",
+   "title": "recommendation product manager intern content ecosystem",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "708992c3-129c-4bbd-9c10-a0ae59f29fd2",
+   "url": "https://lifeattiktok.com/search/7669693163422845237",
+   "title": "machine learning engineer intern performance monetization",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "e6fd79b5-22a9-40cb-a2a0-896d01ebf44b",
+   "url": "https://lifeattiktok.com/search/7669707492914727221",
+   "title": "machine learning engineer intern lead ads",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "6c0be2d1-eac9-429a-b900-df719577d679",
+   "url": "https://lifeattiktok.com/search/7669711968043092229",
+   "title": "machine learning engineer intern commerce ads summer 2027",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "fb88f1c3-967a-419b-8ac4-535d941480ac",
+   "url": "https://lifeattiktok.com/search/7669698648817305909",
+   "title": "machine learning engineer intern search ads",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "6dabe551-58cb-4dd5-9ba4-5656067dd84a",
+   "url": "https://lifeattiktok.com/search/7668654528822954245",
+   "title": "machine learning engineer intern brand ads",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "6454b1b2-6daf-4a13-9e9f-47209a333d39",
+   "url": "https://lifeattiktok.com/search/7667935150530840837",
+   "title": "backend software engineer intern live foundation governance engineering",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b11dddb4-7bc4-4864-8ee8-ab5d5bb12c9a",
+   "url": "https://lifeattiktok.com/search/7669709472078170373",
+   "title": "machine learning engineer intern app ads and gaming",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b6428bbb-bf53-4e9c-8121-3217159bb9b6",
+   "url": "https://lifeattiktok.com/search/7668383643375257909",
+   "title": "machine learning engineer intern data search recommendation global e commerce",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b05ba4c5-016d-48b3-888c-f09fa7f253ad",
+   "url": "https://lifeattiktok.com/search/7669711026846058757",
+   "title": "frontend engineer intern global crm",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "5182ae3f-a0b7-4e07-80fd-25a69767ee5d",
+   "url": "https://lifeattiktok.com/search/7669943120351906053",
+   "title": "software engineer intern transaction platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "dde435d3-0494-49e6-bba7-811e7131b9be",
+   "url": "https://lifeattiktok.com/search/7668862422178318597",
+   "title": "software engineer intern intelligent creation camera",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "3b44efc2-7d58-43bc-a375-21f4344932d3",
+   "url": "https://lifeattiktok.com/search/7669682935444900149",
+   "title": "data science intern integrity and safety",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "0fb5cd0a-2141-450b-b5c0-d7a1d71036dd",
+   "url": "https://lifeattiktok.com/search/7669700822370945333",
+   "title": "data science intern tiktok live",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "b59992d0-e14b-4009-9121-ed1172ad9b24",
+   "url": "https://jobs.bytedance.com/en/position/7668212952030841093/detail",
+   "title": "software engineer intern ai platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "ac3e3883-21b0-4ad1-8011-bf5060c01aab",
+   "url": "https://lifeattiktok.com/search/7667934792727906565",
+   "title": "research engineer intern agentic systems ai infrastructure generalized architecture",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "3b700557-5c32-4773-8cfe-f11a66b71a4f",
+   "url": "https://lifeattiktok.com/search/7669683639101884725",
+   "title": "data science intern tiktok product",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "1077cb58-5992-4ad8-acb0-7980b9360baa",
+   "url": "https://jobs.bytedance.com/en/position/7670316084662339845/detail",
+   "title": "student researcher compiler seed infra",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "861c7a8a-d9c3-4137-b070-331f0d26e5b3",
+   "url": "https://lifeattiktok.com/search/7670287013157095733",
+   "title": "data scientist intern vod data",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "633fde2a-eea3-462a-91b6-f0c8025fba8d",
+   "url": "https://lifeattiktok.com/search/7668396597746862341",
+   "title": "machine learning engineer intern search",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "ec44a0f2-7cf0-4dd9-84b2-cdc746efb42e",
+   "url": "https://lifeattiktok.com/search/7670289874020993285",
+   "title": "backend software engineer intern creation platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "7fdf2de6-75ca-4715-8764-720c7cc52695",
+   "url": "https://lifeattiktok.com/search/7668533140146817333",
+   "title": "data engineer intern ads targeting",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "fe93fbfa-cba0-4f3c-8f20-9cbc4828ef01",
+   "url": "https://jobs.bytedance.com/en/position/7670330161462364421/detail",
+   "title": "student researcher intern ai foundation models infrastructure seed infra",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "roblox",
+   "job_id": "f89dbf35-2e68-4087-a28a-1092da1e72d4",
+   "url": "https://careers.roblox.com/jobs/8072713?gh_jid=8072713",
+   "title": "software engineer intern",
+   "location": "san mateo ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "fad1406c-cd92-4587-b376-d9839b629e3c",
+   "url": "https://lifeattiktok.com/search/7670285031018432773",
+   "title": "llm post training engineer intern research product",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "0673c550-4c1f-4d6c-b03d-e2185d8183b0",
+   "url": "https://lifeattiktok.com/search/7670295535077427509",
+   "title": "software engineer intern media engine",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "5240d3a1-8474-482a-bb81-33ca1189a842",
+   "url": "https://lifeattiktok.com/search/7670009830602721589",
+   "title": "product manager intern product infrastructure account",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b6cb7794-c736-4019-b882-94ec5758132d",
+   "url": "https://lifeattiktok.com/search/7670420287191517493",
+   "title": "strategy product manager intern platform responsibility",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "057bb7a1-e45d-419a-9dce-d6991f31b27d",
+   "url": "https://jobs.bytedance.com/en/position/7669774721406208261/detail",
+   "title": "software engineer intern global payment compliance",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "34fa4813-bc92-4deb-8987-cf33bc625246",
+   "url": "https://jobs.bytedance.com/en/position/7668464504736876853/detail",
+   "title": "gpu ai application system software engineer intern system technologies and engineering",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "fa4acb7b-e2c6-4b0a-8f93-4d09b537db1b",
+   "url": "https://lifeattiktok.com/search/7670281449668905269",
+   "title": "software engineer intern foundation platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "ca012a00-87e1-40b7-ac6f-1464ce5ad2f1",
+   "url": "https://jobs.bytedance.com/en/position/7670690923748870405/detail",
+   "title": "ai network automation engineer intern global physical network infrastructure",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "8b5ac2f9-33b4-434d-b7d0-d7d0afcc5357",
+   "url": "https://lifeattiktok.com/search/7670700387322300677",
+   "title": "fullstack software engineer intern global e commerce",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "470d8405-efc2-46a4-984e-477fa5e3d31e",
+   "url": "https://lifeattiktok.com/search/7662594807715072261",
+   "title": "software engineer intern global e commerce search infrastructure",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "3eeac721-35f3-4f16-9019-05cfc80ad251",
+   "url": "https://lifeattiktok.com/search/7670738362521520437",
+   "title": "fullstack software engineer intern global e commerce 2027 summer",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "aa7eb673-811f-4d32-a109-b840c82a1fab",
+   "url": "https://jobs.bytedance.com/en/position/7670778018960542005/detail",
+   "title": "network software engineer intern network switch",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "1a9582e0-2525-494c-8737-53db648f37cb",
+   "url": "https://jobs.bytedance.com/en/position/7670772641439041797/detail",
+   "title": "network software engineer intern network observation",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "5cd02bbb-4f1e-49d8-a75c-44f5f6e2e968",
+   "url": "https://lifeattiktok.com/search/7671211313289398581",
+   "title": "frontend engineer intern ads interface",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "34280898-ae52-4450-896d-1e47305b467e",
+   "url": "https://lifeattiktok.com/search/7670010726514493749",
+   "title": "ai agent product manager intern product infrastructure customer service platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "016ffb65-6a85-485b-b718-14b7c85d9463",
+   "url": "https://lifeattiktok.com/search/7670420117406452021",
+   "title": "search safety operations intern platform responsibility search",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "30e36d66-cf25-4851-9655-d22bb0c6d319",
+   "url": "https://jobs.bytedance.com/en/position/7671147251943213317/detail",
+   "title": "software development engineer intern network automation 2027 summer",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "fdd7e7ec-c300-4a26-931c-56c3adc48425",
+   "url": "https://lifeattiktok.com/search/7671232204182276405",
+   "title": "data engineer intern monetization data",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "d1768aee-f240-4353-b609-278b04785c95",
+   "url": "https://lifeattiktok.com/search/7670839727059339525",
+   "title": "software engineer intern global e commerce search",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "f57a89f7-f1c7-44ac-826b-23f1d9a409cf",
+   "url": "https://jobs.bytedance.com/en/position/7671109787509213445/detail",
+   "title": "data lake infrastructure and data analytics research engineer intern applied machine learning ark",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "10aab0a0-09f3-44a8-990e-a5b8db3c8da8",
+   "url": "https://jobs.bytedance.com/en/position/7671105026009925893/detail",
+   "title": "visual generation multimodal evaluation machine learning engineer intern aml ark",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "e24c2017-99ff-4c15-9636-3246335193a8",
+   "url": "https://jobs.bytedance.com/en/position/7671096345243535669/detail",
+   "title": "agent evaluation evolution machine learning engineer intern applied machine learning ark",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "3ee0c355-bfb2-4580-a632-b2cd47e53858",
+   "url": "https://tesla.com/careers/search/job/279760",
+   "title": "electronic design engineer intern electronic systems",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "155f6df6-7cca-471e-8fb1-e8318faa6845",
+   "url": "https://tesla.com/careers/search/job/279763",
+   "title": "software engineer intern engineering automation vehicle engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "10e605f7-ddf1-4da3-81d0-198db01cd0b8",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6131089004",
+   "title": "software engineer intern winter 2027",
+   "location": "nyc; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "06fa48a4-38e1-4ac5-9534-ba1c6702b680",
+   "url": "https://tesla.com/careers/search/job/279603",
+   "title": "applied ai engineer intern ai hardware",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b54ab32d-a9c1-471a-8365-6e0bdc0eaeb0",
+   "url": "https://lifeattiktok.com/search/7670529537944766773",
+   "title": "ai safety evaluation governance product manager intern multiple teams",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "e670d442-7188-4ebf-a019-6706835ae548",
+   "url": "https://jobs.bytedance.com/en/position/7672391300141877557/detail",
+   "title": "agent evaluation evolution machine learning engineer intern applied machine learning ark",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "4f77c21f-b6c5-45b9-87c7-4087d47b9589",
+   "url": "https://jobs.bytedance.com/en/position/7672392998231050549/detail",
+   "title": "visual generation multimodal evaluation machine learning engineer intern aml ark",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "d0e6095d-b7d9-4b98-9b30-5bc4f60fed04",
+   "url": "https://jobs.bytedance.com/en/position/7672394389001816325/detail",
+   "title": "data lake infrastructure data analytics research engineer intern applied machine learning ark",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "cd27aaf0-33b6-4d6a-950e-8acff7bbe6ce",
+   "url": "https://tesla.com/careers/search/job/279600",
+   "title": "software engineer intern ai inference co design",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "e68caf69-cb51-4c52-933d-ace225ef6fb3",
+   "url": "https://lifeattiktok.com/search/7672554809555192117",
+   "title": "product manager intern signal and identity product",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "bbd533a0-34b2-491f-a386-2c10df203595",
+   "url": "https://lifeattiktok.com/search/7672562486917286149",
+   "title": "product manager intern ads interface and platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "0e6104ee-b59a-435c-af2d-24c7e880c109",
+   "url": "https://lifeattiktok.com/search/7672569081632229685",
+   "title": "product manager intern ads interface and platform",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "fc4e61cf-8b0d-41bc-a27f-9081dc511bca",
+   "url": "https://lifeattiktok.com/search/7672557943224961333",
+   "title": "product manager intern commerce ads",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "aa733ff3-312d-4f91-935f-9b74817edc2b",
+   "url": "https://jobs.bytedance.com/en/position/7670364362450733317/detail",
+   "title": "self built engineer intern cdn platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "70115b81-b4c5-4a64-8a6c-5b644608f906",
+   "url": "https://jobs.bytedance.com/en/position/7673274910202988805/detail",
+   "title": "student researcher ai foundation model infrastructure seed",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "f76334f0-b144-4ec8-9a36-f7bab853e4e7",
+   "url": "https://tesla.com/careers/search/job/279991",
+   "title": "firmware engineer intern new programs engineering",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "973baf93-b4d1-46c0-a60c-d4a170c31505",
+   "url": "https://lifeattiktok.com/search/7673120794853034245",
+   "title": "seller growth strategy analytics intern tiktok shop",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "a0ec26fd-db0f-4eb4-9bed-73b9409cabc5",
+   "url": "https://lifeattiktok.com/search/7673337777708550405",
+   "title": "product manager intern content and services",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "56973e0e-ee92-4898-b2d3-7f5df827f064",
+   "url": "https://lifeattiktok.com/search/7673559305519794437",
+   "title": "product manager intern scaled growth",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "d1f12ffa-cc86-44c9-aad3-b6def1a50517",
+   "url": "https://lifeattiktok.com/search/7673340525029673221",
+   "title": "product solutions and operations intern commerce ads",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "f9cd7f8b-40b0-42a5-8bd2-f23dfd7d8ac5",
+   "url": "https://jobs.bytedance.com/en/position/7673638856678279429/detail",
+   "title": "asic design engineer intern video silicon ip",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "notion",
+   "job_id": "c61b3999-cfc9-4184-8e3e-3a21a00ebcef",
+   "url": "https://jobs.ashbyhq.com/notion/e66c6658-9e65-4c58-8db2-844628b6e8f8/application?embed=true",
+   "title": "software engineer intern winter 2027",
+   "location": "nyc; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "notion",
+   "job_id": "14e51d14-067b-43b8-80cf-dcf3c6893565",
+   "url": "https://jobs.ashbyhq.com/notion/3fba1c39-c5cb-47d7-9ad2-1cec4d7e9d0c/application?embed=true",
+   "title": "software engineer intern summer 2027",
+   "location": "nyc; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "f271bfa3-e723-416b-aad4-0a6cf6f4f19e",
+   "url": "https://jobs.bytedance.com/en/position/7668315137242351925/detail",
+   "title": "software engineer intern global payment infra and sre",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "ee8a3af2-214e-482e-9a90-3dd327c6bdf1",
+   "url": "https://jobs.bytedance.com/en/position/7672557061679483189/detail",
+   "title": "software engineer intern global traffic architecture",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "e95cee0e-a2ed-44d1-9017-9befd82e1561",
+   "url": "https://lifeattiktok.com/search/7674032146438162693",
+   "title": "data engineer intern data platform global live",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "d4e10f5f-fe79-4c2f-bee7-b413db703e65",
+   "url": "https://lifeattiktok.com/search/7674944387893791029",
+   "title": "data analyst intern live",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "datadog",
+   "job_id": "31355168-e211-42dc-a7b5-c84567c929cc",
+   "url": "https://careers.datadoghq.com/detail/8108241?gh_jid=8108241",
+   "title": "product management intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "9d9a6729-76a5-4fb4-b71f-ea04e053c877",
+   "url": "https://jobs.bytedance.com/en/position/7668650945276168453/detail",
+   "title": "software engineer intern global payment",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "5b89096d-a6c7-439f-9d03-ebdd62e2588a",
+   "url": "https://lifeattiktok.com/search/7675080308216154373",
+   "title": "data science project intern advertisement team",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "5fef5ebc-9956-4edd-8a29-1eee01522d58",
+   "url": "https://lifeattiktok.com/search/7675129440242010421",
+   "title": "software engineer intern tiktok search data infrastructure",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b639bba8-cb2b-4262-9125-9b56aeefa4cb",
+   "url": "https://lifeattiktok.com/search/7675128776856029445",
+   "title": "software engineer intern tiktok search data infra",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "4787855b-e024-4938-a00f-7829fac9f8db",
+   "url": "https://jobs.bytedance.com/en/position/7675376319236311349/detail",
+   "title": "immigration data analyst intern hrops",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "ea8c5ebd-a6c4-49ff-9dac-f3532c41737a",
+   "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Systems-Software-Engineering_JR2023492",
+   "title": "systems software engineering intern",
+   "location": "santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "832f302a-8bc2-45f2-8ada-37a23bf080a7",
+   "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Hardware-Engineering_JR2023508-1",
+   "title": "hardware engineering intern",
+   "location": "santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "bb48b7b8-29e9-4f8f-8817-54e325180735",
+   "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Deep-Learning_JR2023497-1",
+   "title": "deep learning intern deep learning applications and algorithms deep learning frameworks and libraries",
+   "location": "santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "26db23e0-d70f-49b8-ab98-f6c54330d92b",
+   "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Hardware-Physical-Design---VLSI_JR2023501",
+   "title": "hardware physical design vlsi intern",
+   "location": "santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "60fd19b0-17cd-4cb7-8cf0-99bd3743c1c9",
+   "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Hardware-Verification_JR2023500",
+   "title": "hardware verification intern",
+   "location": "santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "af0078da-4418-4e04-afb5-17ec87e8381a",
+   "url": "https://lifeattiktok.com/search/7670875283026053381",
+   "title": "machine learning mlops intern global site reliability engineering",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "notion",
+   "job_id": "efc56001-b148-410d-babd-1c8374028468",
+   "url": "https://jobs.ashbyhq.com/notion/a67d6f2b-7c13-41d0-b36b-b2f662c9873e/application?embed=true",
+   "title": "data science intern",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "f9783cfd-0933-41da-8102-1c15ae7d9c3c",
+   "url": "https://lifeattiktok.com/search/7675159726676101381",
+   "title": "software engineer intern recommendation infra performance efficiency",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "dcab0a63-0790-4990-ad6c-517c42b6436b",
+   "url": "https://lifeattiktok.com/search/7672926068681951493",
+   "title": "software engineer intern recommendation architecture feeds infrastructure",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "89769fe8-b21d-48e7-bc68-0ac457b3a934",
+   "url": "https://lifeattiktok.com/search/7672934842451577141",
+   "title": "software engineer intern recommendation architecture feeds infrastructure",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "c2b2c451-d750-4afe-a76b-18cec45fff86",
+   "url": "https://lifeattiktok.com/search/7675517686256863541",
+   "title": "software engineer intern tiktok search architecture",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "7e502eb4-3d9c-4f91-8e83-a471504d8a4b",
+   "url": "https://tesla.com/careers/search/job/280820",
+   "title": "internship fullstack engineer applications engineering winter spring 2027",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "162be72f-9782-48cc-94af-9e3dcbf2c8de",
+   "url": "https://jobs.bytedance.com/en/position/7675345626188335365/detail",
+   "title": "software engineer intern cis knowledge bank",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "f7eaba38-fbcf-47fb-88d0-928f5427c0cb",
+   "url": "https://careers.amd.com/jobs/91170?icims=1",
+   "title": "machine learning intern co op multiple teams",
+   "location": "austin tx; boxborough ma; fishkill ny; fort collins co; longmont co; rochester ny",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "a5a8ff7e-b250-4699-8d5f-b15adf724936",
+   "url": "https://careers.amd.com/jobs/90801?icims=1",
+   "title": "firmware engineer intern co op",
+   "location": "austin tx; fishkill ny; fort collins co; longmont co; massachusetts; rochester ny; secaucus nj",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "3e9d3b5d-b9b8-4556-8c46-75ca36c2b15d",
+   "url": "https://careers.amd.com/jobs/90891?icims=1",
+   "title": "software engineer intern co op",
+   "location": "san jose ca; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "3a7a0552-99e6-49df-a934-5f5f8e97109b",
+   "url": "https://careers.amd.com/jobs/90807?icims=1",
+   "title": "firmware engineering intern co op undergrad",
+   "location": "san jose ca; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "b6461f19-ac97-4787-a3e5-e3529e7f1e28",
+   "url": "https://careers.amd.com/jobs/91227?icims=1",
+   "title": "product development engineer intern co op",
+   "location": "san jose ca; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "944978fc-7eeb-4346-82ad-857bec5239a5",
+   "url": "https://careers.amd.com/jobs/90947?icims=1",
+   "title": "software engineer intern co op",
+   "location": "austin tx; boxborough ma; fishkill ny; fort collins co; longmont co; rochester ny",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "212a153a-1fd0-4d17-a022-c1db71569fd9",
+   "url": "https://careers.amd.com/jobs/90892?icims=1",
+   "title": "machine learning intern co op machine learning artificial intelligence",
+   "location": "san jose ca; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "2f20ddf7-c228-470e-9c1f-f35d8a1bfc0a",
+   "url": "https://careers.amd.com/jobs/90894?icims=1",
+   "title": "hardware engineer intern co op",
+   "location": "san jose ca; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "1a0df397-2083-456f-9ecb-137eec7603ef",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=8732364002",
+   "title": "software engineer intern",
+   "location": "bellevue wa; mountain view ca; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "892947b6-4cac-464b-941a-7244615e4d0a",
+   "url": "https://lifeattiktok.com/search/7676250516494436661",
+   "title": "data engineer intern e commerce",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "7fff5796-fc88-4d04-a6fa-be35e0bdb2e0",
+   "url": "https://lifeattiktok.com/search/7675616554318596357",
+   "title": "ai product manager intern product social",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "ba733cd9-7086-4e38-bdec-d13b07b8b1d3",
+   "url": "https://jobs.apple.com/en-us/details/200679650",
+   "title": "gpu intern",
+   "location": "cambridge uk; london uk; st albans uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "e012dfd4-c33a-4639-8ea0-3e6586db2b77",
+   "url": "https://lifeattiktok.com/search/7677467375486765317",
+   "title": "client solutions intern global business solutions",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "9461eef2-85ff-4810-8147-6cf294000c7d",
+   "url": "https://lifeattiktok.com/search/7673365416605010229",
+   "title": "product manager intern pgc",
+   "location": "la",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "d5f10439-1231-496b-a535-96be20ab9808",
+   "url": "https://lifeattiktok.com/search/7677467375487486213",
+   "title": "client solutions intern global business solutions",
+   "location": "la",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "cb7c7665-f749-4ac4-82aa-36376548fdc7",
+   "url": "https://lifeattiktok.com/search/7677467052537776437",
+   "title": "client solutions intern",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "4890aa3f-9b23-4f72-8e21-fa891322a004",
+   "url": "https://lifeattiktok.com/search/7673365923163638069",
+   "title": "product manager intern pgc",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "63b147f7-67e5-40ea-bf27-906ad1de151c",
+   "url": "https://lifeattiktok.com/search/7673361736079329541",
+   "title": "product operations intern",
+   "location": "la",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "ddae6979-7fcd-4b8d-97c8-36d02bd02f06",
+   "url": "https://careers.amd.com/jobs/91466?icims=1",
+   "title": "asic package engineering intern co op",
+   "location": "austin tx; boxborough ma; fishkill ny; fort collins co; longmont co; secaucus nj",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "06673e9a-5d65-4652-9ea8-f673b24c85a5",
+   "url": "https://careers.amd.com/jobs/91463?icims=1",
+   "title": "asic package engineering co op intern",
+   "location": "san jose ca; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "76570b32-69dc-4557-ad0d-dfd2480f1605",
+   "url": "https://lifeattiktok.com/search/7672671220798818613",
+   "title": "ai infrastructure engineer intern recommendation llm",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "ffc80c46-0710-4acb-82cc-c1e1d640674c",
+   "url": "https://tesla.com/careers/search/job/281233",
+   "title": "ai hardware physical design engineer intern ai hardware",
+   "location": "austin tx; fort collins co; palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "de753ad7-a941-4751-85c8-ff3d1b697b54",
+   "url": "https://tesla.com/careers/search/job/280604",
+   "title": "fullstack c engineer intern vehicle user interface",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "cb4c69f2-62ef-46ff-b70a-352ab1e61af2",
+   "url": "https://tesla.com/careers/search/job/281102",
+   "title": "embedded software engineer intern firmware platforms",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "0ebaa63f-d5e3-410a-82b7-0234eb9a8e1a",
+   "url": "https://tesla.com/careers/search/job/281099",
+   "title": "fullstack software engineer intern fleetnet fullstack software engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "a96f8f9b-926d-483b-ba4f-ab46b0e78ac2",
+   "url": "https://tesla.com/careers/search/job/281271",
+   "title": "software engineer intern maps navigation validation",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "6f67b1f9-a488-41fb-81ab-1c90fbd557d4",
+   "url": "https://tesla.com/careers/search/job/280960",
+   "title": "software engineer intern maps navigation robotaxi",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "0b09ad76-6210-4b87-94c9-b662b170d268",
+   "url": "https://tesla.com/careers/search/job/280605",
+   "title": "android engineer intern mobile software",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "ae6480dc-19f7-41c1-93ec-fd10763825b1",
+   "url": "https://amazon.jobs/en/jobs/10517567/software-development-engineer-intern-annapurna-labs-2027",
+   "title": "software development engineer intern annapurna labs",
+   "location": "austin tx; cupertino ca; nyc; seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "c5bd1b3f-c4a1-4606-b687-e4afcc112363",
+   "url": "https://tesla.com/careers/search/job/281097",
+   "title": "software engineer intern vehicle software summer 2027",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "615b2214-ffde-44ff-b1af-d08cea6fe865",
+   "url": "https://tesla.com/careers/search/job/281473",
+   "title": "software engineer intern information security spring 2027",
+   "location": "bellevue wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "aac19326-02f3-415a-991f-d6a81d6a7ef9",
+   "url": "https://tesla.com/careers/search/job/281623",
+   "title": "automated diagnostics intern software engineer",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "96a80fff-d4c9-467e-b9f7-80924676ceca",
+   "url": "https://tesla.com/careers/search/job/281607",
+   "title": "product support engineer intern service engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "8b74bc73-21bb-499c-a67a-d34845246a91",
+   "url": "https://tesla.com/careers/search/job/281467",
+   "title": "backend engineer intern infrastructure engineering",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "65097872-fc5a-464c-a9ca-5d4d382c4765",
+   "url": "https://tesla.com/careers/search/job/281625",
+   "title": "mobile app intern mobile applications automated diagnostics",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "adobe",
+   "job_id": "c7b1d381-c5d1-4080-8d2b-531342e2c8a8",
+   "url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/XMLNAME-2027-Intern---Machine-Learning-Engineer_R171519",
+   "title": "machine learning engineer intern",
+   "location": "austin tx; lehi ut; nyc; san jose ca; seattle wa; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "21d6e4f1-9a13-4078-8012-b3f6e65719ac",
+   "url": "https://tesla.com/careers/search/job/281951",
+   "title": "software engineer intern core ai compiler runtime",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "e24555fe-8cae-4a3f-b155-5e0d27cf82b8",
+   "url": "https://careers.amd.com/jobs/90301?icims=1",
+   "title": "firmware engineer intern co op",
+   "location": "vancouver bc canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "c2e5eec4-015a-4598-914b-e93aacc7b809",
+   "url": "https://careers.amd.com/jobs/91362?icims=1",
+   "title": "hardware design verification engineer intern co op",
+   "location": "vancouver bc canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "b6cba04b-4f5c-4090-9c6a-a30355318e86",
+   "url": "https://careers.amd.com/jobs/91360?icims=1",
+   "title": "hardware design engineer intern co op",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "a6f23904-d00a-4120-80ac-c94cce07abcb",
+   "url": "https://careers.amd.com/jobs/91320?icims=1",
+   "title": "firmware engineer intern co op",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "a130716c-fb2f-4134-9ac5-6e93002f40e0",
+   "url": "https://careers.amd.com/jobs/90367?icims=1",
+   "title": "hardware design engineer intern co op long term",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "8feda3b9-865c-42d5-a47b-332911cbfc9e",
+   "url": "https://careers.amd.com/jobs/90379?icims=1",
+   "title": "hardware design verification engineer intern co op",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "63f022cb-b4f4-4fd9-869e-9bdd55d6fabe",
+   "url": "https://careers.amd.com/jobs/91363?icims=1",
+   "title": "machine learning artificial intelligence intern co op",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "369ef34f-cdb6-4df1-a41f-39e63dc980cc",
+   "url": "https://careers.amd.com/jobs/91368?icims=1",
+   "title": "software engineer intern co op",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "0494b1ec-0437-4a60-92c9-cd379693aae3",
+   "url": "https://careers.amd.com/jobs/90435?icims=1",
+   "title": "diagnostics design engineer intern co op",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "d6e09034-f1b8-496a-9b1c-ad916001fc4c",
+   "url": "https://tesla.com/careers/search/job/281462",
+   "title": "software engineer intern fullstack engineer infrastructure engineering",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "640797fc-5abf-4222-9bdb-16b62d09607e",
+   "url": "https://careers.amd.com/jobs/91359?icims=1",
+   "title": "graphics software engineer intern co op",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "874ab97b-4128-4172-bb03-7699b5dbb328",
+   "url": "https://careers.amd.com/jobs/90297?icims=1",
+   "title": "firmware engineer intern co op long term",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "e9f9050a-780c-47dd-b98a-17dda2af0453",
+   "url": "https://careers.amd.com/jobs/91864?icims=1",
+   "title": "compiler engineer intern co op",
+   "location": "austin tx; boxborough ma; fishkill ny; fort collins co; longmont co",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "b96c7c0a-e52d-479c-8c01-d4e54118328f",
+   "url": "https://careers.amd.com/jobs/91865?icims=1",
+   "title": "compiler engineer intern co op",
+   "location": "san jose ca; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "98ba4abf-1726-45e5-a03c-c711dfb81c84",
+   "url": "https://jobs.bytedance.com/en/position/7678449088065997109/detail",
+   "title": "software engineer intern relational database",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "atlassian",
+   "job_id": "dab6f443-d39a-4bca-acad-451c8b347549",
+   "url": "https://careers-americas.icims.com/jobs/26266/software-engineer-intern%2c-2027-summer-u.s./job",
+   "title": "software engineer intern",
+   "location": "seattle wa; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "cbbf5921-5565-4f8b-9599-adde9125fde0",
+   "url": "https://tesla.com/careers/search/job/281921",
+   "title": "vehicle software engineer intern diagnostic user interface",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "c0acbe3a-c2ed-42ea-a71d-eb9df423a1c4",
+   "url": "https://tesla.com/careers/search/job/281936",
+   "title": "robotaxi simulation engineer intern systems modeling optimization",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "84d2832d-f2be-4040-a7c8-6624a43f50fc",
+   "url": "https://tesla.com/careers/search/job/281940",
+   "title": "machine learning engineer intern charging data modeling",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "8b46d013-f73a-4d7b-bd75-7775fa71d342",
+   "url": "https://tesla.com/careers/search/job/282147",
+   "title": "physics engine development engineer intern optimus",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "atlassian",
+   "job_id": "acda40fc-1690-467d-92ef-f27c904fb1bb",
+   "url": "https://careers-americas.icims.com/jobs/26274/product-management-intern%2c-2027-summer-u.s./job",
+   "title": "product management intern",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "01929cf0-26d4-4cd4-a5da-3d08a8e72180",
+   "url": "https://careers.amd.com/jobs/91369?icims=1",
+   "title": "analog and mixed signal engineer intern co op",
+   "location": "markham on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "atlassian",
+   "job_id": "7442c66e-fba5-4b94-bb79-4a94282768f2",
+   "url": "https://campus-globalcareers-atlassian.icims.com/jobs/26275/software-engineer-intern%2c-2027-canada/job",
+   "title": "software engineer intern",
+   "location": "burnaby bc canada; richmond bc canada; vancouver bc canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "intel",
+   "job_id": "ca96c441-d218-4a8a-b6f6-a035b101c51b",
+   "url": "https://intel.wd1.myworkdayjobs.com/en-us/external/job/US-Oregon-Hillsboro/Platform-Hardware-and-Systems-Engineering---Intern--Bachelor-s_JR0286827",
+   "title": "platform hardware and systems engineering intern bachelor s",
+   "location": "austin tx; folsom ca; hillsboro or; phoenix az; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "intel",
+   "job_id": "4ba241d0-99b3-4fa5-a8cc-38e1bc93ce59",
+   "url": "https://intel.wd1.myworkdayjobs.com/en-us/external/job/US-Oregon-Hillsboro/Silicon-Hardware-Engineering---Intern--Bachelor-s_JR0286829",
+   "title": "silicon hardware engineering intern bachelor s",
+   "location": "austin tx; folsom ca; hillsboro or; phoenix az; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "intel",
+   "job_id": "b854fca7-7546-478f-937b-a76b8dbbddae",
+   "url": "https://intel.wd1.myworkdayjobs.com/en-us/external/job/US-Oregon-Hillsboro/Software-Engineering---Intern--Bachelor-s_JR0286834",
+   "title": "software engineer intern",
+   "location": "austin tx; folsom ca; hillsboro or; phoenix az; santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "samsara",
+   "job_id": "1fd9f3fb-b5dd-4e12-9bf7-6d3ff988d2c3",
+   "url": "https://samsara.com/company/careers/roles/8163118?gh_jid=8163118",
+   "title": "electrical engineer co op",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "23f69fe4-0c26-4065-97b0-4c06e0de21aa",
+   "url": "https://careers.amd.com/jobs/91207?icims=1",
+   "title": "asic verification engineer intern co op",
+   "location": "ottawa on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "0e6f5da2-5748-4854-8c44-2155dd39aa2a",
+   "url": "https://lifeattiktok.com/search/7680876022824945973",
+   "title": "product solutions and operations project intern scaled growth",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "82b82765-ac44-4015-94fc-97d512495e37",
+   "url": "https://lifeattiktok.com/search/7677493272788683013",
+   "title": "ai governance strategy product manager intern platform trust and ecosystem",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "6e3c0adb-d5a0-4338-84f4-8952eff0c717",
+   "url": "https://tesla.com/careers/search/job/282227",
+   "title": "embedded software engineer intern high voltage systems",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "426b172d-0484-4838-80d6-08e3d84a357e",
+   "url": "https://tesla.com/careers/search/job/282241",
+   "title": "software integration engineer intern battery management systems",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "e4814955-4e90-400b-9335-a3ab04843a7b",
+   "url": "https://tesla.com/careers/search/job/282242",
+   "title": "software engineer intern vehicle ui development",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "4866cbcf-d67b-4afa-b4df-3d028fbae980",
+   "url": "https://tesla.com/careers/search/job/282248",
+   "title": "embedded software engineer intern steering chassis systems",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "43841eec-e864-4974-9040-b082631ecd4c",
+   "url": "https://tesla.com/careers/search/job/282291",
+   "title": "software engineer intern ai tooling",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "8a718c8c-b26b-49bc-9e9d-ee9da1db4be8",
+   "url": "https://tesla.com/careers/search/job/281457",
+   "title": "electrical engineer intern energy service tooling",
+   "location": "hayward ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "de8cb307-6829-4afa-8e31-0fefe60818e7",
+   "url": "https://tesla.com/careers/search/job/282303",
+   "title": "software engineer intern finance programs",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "roblox",
+   "job_id": "45f530d7-4c78-4402-8da1-8e54f5c4a245",
+   "url": "https://careers.roblox.com/jobs/8143981?gh_jid=8143981",
+   "title": "product management intern",
+   "location": "san mateo ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "757e2c6b-9fbc-4427-862d-f87a0382bea0",
+   "url": "https://tesla.com/careers/search/job/281100",
+   "title": "embedded engineer intern infotainment platforms",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "8239ef8b-e07a-4715-bc6d-2036aad271eb",
+   "url": "https://careers.amd.com/jobs/91230?icims=1",
+   "title": "product development engineering intern co op",
+   "location": "austin tx; boxborough ma; fishkill ny; fort collins co; longmont co; rochester ny",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "51a4a857-a381-433e-a84a-c418a90df692",
+   "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Digital-Circuit-Design_JR2023504",
+   "title": "digital circuit design intern",
+   "location": "santa clara ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "12247a72-6063-4576-b5d2-843c6d5139c0",
+   "url": "https://tesla.com/careers/search/job/278630",
+   "title": "electrical design engineer intern vehicle engineering",
+   "location": "fremont ca; palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amd",
+   "job_id": "68c629c0-ad5e-461a-a2fb-fecaf1808854",
+   "url": "https://careers.amd.com/jobs/90427?icims=1",
+   "title": "ags libraries intern co op",
+   "location": "calgary ab canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "62159d15-bab7-4d5c-87ff-dbfd99f3c357",
+   "url": "https://lifeattiktok.com/search/7665081919226284293",
+   "title": "product solutions and operations intern ads interface and platform product",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "e34e7cea-b5c8-41ba-9958-74adca386738",
+   "url": "https://lifeattiktok.com/search/7584522934515714357",
+   "title": "product management project intern tiktok shop operations",
+   "location": "la",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "9055776b-b5f1-4d7b-823a-444ffdb1ca17",
+   "url": "https://lifeattiktok.com/search/7644986569989032197",
+   "title": "product manager shop ads creative project intern ads interface and platform 2026 start bs ms",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "oracle",
+   "job_id": "a0eb551c-9048-4dde-ac40-f2bd01e4d05f",
+   "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/job/334344",
+   "title": "project manager intern",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "649ce601-1cf3-41a7-bc57-2ff4727b54be",
+   "url": "https://lifeattiktok.com/search/7655410730217048373",
+   "title": "product manager vertical search ads mandarin speaking project intern content and service ads 2026 start bs ms",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "497d74b1-baa5-412b-ba3d-76ffc87e197d",
+   "url": "https://lifeattiktok.com/search/7663478489194612997",
+   "title": "global product strategy operation project intern ads interface and platform product",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "8956fcef-9bc0-4e93-bbc2-2f9165ddc136",
+   "url": "https://lifeattiktok.com/search/7665080709191108917",
+   "title": "product solutions and operations project intern ads interface and platform product",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "20754e5e-e165-40e6-b859-c1dca81f7bdf",
+   "url": "https://lifeattiktok.com/search/7668881813744191749",
+   "title": "machine learning infrastructure engineer intern ads infrastructure",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "1f65e1dc-4f67-432b-822e-9d4bf09cfc3d",
+   "url": "https://jobs.bytedance.com/en/position/7668489218234157365/detail",
+   "title": "backend developer intern infrastructure platform delivery",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "8eec74b3-7daf-4b67-b262-621b5b164a09",
+   "url": "https://tesla.com/careers/search/job/278982",
+   "title": "hardware validation engineer intern optimus",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "d18679b9-d87f-4ffd-a1c2-72c408274aba",
+   "url": "https://lifeattiktok.com/search/7670876223732762933",
+   "title": "ai ml infrastructure engineer intern data arch tiktok live",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "d1e4eec6-2b6b-4b94-a986-8a25822c4666",
+   "url": "https://tesla.com/careers/search/job/282258",
+   "title": "access control systems integration engineer intern access control systems",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "1215457c-e499-4e58-b72b-fb231b5eb754",
+   "url": "https://tesla.com/careers/search/job/282255",
+   "title": "software engineer intern torque path chassis controls vehicle software",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "596dd9f7-ec11-4d3b-99e8-bcce4bd4a605",
+   "url": "https://tesla.com/careers/search/job/282340",
+   "title": "embedded software engineer intern optimus",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "d6bbc3f2-149a-4cb2-9752-3bcd80011975",
+   "url": "https://tesla.com/careers/search/job/282331",
+   "title": "embedded systems software engineer intern ai platforms",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "da56c477-505d-47e8-8a53-536887f0784e",
+   "url": "https://tesla.com/careers/search/job/282342",
+   "title": "software integration engineer intern optimus",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "adobe",
+   "job_id": "a9900edf-029b-4f1e-98cb-a9a1c96f11b3",
+   "url": "https://adobe.wd5.myworkdayjobs.com/external_experienced/job/San-Jose/XMLNAME-2027-Intern---Software-Engineer_R171666",
+   "title": "software engineer intern",
+   "location": "austin tx; lehi ut; nyc; san jose ca; seattle wa; sf; waltham ma",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "ea127849-c2ce-48a3-8ef5-8024831dc02e",
+   "url": "https://amazon.jobs/en/jobs/10529525/software-development-engineer-intern-robotics-2027",
+   "title": "software development engineer intern robotics",
+   "location": "arlington county arlington va; austin tx; bellevue wa; nashville tn; north reading ma; seattle wa; westborough ma",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "29d56467-920c-46e3-a94e-c6e396215e2d",
+   "url": "https://tesla.com/careers/search/job/278976",
+   "title": "electrical test engineer intern vehicle engineering",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "5b7f08a3-2a1a-4cc9-9c45-1c1354b90913",
+   "url": "https://jobs.bytedance.com/en/position/7669973602626308357/detail",
+   "title": "student researcher ai foundation models infrastructure seed infra",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "66d624a4-bf98-4f02-b127-38342b345cff",
+   "url": "https://jobs.bytedance.com/en/position/7538139519473092882/detail",
+   "title": "data platform engineer intern global engineering cdn",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "oracle",
+   "job_id": "df021870-bc1b-408c-ac28-255a67469798",
+   "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/job/334396",
+   "title": "data strategy intern",
+   "location": "rocklin ca; san carlos ca; santa clara ca; santa monica ca; seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "oracle",
+   "job_id": "01b8795d-7b11-42d2-8ab9-9bc0f46bd425",
+   "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_45001/job/334345",
+   "title": "ai agent intern logistics focus",
+   "location": "austin tx",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "bdc2e5e0-9ec7-4480-af9b-d02e6fb8dbfd",
+   "url": "https://tesla.com/careers/search/job/282483",
+   "title": "fleet management algorithms intern vehicle software",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "8c58bc92-e90a-4ee3-9ef4-9d72c536abde",
+   "url": "https://tesla.com/careers/search/job/282301",
+   "title": "audio sensor software engineer intern vehicle engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "afee18fd-88ec-4b55-92fd-e276d5e01481",
+   "url": "https://tesla.com/careers/search/job/279743",
+   "title": "electrical engineer intern energy engineering",
+   "location": "austin tx; palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "9782344e-0072-4996-ae4d-b36ef27d13db",
+   "url": "https://tesla.com/careers/search/job/282598",
+   "title": "software engineer intern code hardening framework resilience robotaxi",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "4bcd5c66-dd7f-4827-9604-aaf0042ab85a",
+   "url": "https://jobs.apple.com/en-us/details/200682357",
+   "title": "gpu intern multiple teams",
+   "location": "cambridge uk; london uk; st albans uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "datadog",
+   "job_id": "4d30f64b-9b67-4679-a968-1b62bf57c98e",
+   "url": "https://careers.datadoghq.com/detail/8052118?gh_jid=8052118",
+   "title": "software engineer intern summer",
+   "location": "boston ma; nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "52c6c00b-0538-4eae-ba83-7a32198496a7",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=8168315",
+   "title": "software engineer intern",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "0601574e-b3fe-447e-b449-99a6e8022d37",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=8175504",
+   "title": "product manager intern hr technology",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "fc37e578-b9e2-475c-8b6a-2fcf313f6d7c",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=8175517",
+   "title": "people analytics intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "93048763-5a4d-430c-bb12-ed0ad0d9cfa7",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=8175462",
+   "title": "data science intern strategy execution analytics platform",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "96af2834-7e64-41a6-b0d4-d000f97b76cb",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=8175459",
+   "title": "data engineer intern",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "c588f748-c6d2-459d-90b6-c43d81d4522b",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=8168322",
+   "title": "associate product manager intern multiple teams",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "3bb1cef5-cd4d-4c81-afd9-b4770557e5b1",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=8175471",
+   "title": "analytics engineer intern",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "61ec7d70-4c67-42e3-b8ec-b7d24c4048e2",
+   "url": "https://tesla.com/careers/search/job/282233",
+   "title": "software engineer intern service engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "f83f287e-8226-4a60-8693-59f4c3a5d746",
+   "url": "https://lifeattiktok.com/search/7681633701767612677",
+   "title": "global customer experience business analytics intern",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "a07827a9-ad39-4bc7-ac54-89535faf28db",
+   "url": "https://lifeattiktok.com/search/7649673091993454853",
+   "title": "product manager intern",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "50162e18-1bb9-44c1-94a0-0922daf6f38b",
+   "url": "https://tesla.com/careers/search/job/282774",
+   "title": "software engineer intern it apps",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "dac9504d-3656-4127-972c-fc70bc04666a",
+   "url": "https://tesla.com/careers/search/job/282825",
+   "title": "software engineer intern autonomy systems foundations",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "2f8a6e47-2880-4a56-b618-7acbfb79109d",
+   "url": "https://tesla.com/careers/search/job/282916",
+   "title": "machine learning engineer intern factory software",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "3c5a73cb-e206-4607-bba3-aa3fbb3b51b9",
+   "url": "https://tesla.com/careers/search/job/281612",
+   "title": "data engineer intern fleet data self driving",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "d5c67b95-ec5f-4c2d-b9dc-68c0a2efad5d",
+   "url": "https://tesla.com/careers/search/job/283137",
+   "title": "vehicle accessories merchandise product intern global merchandise",
+   "location": "hawthorne ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "a6be63fe-0ed7-4ad2-a4f7-774bd97b77b8",
+   "url": "https://tesla.com/careers/search/job/283117",
+   "title": "software engineer intern data platforms",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "43f7ea35-f35d-4add-a344-e6dc42c8dbaa",
+   "url": "https://tesla.com/careers/search/job/283128",
+   "title": "robotics physics modeling engineer intern model based design optimus",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "c7521562-9599-4ee6-a407-0b8d73212142",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8767726002?gh_jid=8767726002",
+   "title": "software engineer intern backend",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "7e6e88a0-5330-4613-aa83-3784cab66781",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8796054002?gh_jid=8796054002",
+   "title": "software engineer intern backend",
+   "location": "montreal qc canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "81859a79-5a01-4005-8fa7-de6b7c14d4cf",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8802332002?gh_jid=8802332002",
+   "title": "software engineer intern machine learning",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "fe11ba13-7a53-44f0-a0dc-56189ee93f03",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8767710002?gh_jid=8767710002",
+   "title": "software engineer intern",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "0b7f448f-85cf-4eb9-95a0-7de074ec13a5",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8797859002?gh_jid=8797859002",
+   "title": "software engineer intern fullstack",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "d6f03a28-3a65-4557-acdc-30acdc9937bd",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8797376002?gh_jid=8797376002",
+   "title": "data engineer intern",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "1fc58c27-f803-4765-8d88-dbaa558aaaa5",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8796052002?gh_jid=8796052002",
+   "title": "software developer intern backend",
+   "location": "montreal qc canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "071e1ee1-8695-49cf-91ac-316a4d241cda",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8802198002?gh_jid=8802198002",
+   "title": "data analyst intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "da6c09b8-173d-4c72-bf85-472ace81bd4b",
+   "url": "https://tesla.com/careers/search/job/283220",
+   "title": "content integration engineer intern vehicle firmware",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "63c54762-f415-4c3b-98b4-73e036029e35",
+   "url": "https://tesla.com/careers/search/job/283156",
+   "title": "commercial charging product management intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "92fe6d6b-6590-49b9-aa41-bb0f877535d9",
+   "url": "https://tesla.com/careers/search/job/283138",
+   "title": "data engineer intern fleet analytics",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "c3a3cae1-f9a1-4c9b-bc38-1b3859ce6744",
+   "url": "https://amazon.jobs/en/jobs/10538066/ml-systems-software-development-engineer-intern-annapurna-labs-2027",
+   "title": "machine learning systems software development engineer intern annapurna labs",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "ebc7d1a1-b5b8-4837-b209-d99b4aa18795",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556983221",
+   "title": "software engineer intern",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "774ba07b-748b-4611-a614-29bd7d586ef2",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556983226",
+   "title": "product manager intern specialized cloud",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "b1f436d0-d239-4a06-ac5f-7643c6643563",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393556983223",
+   "title": "software engineer intern",
+   "location": "reston va",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "89f594f1-36b8-4da1-a6b7-4c345fc51e0b",
+   "url": "https://lifeattiktok.com/search/7595733632086591797",
+   "title": "frontend engineer project intern tiktok multimedia arch 2026 bs ms",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "c0de0a9c-5b04-458f-942a-5c88c3747d9f",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6152695004",
+   "title": "software engineer intern multiple teams",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "waymo",
+   "job_id": "555a5129-471f-4c93-8e7b-aa4a1996fa61",
+   "url": "https://careers.withwaymo.com/jobs?gh_jid=8197899",
+   "title": "human behavior analytics intern safety research",
+   "location": "mountain view ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "34ec0b27-bbab-4d78-9eb3-2900f2f91255",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6143238004",
+   "title": "software engineer intern",
+   "location": "nyc; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "25263330-f6ce-4a47-baf8-d69b3086adf7",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6178857004",
+   "title": "data science intern",
+   "location": "nyc; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "google",
+   "job_id": "36eda7d6-d1c3-433b-a403-7b764e131176",
+   "url": "https://google.com/about/careers/applications/jobs/results/104405499448828614",
+   "title": "student researcher bs ms",
+   "location": "montreal qc canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "google",
+   "job_id": "6e14720a-d435-4679-887e-dd6287aad24a",
+   "url": "https://google.com/about/careers/applications/jobs/results/88570332985598662",
+   "title": "silicon engineering intern bs ms multiple teams",
+   "location": "madison wi; sunnyvale ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "google",
+   "job_id": "96cd6ad8-81e9-4fb4-bbf6-b3dd4f259a58",
+   "url": "https://google.com/about/careers/applications/jobs/results/122803627516404422",
+   "title": "hardware engineer intern",
+   "location": "ann arbor mi; atlanta ga; austin tx; bellevue wa; boulder co; cambridge ma; chicago il; durham nc; goleta ca; irvine ca; kirkland wa; la; madison wi; mountain view ca; nyc; palo alto ca; pittsburgh pa; portland or; raleigh nc; redmond wa; redwood city ca; reston va; san bruno ca; san diego ca; san jose ca; santa cruz ca; seattle wa; sf; south sf; sunnyvale ca; washington dc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "google",
+   "job_id": "709433ac-42c3-4c44-a25b-c31b22c52054",
+   "url": "https://google.com/about/careers/applications/jobs/results/112499004540887750",
+   "title": "user experience engineer intern",
+   "location": "atlanta ga; austin tx; bellevue wa; boulder co; cambridge ma; chicago il; goleta ca; irvine ca; kirkland wa; la; madison wi; mountain view ca; nyc; palo alto ca; pittsburgh pa; portland or; redmond wa; reston va; san bruno ca; san diego ca; santa cruz ca; seattle wa; sf; sunnyvale ca; washington dc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "3bb38aa8-f245-410c-8c91-5120b5b561a4",
+   "url": "https://tesla.com/careers/search/job/283274",
+   "title": "software engineer intern camera robotics",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "2316ee23-75b8-4147-a14b-ad5d1ec67ede",
+   "url": "https://tesla.com/careers/search/job/283298",
+   "title": "product engineer intern applications engineering",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "d36d149f-2f21-4ced-b474-e6dfb0876186",
+   "url": "https://tesla.com/careers/search/job/283395",
+   "title": "software integration engineer intern factory firmware",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "1510bbe6-322e-4e07-8054-1ce27bd0ba09",
+   "url": "https://tesla.com/careers/search/job/283396",
+   "title": "system integration and test automation engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "waymo",
+   "job_id": "4d33923f-011e-4c9c-8e39-4a4f417686d7",
+   "url": "https://careers.withwaymo.com/jobs?gh_jid=8198218",
+   "title": "software engineering intern commercialization",
+   "location": "mountain view ca; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "doordash",
+   "job_id": "d3c0c779-480d-4810-9393-88d215aa5e7e",
+   "url": "https://job-boards.greenhouse.io/doordashusa/jobs/8171041",
+   "title": "software engineer intern summer 2027",
+   "location": "la; nyc; seattle wa; sf; sunnyvale ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "doordash",
+   "job_id": "ea0fba80-15e5-4a2e-829e-38a6fde13be8",
+   "url": "https://job-boards.greenhouse.io/doordashcanada/jobs/8170944",
+   "title": "software engineer intern",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "f738e9df-005d-49b2-b408-266feeacf24b",
+   "url": "https://tesla.com/careers/search/job/283447",
+   "title": "internship software integration engineer factory firmware team winter spring 2027",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "8d49edaf-5e5e-49b5-8b0e-1c75d2c04f76",
+   "url": "https://tesla.com/careers/search/job/283290",
+   "title": "computer vision engineer intern cell engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "044235a0-420e-4de8-b8f8-d03207616f48",
+   "url": "https://tesla.com/careers/search/job/283423",
+   "title": "solar hardware engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "856205c2-0e42-4511-9086-192bd7d20932",
+   "url": "https://jobs.apple.com/en-us/details/200683293",
+   "title": "pmu design verification intern",
+   "location": "swindon uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "68c18319-478a-4870-9d8b-35cc4d650e90",
+   "url": "https://tesla.com/careers/search/job/283634",
+   "title": "actuator test engineer intern optimus",
+   "location": "langley bc canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "duolingo",
+   "job_id": "8a9edd16-81d0-4406-9c23-6a35909b252b",
+   "url": "https://job-boards.greenhouse.io/duolingounirecruitment/jobs/8806188002",
+   "title": "associate product manager intern",
+   "location": "pittsburgh pa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "c92e4c8d-eba7-452d-a9f3-d6d623a669cd",
+   "url": "https://tesla.com/careers/search/job/283676",
+   "title": "electronic design engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "a860c217-2741-42a5-99a3-bf7b86bc03d5",
+   "url": "https://tesla.com/careers/search/job/283630",
+   "title": "factory firmware integration intern energy engineering",
+   "location": "buffalo ny",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "waymo",
+   "job_id": "371c8592-d416-40cf-88fb-3f95ac049ad3",
+   "url": "https://careers.withwaymo.com/jobs?gh_jid=8210170",
+   "title": "scenes intern",
+   "location": "mountain view ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "1ab1a45d-f5cc-4187-9f03-f2e2c5c3e021",
+   "url": "https://amazon.jobs/en/jobs/10552937/software-development-engineer-internship-summer-2027-usa",
+   "title": "software development engineer intern summer",
+   "location": "arlington county arlington va; seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "81c8741f-a500-47e6-931a-a6cf3a2b0a65",
+   "url": "https://tesla.com/careers/search/job/284009",
+   "title": "internship electrical engineer power electronics optimus winter spring 2027",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "c99fb84b-f415-4d60-8de5-3ad2537bd74f",
+   "url": "https://tesla.com/careers/search/job/283841",
+   "title": "product manager intern residential energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "93ef662e-5551-44f1-b92f-7803ee8a3ea1",
+   "url": "https://tesla.com/careers/search/job/284003",
+   "title": "internship software engineering people products winter spring 2027",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "84093f11-2319-4e29-a63b-6c4a03dc4ee7",
+   "url": "https://tesla.com/careers/search/job/284008",
+   "title": "internship electronic design engineer optimus winter spring 2027",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "2a08a446-034e-4632-878e-550a7d4d7748",
+   "url": "https://tesla.com/careers/search/job/284026",
+   "title": "internship system integration test automation engineer energy engineering winter spring 2027",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "a0411f20-98d8-4615-8a27-21bcd5d82808",
+   "url": "https://tesla.com/careers/search/job/283956",
+   "title": "site controller software engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "5eeb71a2-4362-490d-91b2-80bec3bb466d",
+   "url": "https://tesla.com/careers/search/job/284004",
+   "title": "internship software engineering people products summer 2027",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "50aa2666-a2a3-4da7-8099-d77ee703ebd6",
+   "url": "https://tesla.com/careers/search/job/283950",
+   "title": "software engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "b83b0b5a-fe98-4d36-8a28-f5ae99b19dd8",
+   "url": "https://tesla.com/careers/search/job/283994",
+   "title": "embedded software engineer intern body controls firmware",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "b3e74a6e-d3af-4e37-808e-8a94de03c75d",
+   "url": "https://tesla.com/careers/search/job/283990",
+   "title": "systems integration engineer intern body controls",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "9d3485fc-e9c9-4315-b9af-f839b852b2a6",
+   "url": "https://amazon.jobs/en/jobs/10553947/software-development-engineer-intern-summer-2027-can",
+   "title": "software development engineer intern summer 2027",
+   "location": "vancouver bc canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "40bcc577-85d4-4a0d-9a61-264559e946e2",
+   "url": "https://tesla.com/careers/search/job/284126",
+   "title": "reliability electronics design engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "02dee7ff-6975-4a5e-8aea-ee0dc2ebfde9",
+   "url": "https://jobs.bytedance.com/en/position/7686394581777631541/detail",
+   "title": "product management project intern global payment",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "070fe1b9-0837-4ba9-aaad-ed124634f867",
+   "url": "https://tesla.com/careers/search/job/284156",
+   "title": "firmware integration engineer intern factory firmware",
+   "location": "austin tx",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "74cf1c10-8e9a-4066-a47c-024ca7ecbf4b",
+   "url": "https://tesla.com/careers/search/job/284275",
+   "title": "residential energy device software engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "7b20c4df-f10b-41f9-8eb8-e8d3f55d3f10",
+   "url": "https://tesla.com/careers/search/job/284029",
+   "title": "power electronics firmware engineer intern",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "1a1a2a75-10ef-4a52-9850-702ee859dc3d",
+   "url": "https://tesla.com/careers/search/job/284278",
+   "title": "reliability test engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "waymo",
+   "job_id": "28da2a86-9f2e-45b0-98d5-9daf28f8a39d",
+   "url": "https://careers.withwaymo.com/jobs?gh_jid=8221198",
+   "title": "embedded intern software engineer",
+   "location": "mountain view ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "google",
+   "job_id": "36fdb948-c215-4a20-afda-958941c4de18",
+   "url": "https://google.com/about/careers/applications/jobs/results/134770032394543814",
+   "title": "product manager intern summer 2027",
+   "location": "mountain view ca; nyc; san bruno ca; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "rippling",
+   "job_id": "fff73d24-2557-417b-a791-58567415f245",
+   "url": "https://ats.rippling.com/rippling/jobs/a07e4e46-3721-4934-b57b-0d58412e22ba",
+   "title": "software engineer intern backend focused",
+   "location": "nyc; seattle wa; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "rippling",
+   "job_id": "2d6b647d-ac44-4539-b4ac-403a696b90b1",
+   "url": "https://ats.rippling.com/rippling/jobs/f255bf03-9173-4c0a-8a18-7cc43c27ded8",
+   "title": "data science intern summer 2027",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "rippling",
+   "job_id": "0315cabd-eed9-4fb0-bf72-2770478f6bb9",
+   "url": "https://ats.rippling.com/rippling/jobs/f64b6158-9534-4bab-9457-45556166b262",
+   "title": "full stack software engineer intern",
+   "location": "nyc; seattle wa; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "140c2da4-0a49-45bd-b29d-c799ab7b15d7",
+   "url": "https://lifeattiktok.com/search/7681783406632782085",
+   "title": "data engineer intern data platform tiktok bp",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "d21b7b94-4ec6-4789-9893-f5bcb8a6d2b8",
+   "url": "https://tesla.com/careers/search/job/284436",
+   "title": "robotics modeling simulation engineer intern",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "cb130a57-72be-4745-8c77-a3538eea00b7",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6178851004",
+   "title": "data engineer intern",
+   "location": "nyc; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "intel",
+   "job_id": "c125d363-9bdc-456d-92f1-eff43afdc8ae",
+   "url": "https://intel.wd1.myworkdayjobs.com/en-us/external/job/Virtual-Canada/Firmware-Development-Undergraduate-Engineering-Co-op_JR0286862",
+   "title": "firmware development undergraduate engineering co op",
+   "location": "remote in canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "fd2aa27a-d775-4452-8bfc-318d2021b364",
+   "url": "https://lifeattiktok.com/search/7598849238706735365",
+   "title": "ai product manager intern tiktok live ecosystem governance",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "be11dc29-6925-4c06-99a2-79e488a51c35",
+   "url": "https://tesla.com/careers/search/job/284593",
+   "title": "robotics electrical design engineer intern tactile sensing",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "ramp",
+   "job_id": "f0d9dc74-c470-46ea-ab22-7301f693cf34",
+   "url": "https://jobs.ashbyhq.com/ramp/b66be397-240b-41a6-9b05-493299b270a9/application?embed=true",
+   "title": "ios engineer intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "ramp",
+   "job_id": "a6ca4015-b83d-4606-a189-7a9fe9f86aa3",
+   "url": "https://jobs.ashbyhq.com/ramp/fcf118cc-521a-4a62-9d13-945e5b6e3cb8/application?embed=true",
+   "title": "software engineer intern android",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "ramp",
+   "job_id": "2470b381-61c4-4e0a-9a0b-dcc58f4956bd",
+   "url": "https://jobs.ashbyhq.com/ramp/a13ae586-f4cb-4385-8822-c42b9b54ed74/application?embed=true",
+   "title": "software engineer intern frontend",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "ramp",
+   "job_id": "ac053621-f848-4ace-97dc-4ef8ad9562a0",
+   "url": "https://jobs.ashbyhq.com/ramp/acf6b28d-767f-483f-8ff2-114620cd7e04/application?embed=true",
+   "title": "software engineer intern backend",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "a16efc0d-108f-4ae3-81a2-aaf96195f8ce",
+   "url": "https://tesla.com/careers/search/job/284489",
+   "title": "solar hardware engineer intern pv cell energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "d0f85828-c8e8-42fb-a47d-3f46e18db9d1",
+   "url": "https://tesla.com/careers/search/job/284448",
+   "title": "software engineer industrial firmware intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "samsara",
+   "job_id": "ec8d9fc9-a1ee-438a-af35-562b2bd2dd11",
+   "url": "https://samsara.com/company/careers/roles/8226602?gh_jid=8226602",
+   "title": "firmware engineer co op",
+   "location": "sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "notion",
+   "job_id": "4ebbeec3-7c6e-4921-bd4a-0131e3cc0c04",
+   "url": "https://jobs.ashbyhq.com/notion/2b587e66-deac-421a-a824-9415ba78b5a7/application?embed=true",
+   "title": "mobile software engineer intern",
+   "location": "nyc; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "6cc1324d-857f-49fa-89d0-5499ccbfa78b",
+   "url": "https://tesla.com/careers/search/job/284607",
+   "title": "optical engineer intern electronic systems",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "bytedance",
+   "job_id": "97e6ece1-7a71-4d9d-a1b3-255d28e56d89",
+   "url": "https://jobs.bytedance.com/en/position/7600175469758040325/detail",
+   "title": "software engineer project intern security data",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "waymo",
+   "job_id": "44631389-4603-4cbc-bb24-596433854282",
+   "url": "https://careers.withwaymo.com/jobs?gh_jid=8224900",
+   "title": "software engineer intern driver refinement foundations",
+   "location": "mountain view ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "cf5aad4b-cc25-4bd4-92c7-0ac99a58245e",
+   "url": "https://tesla.com/careers/search/job/284776",
+   "title": "mobile application software engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "2e0213a1-7000-4405-b12c-fcc9b0f4ccec",
+   "url": "https://tesla.com/careers/search/job/284821",
+   "title": "silicon validation engineer intern ai hardware",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "6eff6a24-903f-4e0d-9c37-9391aca12788",
+   "url": "https://lifeattiktok.com/search/7689010193607051525",
+   "title": "cross border e commerce product operations intern tiktok shop user promotion growth product",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "cloudflare",
+   "job_id": "adc756c8-eec3-41e4-b9a6-a13e34b5768f",
+   "url": "https://job-boards.greenhouse.io/cloudflare/jobs/8199958",
+   "title": "software engineer intern",
+   "location": "austin tx",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "5866904c-1ee5-4973-8ca1-2c57ecb0569f",
+   "url": "https://tesla.com/careers/search/job/284925",
+   "title": "software engineer intern data transformations",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "6a69efba-08f8-4421-aab2-93514fd51b3f",
+   "url": "https://tesla.com/careers/search/job/285088",
+   "title": "ai hardware design verification engineer intern ai hardware tesla ai",
+   "location": "austin tx; palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "2a070d46-138e-485c-af41-0eaf2a7f105f",
+   "url": "https://tesla.com/careers/search/job/277009",
+   "title": "software integration engineer intern ai platforms",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "5128ff22-0d67-4cac-b57c-437fd5ab220d",
+   "url": "https://tesla.com/careers/search/job/285089",
+   "title": "ai hardware rtl design engineer intern ai hardware",
+   "location": "austin tx; palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "fbc605f2-1c14-4f86-b047-d9e7c04be13a",
+   "url": "https://tesla.com/careers/search/job/285120",
+   "title": "ai hardware signal power integrity engineer intern ai hardware",
+   "location": "austin tx; palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "c436ae49-cb5b-447d-9947-7f790cb0c8d9",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8241738",
+   "title": "data science intern",
+   "location": "menlo park ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "b5e54246-5cf1-4854-8ea2-77816df0b012",
+   "url": "https://tesla.com/careers/search/job/285084",
+   "title": "embedded software engineer intern silicon development",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "bc9e8818-9f8f-4083-9d35-d8f57bc2ddfb",
+   "url": "https://tesla.com/careers/search/job/285153",
+   "title": "embedded software developer intern vehicle suspension",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "7e4c5c71-f008-4439-8ae7-145e2b6cb5d9",
+   "url": "https://jobs.apple.com/en-us/details/200686449",
+   "title": "design verification engineer",
+   "location": "sunnyvale ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "4cfc6f1c-ae9e-447d-8980-a90e98153e86",
+   "url": "https://tesla.com/careers/search/job/284924",
+   "title": "software developer intern integration tools",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "6795e080-5626-469b-a609-48988a09eab1",
+   "url": "https://jobs.apple.com/en-us/details/200686205",
+   "title": "data scientist co op sales business analytics",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "ramp",
+   "job_id": "af84853a-a797-499a-ae18-410f2991f5bb",
+   "url": "https://jobs.ashbyhq.com/ramp/b39ceb08-a0a7-4f8b-a760-2fb88e209956/application?embed=true",
+   "title": "applied scientist intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "waymo",
+   "job_id": "3652392f-5646-4168-b539-ac3e5a186acd",
+   "url": "https://careers.withwaymo.com/jobs?gh_jid=8238525",
+   "title": "software engineering intern labeling",
+   "location": "mountain view ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "0bb25d49-891c-45e8-9504-1d5c8d923aa3",
+   "url": "https://tesla.com/careers/search/job/285202",
+   "title": "commercial ui software engineer intern",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "080ae983-f3c6-404a-9df2-ba7e7c54506e",
+   "url": "https://tesla.com/careers/search/job/285179",
+   "title": "data engineer intern data engineer applications engineering",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "df5171fa-1ddf-43a0-ad02-00788d2705f3",
+   "url": "https://tesla.com/careers/search/job/285291",
+   "title": "data engineer intern data engineering business intelligence",
+   "location": "fremont ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "stripe",
+   "job_id": "48975da5-2bb2-4457-8702-de4898cd805e",
+   "url": "https://stripe.com/jobs/search?gh_jid=8241260",
+   "title": "software engineer intern",
+   "location": "seattle wa; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "da112e4c-4b18-4df4-9cad-95acdd778d6f",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393557002476",
+   "title": "software engineer intern azure databases",
+   "location": "redmond wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "35d12704-75f4-4a19-8d57-c70563db0263",
+   "url": "https://amazon.jobs/en/jobs/10559746/software-development-engineer-intern-summer-2027-usa-amazon-dedicated-cloud-adc",
+   "title": "software engineer intern",
+   "location": "arlington county arlington va; denver co; jessup md; seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "meta",
+   "job_id": "d08c50c3-35d4-45a8-b1ab-041d0b5a5a3a",
+   "url": "https://metacareers.com/jobs/1940312740718917",
+   "title": "research scientist intern robotics",
+   "location": "menlo park ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "pinterest",
+   "job_id": "9513cd12-01dd-4e85-99be-9b990a943ae9",
+   "url": "https://pinterestcareers.com/jobs?gh_jid=8138039",
+   "title": "software engineer intern",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "pinterest",
+   "job_id": "4fda6f3c-c073-469a-90b9-cb1d79c5f369",
+   "url": "https://pinterestcareers.com/jobs?gh_jid=7838577",
+   "title": "software engineer intern",
+   "location": "remote in usa; sf",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "google",
+   "job_id": "49dad85f-a6af-4fb4-b6e9-20402bab7e9d",
+   "url": "https://google.com/about/careers/applications/jobs/results/135156989620560582",
+   "title": "forward deployed engineer intern",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "intel",
+   "job_id": "c29d0eb0-d886-48aa-910f-b36696f9f839",
+   "url": "https://intel.wd1.myworkdayjobs.com/en-us/external/job/Canada-Toronto/Graphics-Hardware-Validation-Undergraduate-Engineering-Intern_JR0287535",
+   "title": "graphics hardware validation undergraduate engineering intern",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "bd6bb19c-fd64-4f41-b754-9228e9b209bd",
+   "url": "https://amazon.jobs/en/jobs/10567687/business-intelligence-intern-london",
+   "title": "business intelligence engineer intern",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "google",
+   "job_id": "75c9bd55-d962-405d-8b35-8302935fa982",
+   "url": "https://google.com/about/careers/applications/jobs/results/103464941339452102",
+   "title": "associate product manager intern",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "intel",
+   "job_id": "f59257fb-9deb-439b-867b-379bc02454b2",
+   "url": "https://intel.wd1.myworkdayjobs.com/en-us/external/job/Canada-Toronto/Thermal-Mechanical-Engineering-Undergraduate-Intern--GPU-Platforms_JR0287516",
+   "title": "thermal mechanical engineering intern gpu platforms",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "956eedbe-799d-459b-8556-9184a7f7f706",
+   "url": "https://job-boards.greenhouse.io/embed/job_app?token=8847738002",
+   "title": "software engineer intern",
+   "location": "london uk",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "6f49e470-0a16-4b21-86e6-7a8a8a5cd275",
+   "url": "https://tesla.com/careers/search/job/285508",
+   "title": "distributed systems software engineer intern energy engineering",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "intel",
+   "job_id": "4fdb4466-e2bf-4f2d-9bf0-5a2352bf5dfd",
+   "url": "https://intel.wd1.myworkdayjobs.com/en-us/external/job/Canada-Toronto/GPU---AI-Accelerator-Hardware-Design-Undergraduate-Intern_JR0287539",
+   "title": "gpu ai accelerator hardware design undergraduate intern",
+   "location": "toronto on canada",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "3a8d7164-301d-464b-8200-3af8df791822",
+   "url": "https://lifeattiktok.com/search/7662343067223263541",
+   "title": "leave of absence analyst project intern",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "87d8c1bb-eb89-4c66-9a12-28941bbb9fee",
+   "url": "https://lifeattiktok.com/search/7558622480857188626",
+   "title": "seller strategy business analyst intern tiktok shop us operation",
+   "location": "seattle wa",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "b4e06b73-03e8-4a6a-9e97-3838529b44da",
+   "url": "https://lifeattiktok.com/search/7600202821496998197",
+   "title": "business analyst project intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "2099d098-5fb8-4ea6-9d76-093eded3455b",
+   "url": "https://lifeattiktok.com/search/7672345290048817413",
+   "title": "open platform product project intern open platform",
+   "location": "san jose ca",
+   "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "tiktok",
+   "job_id": "36ca9c42-5715-4e50-acfe-f95b266ced75",
+   "url": "https://lifeattiktok.com/search/7684622182248548661",
+   "title": "client solutions intern",
+   "location": "nyc",
+   "first_seen": "2026-10-04T23:51:26Z"
+  }
+ ]
+}
