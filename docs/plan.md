@@ -124,6 +124,13 @@ A scheduled job that finds new internship postings and announces them in Discord
 - The program writes `state.json` after each channel's messages are posted, so a crash partway through doesn't cause re-announcements.
 - **Risk:** GitHub disables scheduled workflows in public repos after 60 days without repository activity. It's unverified whether the workflow's own commits count. Re-enable from the Actions tab if it happens.
 
+### Running
+
+- `uv run python -m intern_alerts` runs one poll. `--dry-run` prints messages instead of sending them and doesn't save state; webhook secrets aren't needed for it.
+- `STATE_PATH` sets the state file location. The default is `state.json`.
+- Company boards are fetched before Simplify, so a new job seen in both is announced from the direct source.
+- A board that fails to fetch logs a warning and isn't marked polled. A failed Discord message logs an error, stops that channel, and makes the run exit with code 1. Its postings stay unrecorded and retry next run.
+
 ### Code structure
 
 - `main.py`: runs the steps in order; holds no logic of its own.
