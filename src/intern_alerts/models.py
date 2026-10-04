@@ -21,3 +21,4 @@ class Posting:
     posted_at: datetime  # UTC
     category: str | None = None  # Simplify only
     employment_type: str | None = None  # Ashby only
+    degrees: tuple[str, ...] = ()  # Simplify only; empty means not stated

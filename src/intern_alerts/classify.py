@@ -25,7 +25,7 @@ IGNORED = Classification(frozenset(), frozenset(), ())
 
 
 def classify(posting: Posting) -> Classification:
-    if not is_intern(posting):
+    if not is_intern(posting) or not is_undergrad(posting):
         return IGNORED
     channels = job_channels(posting)
     if not channels:
@@ -45,13 +45,32 @@ def classify(posting: Posting) -> Classification:
 
 INTERN_TITLE = re.compile(r"\b(intern|internship|co-op|coop)s?\b", re.IGNORECASE)
 
+# Internship programs not aimed at university students, excluded from every source.
+EXCLUDED_TITLE = re.compile(r"\bhigh school\b")
+
 
 def is_intern(posting: Posting) -> bool:
+    if EXCLUDED_TITLE.search(normalize_text(posting.title)):
+        return False
     if posting.source == "simplify":
         return True  # Simplify only lists internships
     if posting.source == "ashby":
         return posting.employment_type == "Intern"
     return bool(INTERN_TITLE.search(posting.title))
+
+
+# Degree level: only postings open to undergrads
+
+UNDERGRAD_DEGREES = {"Bachelor's", "Associate's"}
+GRAD_TITLE = re.compile(r"\b(?:phd|ph d|ms|msc|master|masters|mba|doctoral|doctorate)\b")
+UNDERGRAD_TITLE = re.compile(r"\b(?:bs|bsc|bachelor|bachelors|undergrad|undergraduate)\b")
+
+
+def is_undergrad(posting: Posting) -> bool:
+    if posting.degrees and not UNDERGRAD_DEGREES & set(posting.degrees):
+        return False
+    title = normalize_text(posting.title)
+    return not (GRAD_TITLE.search(title) and not UNDERGRAD_TITLE.search(title))
 
 
 # Job type

@@ -29,6 +29,7 @@ def parse_simplify(data: list[dict[str, Any]], faang_plus: frozenset[str]) -> li
                 url=item["url"],
                 posted_at=datetime.fromtimestamp(item["date_posted"], UTC),
                 category=item["category"],
+                degrees=tuple(item.get("degrees", [])),
             )
         )
     return postings

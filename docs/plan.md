@@ -77,6 +77,10 @@ A scheduled job that finds new internship postings and announces them in Discord
 - **Intern detection:**
   - Ashby: `employmentType == "Intern"`.
   - Greenhouse: title matches `\b(intern|internship|co-op|coop)s?\b`, case-insensitive.
+  - All sources: titles containing "high school" are excluded.
+- **Undergrad only:**
+  - Simplify postings are kept if `degrees` is empty or includes `Bachelor's` or `Associate's`.
+  - On all sources, a title naming a graduate degree (PhD, MS, MSc, Master's, MBA, Doctoral) is excluded unless it also names BS, BSc, Bachelor's, or Undergrad.
 - **Regions:** Canada, US, UK, Europe, Remote, parsed with a lookup table: country names, US states and abbreviations, Canadian provinces, major cities and city abbreviations (`NYC`, `SF`), European countries.
   - Plain `Remote` goes under Remote. Remote-in-a-country (e.g. `Remote (US)`) goes under Remote only if that country is in one of the listed regions, so `Remote (India)` is dropped.
   - A posting spanning several regions appears under each.

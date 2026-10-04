@@ -2,7 +2,13 @@ from datetime import UTC, datetime
 
 import pytest
 
-from intern_alerts.classify import classify, is_intern, job_channels, location_regions
+from intern_alerts.classify import (
+    classify,
+    is_intern,
+    is_undergrad,
+    job_channels,
+    location_regions,
+)
 from intern_alerts.models import Posting
 
 
@@ -47,8 +53,57 @@ def test_ashby_uses_employment_type_not_title():
     )
 
 
+def test_high_school_programs_excluded_from_every_source():
+    title = "High School Internship, Software Engineering (Summer 2027)"
+    assert not is_intern(posting(title=title))
+    assert not is_intern(posting(source="ashby", title=title, employment_type="Intern"))
+    assert not is_intern(posting(source="simplify", title="High-School Intern", category="Software"))
+
+
 def test_simplify_always_intern():
     assert is_intern(posting(source="simplify", title="Anything", category="Software"))
+
+
+# Degree level
+
+
+@pytest.mark.parametrize(
+    "degrees, expected",
+    [
+        ((), True),  # not stated
+        (("Bachelor's",), True),
+        (("Bachelor's", "Master's"), True),
+        (("Associate's",), True),
+        (("Master's", "PhD"), False),
+        (("PhD",), False),
+        (("MBA",), False),
+    ],
+)
+def test_simplify_degrees(degrees, expected):
+    p = posting(source="simplify", title="Software Engineer Intern", category="Software",
+                degrees=degrees)
+    assert is_undergrad(p) is expected
+
+
+@pytest.mark.parametrize(
+    "title, expected",
+    [
+        ("Software Engineer Intern", True),
+        ("PhD Data Scientist, Intern", False),
+        ("Software Engineer Intern - MS", False),
+        ("Master's Research Intern", False),
+        ("MBA Product Intern", False),
+        ("Software Engineer Intern (BS/MS)", True),
+        ("Undergraduate or PhD Research Intern", True),
+        ("Systems Intern", True),  # "ms" only as a whole word
+    ],
+)
+def test_degree_in_title(title, expected):
+    assert is_undergrad(posting(title=title)) is expected
+
+
+def test_phd_posting_not_announced():
+    assert not classify(posting(title="PhD Data Scientist, Intern")).announce
 
 
 # Job type
