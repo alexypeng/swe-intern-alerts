@@ -116,7 +116,9 @@
   "smartrecruiters:Sandisk": "2026-10-05T03:56:19Z",
   "smartrecruiters:ServiceNow": "2026-10-05T03:56:19Z",
   "smartrecruiters:Solidigm": "2026-10-05T03:56:19Z",
-  "smartrecruiters:WesternDigital": "2026-10-05T03:56:19Z"
+  "smartrecruiters:WesternDigital": "2026-10-05T03:56:19Z",
+  "workday:nvidia/NVIDIAExternalCareerSite": "2026-10-05T05:50:18Z",
+  "workday:salesforce/Futureforce_Internships": "2026-10-05T05:50:18Z"
  },
  "postings": [
   {
@@ -5454,6 +5456,38 @@
    "title": "materials science division undergraduate intern fall 2026",
    "location": "livermore ca united states",
    "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "JR2026775",
+   "url": "https://nvidia.myworkdayjobs.com/job/JR2026775",
+   "title": "developer technology engineering intern compute performance",
+   "location": "france courbevoie; germany munich; germany wuerselen; switzerland zurich; uk bristol",
+   "first_seen": "2026-10-05T05:50:18Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "JR2023486",
+   "url": "https://nvidia.myworkdayjobs.com/job/JR2023486",
+   "title": "nvidia 2027 internships hardware asic design",
+   "location": "us ca santa clara",
+   "first_seen": "2026-10-05T05:50:18Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "JR2023495",
+   "url": "https://nvidia.myworkdayjobs.com/job/JR2023495",
+   "title": "nvidia 2027 internships software engineering",
+   "location": "us ca santa clara",
+   "first_seen": "2026-10-05T05:50:18Z"
+  },
+  {
+   "company": "nvidia",
+   "job_id": "JR2023499",
+   "url": "https://nvidia.myworkdayjobs.com/job/JR2023499",
+   "title": "nvidia spring 2027 internships developer and performance technology",
+   "location": "us ca santa clara",
+   "first_seen": "2026-10-05T05:50:18Z"
   }
  ]
 }
