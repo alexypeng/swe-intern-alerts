@@ -101,6 +101,7 @@ A scheduled job that finds new internship postings and announces them in Discord
 - On HTTP `429`, wait the time Discord specifies and retry the same message.
 - A posting is recorded as seen only after the message where it first appears is posted successfully. State is saved after each message.
 - Long location lists show the first 3 and then `+N more`.
+- A blank line separates postings. Every message ends with a newline plus a zero-width space, because Discord trims trailing whitespace; that leaves a visible gap between consecutive messages.
 - Markdown characters in company names and titles are escaped.
 - Messages are sent with `allowed_mentions: {"parse": []}`, so nothing can ping.
 

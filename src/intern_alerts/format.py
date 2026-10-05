@@ -11,6 +11,9 @@ MAX_LENGTH = 2000  # Discord's limit for a message's content
 MAX_LOCATIONS = 3
 MAX_TITLE = 300
 SEPARATOR = "\n\n"  # blank line between postings, and before each region header
+# Discord trims trailing whitespace, so a zero-width space keeps the blank line at the end.
+ENDING = "\n" + chr(0x200B)  # newline + zero-width space
+BODY_LIMIT = MAX_LENGTH - len(ENDING)
 
 HEADERS = {
     US: "## 🇺🇸 US",
@@ -68,14 +71,16 @@ def build_messages(items: Iterable[tuple[Posting, frozenset[str]]]) -> list[Mess
     shown: set[Posting] = set()
     for text, posting in units:
         if current is not None:
-            if len(current.content) + len(SEPARATOR) + len(text) <= MAX_LENGTH:
+            if len(current.content) + len(SEPARATOR) + len(text) <= BODY_LIMIT:
                 current.content += SEPARATOR + text
             else:
                 current = None
         if current is None:
-            current = Message(content=text[:MAX_LENGTH])
+            current = Message(content=text[:BODY_LIMIT])
             messages.append(current)
         if posting not in shown:
             shown.add(posting)
             current.postings.append(posting)
+    for message in messages:
+        message.content += ENDING
     return messages

@@ -1,6 +1,6 @@
 from datetime import UTC, datetime
 
-from intern_alerts.format import MAX_LENGTH, build_messages, escape, posting_block
+from intern_alerts.format import ENDING, MAX_LENGTH, build_messages, escape, posting_block
 from intern_alerts.models import Posting
 
 
@@ -85,6 +85,14 @@ def test_unspecified_location_header_comes_last():
     vague = posting(2, title="Vague Role", locations=("Multiple Locations",))
     [message] = build_messages([(vague, frozenset({"Unspecified"})), (us, frozenset({"US"}))])
     assert message.content.index("## 🇺🇸 US") < message.content.index("## 📍 Location not specified")
+
+
+def test_every_message_ends_with_a_blank_line_within_the_limit():
+    postings = [posting(i, title=f"Role {i:03d} " + "x" * 80) for i in range(60)]
+    messages = build_messages((p, frozenset({"US"})) for p in postings)
+    for m in messages:
+        assert m.content.endswith("Oct 4" + ENDING)  # zero-width space survives Discord's trim
+        assert len(m.content) <= MAX_LENGTH
 
 
 def test_no_postings_no_messages():
