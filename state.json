@@ -1,9 +1,110 @@
 {
  "version": 1,
  "boards": {
+  "ashby:cursor": "2026-10-05T00:07:28Z",
+  "ashby:notion": "2026-10-05T00:07:28Z",
+  "ashby:openai": "2026-10-05T00:07:28Z",
+  "ashby:perplexity": "2026-10-05T00:07:28Z",
+  "ashby:plaid": "2026-10-05T00:07:28Z",
   "ashby:ramp": "2026-10-04T23:51:26Z",
+  "ashby:snowflake": "2026-10-05T00:07:28Z",
+  "greenhouse:airbnb": "2026-10-05T00:07:28Z",
+  "greenhouse:akunacapital": "2026-10-05T00:07:28Z",
+  "greenhouse:anthropic": "2026-10-05T00:07:28Z",
+  "greenhouse:cloudflare": "2026-10-05T00:07:28Z",
+  "greenhouse:coinbase": "2026-10-05T00:07:28Z",
+  "greenhouse:databricks": "2026-10-05T00:07:28Z",
+  "greenhouse:datadog": "2026-10-05T00:07:28Z",
+  "greenhouse:discord": "2026-10-05T00:07:28Z",
+  "greenhouse:doordashusa": "2026-10-05T00:07:28Z",
+  "greenhouse:drweng": "2026-10-05T00:07:28Z",
+  "greenhouse:duolingo": "2026-10-05T00:07:28Z",
+  "greenhouse:epicgames": "2026-10-05T00:07:28Z",
+  "greenhouse:figma": "2026-10-05T00:07:28Z",
+  "greenhouse:fiveringsllc": "2026-10-05T00:07:28Z",
+  "greenhouse:hubspotjobs": "2026-10-05T00:07:28Z",
+  "greenhouse:imc": "2026-10-05T00:07:28Z",
+  "greenhouse:janestreet": "2026-10-05T00:07:28Z",
+  "greenhouse:jumptrading": "2026-10-05T00:07:28Z",
+  "greenhouse:lyft": "2026-10-05T00:07:28Z",
+  "greenhouse:oldmissioncapital": "2026-10-05T00:07:28Z",
+  "greenhouse:pinterest": "2026-10-05T00:07:28Z",
+  "greenhouse:reddit": "2026-10-05T00:07:28Z",
+  "greenhouse:riotgames": "2026-10-05T00:07:28Z",
+  "greenhouse:robinhood": "2026-10-05T00:07:28Z",
+  "greenhouse:roblox": "2026-10-05T00:07:28Z",
+  "greenhouse:scaleai": "2026-10-05T00:07:28Z",
+  "greenhouse:spacex": "2026-10-05T00:07:28Z",
   "greenhouse:stripe": "2026-10-04T23:51:26Z",
-  "simplify:faang": "2026-10-04T23:51:26Z"
+  "greenhouse:vercel": "2026-10-05T00:07:28Z",
+  "greenhouse:waymo": "2026-10-05T00:07:28Z",
+  "greenhouse:wehrtyou": "2026-10-05T00:07:28Z",
+  "simplify:adobe": "2026-10-05T00:07:28Z",
+  "simplify:airbnb": "2026-10-05T00:07:28Z",
+  "simplify:amazon": "2026-10-05T00:07:28Z",
+  "simplify:amd": "2026-10-05T00:07:28Z",
+  "simplify:anthropic": "2026-10-05T00:07:28Z",
+  "simplify:apple": "2026-10-05T00:07:28Z",
+  "simplify:asana": "2026-10-05T00:07:28Z",
+  "simplify:atlassian": "2026-10-05T00:07:28Z",
+  "simplify:bytedance": "2026-10-05T00:07:28Z",
+  "simplify:citadel": "2026-10-05T00:07:28Z",
+  "simplify:citadel securities": "2026-10-05T00:07:28Z",
+  "simplify:cloudflare": "2026-10-05T00:07:28Z",
+  "simplify:coinbase": "2026-10-05T00:07:28Z",
+  "simplify:crowdstrike": "2026-10-05T00:07:28Z",
+  "simplify:databricks": "2026-10-05T00:07:28Z",
+  "simplify:datadog": "2026-10-05T00:07:28Z",
+  "simplify:doordash": "2026-10-05T00:07:28Z",
+  "simplify:dropbox": "2026-10-05T00:07:28Z",
+  "simplify:duolingo": "2026-10-05T00:07:28Z",
+  "simplify:faang": "2026-10-04T23:51:26Z",
+  "simplify:figma": "2026-10-05T00:07:28Z",
+  "simplify:google": "2026-10-05T00:07:28Z",
+  "simplify:ibm": "2026-10-05T00:07:28Z",
+  "simplify:instacart": "2026-10-05T00:07:28Z",
+  "simplify:intel": "2026-10-05T00:07:28Z",
+  "simplify:linkedin": "2026-10-05T00:07:28Z",
+  "simplify:lyft": "2026-10-05T00:07:28Z",
+  "simplify:meta": "2026-10-05T00:07:28Z",
+  "simplify:microsoft": "2026-10-05T00:07:28Z",
+  "simplify:netflix": "2026-10-05T00:07:28Z",
+  "simplify:notion": "2026-10-05T00:07:28Z",
+  "simplify:nvidia": "2026-10-05T00:07:28Z",
+  "simplify:openai": "2026-10-05T00:07:28Z",
+  "simplify:optiver": "2026-10-05T00:07:28Z",
+  "simplify:oracle": "2026-10-05T00:07:28Z",
+  "simplify:palantir": "2026-10-05T00:07:28Z",
+  "simplify:paypal": "2026-10-05T00:07:28Z",
+  "simplify:perplexity": "2026-10-05T00:07:28Z",
+  "simplify:pinterest": "2026-10-05T00:07:28Z",
+  "simplify:ramp": "2026-10-05T00:07:28Z",
+  "simplify:reddit": "2026-10-05T00:07:28Z",
+  "simplify:rippling": "2026-10-05T00:07:28Z",
+  "simplify:robinhood": "2026-10-05T00:07:28Z",
+  "simplify:roblox": "2026-10-05T00:07:28Z",
+  "simplify:salesforce": "2026-10-05T00:07:28Z",
+  "simplify:samsara": "2026-10-05T00:07:28Z",
+  "simplify:servicenow": "2026-10-05T00:07:28Z",
+  "simplify:shopify": "2026-10-05T00:07:28Z",
+  "simplify:slack": "2026-10-05T00:07:28Z",
+  "simplify:snap": "2026-10-05T00:07:28Z",
+  "simplify:snapchat": "2026-10-05T00:07:28Z",
+  "simplify:snowflake": "2026-10-05T00:07:28Z",
+  "simplify:spacex": "2026-10-05T00:07:28Z",
+  "simplify:splunk": "2026-10-05T00:07:28Z",
+  "simplify:square": "2026-10-05T00:07:28Z",
+  "simplify:stripe": "2026-10-05T00:07:28Z",
+  "simplify:susquehanna international group": "2026-10-05T00:07:28Z",
+  "simplify:susquehanna international group sig": "2026-10-05T00:07:28Z",
+  "simplify:tesla": "2026-10-05T00:07:28Z",
+  "simplify:tiktok": "2026-10-05T00:07:28Z",
+  "simplify:tinder": "2026-10-05T00:07:28Z",
+  "simplify:two sigma": "2026-10-05T00:07:28Z",
+  "simplify:uber": "2026-10-05T00:07:28Z",
+  "simplify:visa": "2026-10-05T00:07:28Z",
+  "simplify:waymo": "2026-10-05T00:07:28Z",
+  "simplify:x": "2026-10-05T00:07:28Z"
  },
  "postings": [
   {
@@ -3589,6 +3690,1262 @@
    "title": "client solutions intern",
    "location": "nyc",
    "first_seen": "2026-10-04T23:51:26Z"
+  },
+  {
+   "company": "roblox",
+   "job_id": "8143984",
+   "url": "https://careers.roblox.com/jobs/8143984?gh_jid=8143984",
+   "title": "summer 2027 product design intern",
+   "location": "san mateo ca united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "hudson river trading",
+   "job_id": "7964062",
+   "url": "https://hudsonrivertrading.com/careers/job?gh_jid=7964062",
+   "title": "algorithm development quant research trading internship summer 2027",
+   "location": "london united kingdom new york ny united states singapore",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "hudson river trading",
+   "job_id": "8222414",
+   "url": "https://hudsonrivertrading.com/careers/job?gh_jid=8222414",
+   "title": "data scientist intern 2027",
+   "location": "new york ny united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "hudson river trading",
+   "job_id": "8222413",
+   "url": "https://hudsonrivertrading.com/careers/job?gh_jid=8222413",
+   "title": "data scientist intern 2027",
+   "location": "london united kingdom",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "hudson river trading",
+   "job_id": "7899574",
+   "url": "https://hudsonrivertrading.com/careers/job?gh_jid=7899574",
+   "title": "hardware engineer internship summer 2027",
+   "location": "new york ny united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "hudson river trading",
+   "job_id": "8052083",
+   "url": "https://hudsonrivertrading.com/careers/job?gh_jid=8052083",
+   "title": "software engineering internship c or python summer 2027",
+   "location": "austin tx united states chicago illinois united states london united kingdom new york ny united states singapore",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "hudson river trading",
+   "job_id": "8188637",
+   "url": "https://hudsonrivertrading.com/careers/job?gh_jid=8188637",
+   "title": "women in trading and technology internship witti winter 2027",
+   "location": "new york ny united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "riot games",
+   "job_id": "8222014",
+   "url": "https://riotgames.com/en/work-with-us/job/8222014?gh_jid=8222014",
+   "title": "software engineering intern summer 2027 remote",
+   "location": "los angeles usa",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "epic games",
+   "job_id": "6183293004",
+   "url": "https://epicgames.com/careers/jobs/6183293004?gh_jid=6183293004",
+   "title": "backend services programmer intern",
+   "location": "cary north carolina united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "epic games",
+   "job_id": "6202675004",
+   "url": "https://epicgames.com/careers/jobs/6202675004?gh_jid=6202675004",
+   "title": "data science intern",
+   "location": "cary north carolina united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "epic games",
+   "job_id": "6173862004",
+   "url": "https://epicgames.com/careers/jobs/6173862004?gh_jid=6173862004",
+   "title": "frontend programmer intern",
+   "location": "cary north carolina united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "epic games",
+   "job_id": "6138134004",
+   "url": "https://epicgames.com/careers/jobs/6138134004?gh_jid=6138134004",
+   "title": "machine learning intern",
+   "location": "blank blank multiple locations",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "epic games",
+   "job_id": "5708589004",
+   "url": "https://epicgames.com/careers/jobs/5708589004?gh_jid=5708589004",
+   "title": "machine learning intern",
+   "location": "london england united kingdom",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "epic games",
+   "job_id": "6138140004",
+   "url": "https://epicgames.com/careers/jobs/6138140004?gh_jid=6138140004",
+   "title": "machine learning intern",
+   "location": "montreal quebec canada",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "epic games",
+   "job_id": "6161289004",
+   "url": "https://epicgames.com/careers/jobs/6161289004?gh_jid=6161289004",
+   "title": "product management intern",
+   "location": "cary north carolina united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "epic games",
+   "job_id": "6178818004",
+   "url": "https://epicgames.com/careers/jobs/6178818004?gh_jid=6178818004",
+   "title": "technical product management intern",
+   "location": "cary north carolina united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "8052338",
+   "url": "https://jumptrading.com/hr/job?gh_jid=8052338",
+   "title": "campus ai research engineer deep learning intern",
+   "location": "chicago new york",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "8052281",
+   "url": "https://jumptrading.com/hr/job?gh_jid=8052281",
+   "title": "campus ai research engineer intern",
+   "location": "chicago new york",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "8052351",
+   "url": "https://jumptrading.com/hr/job?gh_jid=8052351",
+   "title": "campus ai research engineer research automation intern",
+   "location": "chicago new york",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "7974837",
+   "url": "https://jumptrading.com/hr/job?gh_jid=7974837",
+   "title": "campus asic engineer intern",
+   "location": "bristol",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "8002998",
+   "url": "https://jumptrading.com/hr/job?gh_jid=8002998",
+   "title": "campus data engineer intern",
+   "location": "chicago",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "7975008",
+   "url": "https://jumptrading.com/hr/job?gh_jid=7975008",
+   "title": "campus data engineer intern",
+   "location": "london",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "7974391",
+   "url": "https://jumptrading.com/hr/job?gh_jid=7974391",
+   "title": "campus fpga engineer intern",
+   "location": "london",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "7977145",
+   "url": "https://jumptrading.com/hr/job?gh_jid=7977145",
+   "title": "campus ml research engineer intern",
+   "location": "london",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "8010307",
+   "url": "https://jumptrading.com/hr/job?gh_jid=8010307",
+   "title": "campus quantitative researcher intern",
+   "location": "london amsterdam",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "8059384",
+   "url": "https://jumptrading.com/hr/job?gh_jid=8059384",
+   "title": "campus quantitative researcher m1 m2 intern",
+   "location": "london paris",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "7848371",
+   "url": "https://jumptrading.com/hr/job?gh_jid=7848371",
+   "title": "campus quantitative trader intern",
+   "location": "chicago new york",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "8050772",
+   "url": "https://jumptrading.com/hr/job?gh_jid=8050772",
+   "title": "campus quantitative trader intern",
+   "location": "london amsterdam",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "7975026",
+   "url": "https://jumptrading.com/hr/job?gh_jid=7975026",
+   "title": "campus software engineer intern",
+   "location": "london",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "8002989",
+   "url": "https://jumptrading.com/hr/job?gh_jid=8002989",
+   "title": "campus software engineer intern",
+   "location": "chicago",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "7974943",
+   "url": "https://jumptrading.com/hr/job?gh_jid=7974943",
+   "title": "campus ui software engineer intern",
+   "location": "london",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "jump trading",
+   "job_id": "8003019",
+   "url": "https://jumptrading.com/hr/job?gh_jid=8003019",
+   "title": "campus ui software engineer intern",
+   "location": "chicago",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "7991171",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/7991171",
+   "title": "ai ml research intern",
+   "location": "montreal",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "8070392",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/8070392",
+   "title": "fpga intern",
+   "location": "london",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "7957756",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/7957756",
+   "title": "quantitative research intern",
+   "location": "london",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "7818540",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/7818540",
+   "title": "quantitative research intern",
+   "location": "chicago new york city",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "7957243",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/7957243",
+   "title": "quantitative trading analyst intern",
+   "location": "london",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "7668776",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/7668776",
+   "title": "quantitative trading analyst intern",
+   "location": "chicago illinois",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "7991196",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/7991196",
+   "title": "software developer intern",
+   "location": "montreal",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "7992936",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/7992936",
+   "title": "software developer intern",
+   "location": "chicago",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "7942281",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/7942281",
+   "title": "software developer intern",
+   "location": "london",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "drw",
+   "job_id": "8020364",
+   "url": "https://job-boards.greenhouse.io/drweng/jobs/8020364",
+   "title": "software developer intern",
+   "location": "amsterdam",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4927149101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4927149101",
+   "title": "hardware engineer intern",
+   "location": "amsterdam netherlands",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4823945101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4823945101",
+   "title": "hardware engineer intern summer 2027",
+   "location": "chicago united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4912874101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4912874101",
+   "title": "machine learning research intern summer 2027 amsterdam",
+   "location": "amsterdam netherlands",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4907399101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4907399101",
+   "title": "quantitative research intern bs ms summer 2027",
+   "location": "chicago united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4936262101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4936262101",
+   "title": "quantitative trader intern",
+   "location": "amsterdam netherlands",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4823923101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4823923101",
+   "title": "quantitative trader intern summer 2027",
+   "location": "chicago united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4842595101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4842595101",
+   "title": "quant performance engineer intern summer 2027",
+   "location": "chicago united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4667854101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4667854101",
+   "title": "software engineer intern",
+   "location": "amsterdam netherlands",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4823924101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4823924101",
+   "title": "software engineer intern summer 2027",
+   "location": "chicago united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "imc",
+   "job_id": "4939846101",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4939846101",
+   "title": "trader intern",
+   "location": "amsterdam netherlands",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "akuna capital",
+   "job_id": "8021481",
+   "url": "https://akunacapital.com/careers/job/8021481?gh_jid=8021481",
+   "title": "quantitative development strategy intern summer 2027",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "akuna capital",
+   "job_id": "8036614",
+   "url": "https://akunacapital.com/careers/job/8036614?gh_jid=8036614",
+   "title": "quantitative research intern summer 2027",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "akuna capital",
+   "job_id": "8018886",
+   "url": "https://akunacapital.com/careers/job/8018886?gh_jid=8018886",
+   "title": "software engineer intern c net desktop summer 2027",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "akuna capital",
+   "job_id": "8018847",
+   "url": "https://akunacapital.com/careers/job/8018847?gh_jid=8018847",
+   "title": "software engineer intern c summer 2027",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "akuna capital",
+   "job_id": "8018893",
+   "url": "https://akunacapital.com/careers/job/8018893?gh_jid=8018893",
+   "title": "software engineer intern full stack web summer 2027",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "akuna capital",
+   "job_id": "8018853",
+   "url": "https://akunacapital.com/careers/job/8018853?gh_jid=8018853",
+   "title": "software engineer intern python summer 2027",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "five rings",
+   "job_id": "5420708008",
+   "url": "https://job-boards.greenhouse.io/fiveringsllc/jobs/5420708008",
+   "title": "summer 2027 trading operations engineer intern",
+   "location": "new york",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "five rings",
+   "job_id": "5139668008",
+   "url": "https://job-boards.greenhouse.io/fiveringsllc/jobs/5139668008",
+   "title": "summer intern 2027 quantitative trader",
+   "location": "new york",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "five rings",
+   "job_id": "5349707008",
+   "url": "https://job-boards.greenhouse.io/fiveringsllc/jobs/5349707008",
+   "title": "summer intern 2027 software developer",
+   "location": "new york",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "old mission",
+   "job_id": "8002345003",
+   "url": "https://oldmissioncapital.com/careers?gh_jid=8002345003",
+   "title": "quantitative trader 2027 micro internship program january start",
+   "location": "chicago il united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "old mission",
+   "job_id": "7796180003",
+   "url": "https://oldmissioncapital.com/careers?gh_jid=7796180003",
+   "title": "software engineer 2027 internship program june start",
+   "location": "chicago il united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "waymo",
+   "job_id": "8214729",
+   "url": "https://careers.withwaymo.com/jobs?gh_jid=8214729",
+   "title": "2027 summer intern bs ms software engineer ro performance team release evaluation simulation",
+   "location": "warsaw poland",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "8168322",
+   "url": "https://coinbase.com/careers/positions/8168322?gh_jid=8168322",
+   "title": "associate product manager intern",
+   "location": "hybrid san francisco ca",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "8175459",
+   "url": "https://coinbase.com/careers/positions/8175459?gh_jid=8175459",
+   "title": "data engineer intern",
+   "location": "hybrid san francisco ca",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "8175462",
+   "url": "https://coinbase.com/careers/positions/8175462?gh_jid=8175462",
+   "title": "data science intern",
+   "location": "hybrid new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "8175441",
+   "url": "https://coinbase.com/careers/positions/8175441?gh_jid=8175441",
+   "title": "machine learning engineer intern",
+   "location": "hybrid san francisco ca",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "8175339",
+   "url": "https://coinbase.com/careers/positions/8175339?gh_jid=8175339",
+   "title": "product design intern",
+   "location": "hybrid san francisco ca",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "8175504",
+   "url": "https://coinbase.com/careers/positions/8175504?gh_jid=8175504",
+   "title": "product manager hr technology intern",
+   "location": "hybrid new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "coinbase",
+   "job_id": "8168315",
+   "url": "https://coinbase.com/careers/positions/8168315?gh_jid=8168315",
+   "title": "software engineer intern",
+   "location": "hybrid san francisco ca",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "8241738",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8241738?gh_jid=8241738&t=gh_src%3D",
+   "title": "data science intern summer 2027",
+   "location": "menlo park ca",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "8142930",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8142930?gh_jid=8142930&t=gh_src%3D",
+   "title": "software developer intern backend summer 2027",
+   "location": "toronto canada",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "8194428",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8194428?gh_jid=8194428&t=gh_src%3D",
+   "title": "software developer intern co op backend winter 2027",
+   "location": "toronto canada",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "8199729",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8199729?gh_jid=8199729&t=gh_src%3D",
+   "title": "software developer intern ios summer 2027",
+   "location": "toronto canada",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "8199744",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8199744?gh_jid=8199744&t=gh_src%3D",
+   "title": "software developer intern web summer 2027",
+   "location": "toronto canada",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "8142961",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8142961?gh_jid=8142961&t=gh_src%3D",
+   "title": "software engineering intern android summer 2027",
+   "location": "menlo park ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "8123225",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8123225?gh_jid=8123225&t=gh_src%3D",
+   "title": "software engineering intern backend summer 2027",
+   "location": "bellevue wa menlo park ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "8142959",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8142959?gh_jid=8142959&t=gh_src%3D",
+   "title": "software engineering intern ios summer 2027",
+   "location": "menlo park ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "robinhood",
+   "job_id": "8142963",
+   "url": "https://job-boards.greenhouse.io/robinhood/jobs/8142963?gh_jid=8142963&t=gh_src%3D",
+   "title": "software engineering intern web summer 2027",
+   "location": "menlo park ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "8796124002",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8796124002?gh_jid=8796124002",
+   "title": "data science intern algorithms summer 2027 sf nyc",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "8767723002",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8767723002?gh_jid=8767723002",
+   "title": "data science intern algorithms summer 2027 sf nyc",
+   "location": "san francisco ca",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "8767697002",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8767697002?gh_jid=8767697002",
+   "title": "data science intern algorithms summer 2027 toronto",
+   "location": "toronto canada",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "8862215002",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8862215002?gh_jid=8862215002",
+   "title": "hardware field quality engineer intern summer 2027",
+   "location": "longueuil canada",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "lyft",
+   "job_id": "8767534002",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8767534002?gh_jid=8767534002",
+   "title": "software engineer intern test automation summer 2027",
+   "location": "montreal canada",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "pinterest",
+   "job_id": "8138080",
+   "url": "https://pinterestcareers.com/jobs?gh_jid=8138080",
+   "title": "machine learning intern 2027 toronto",
+   "location": "toronto on ca",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "pinterest",
+   "job_id": "8214757",
+   "url": "https://pinterestcareers.com/jobs?gh_jid=8214757",
+   "title": "machine learning intern 2027 zurich",
+   "location": "zurich ch",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "pinterest",
+   "job_id": "8138034",
+   "url": "https://pinterestcareers.com/jobs?gh_jid=8138034",
+   "title": "software engineering intern 2027 dublin",
+   "location": "dublin ie",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "pinterest",
+   "job_id": "8214745",
+   "url": "https://pinterestcareers.com/jobs?gh_jid=8214745",
+   "title": "software engineering intern 2027 zurich",
+   "location": "zurich ch",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "pinterest",
+   "job_id": "8140217",
+   "url": "https://pinterestcareers.com/jobs?gh_jid=8140217",
+   "title": "ux quantitative research intern usa",
+   "location": "remote us",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "spacex",
+   "job_id": "8636143002",
+   "url": "https://job-boards.greenhouse.io/spacex/jobs/8636143002?gh_jid=8636143002",
+   "title": "spring 2027 civil engineering internship",
+   "location": "flexible any spacex site",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "spacex",
+   "job_id": "8636134002",
+   "url": "https://job-boards.greenhouse.io/spacex/jobs/8636134002?gh_jid=8636134002",
+   "title": "spring 2027 silicon engineering internship co op",
+   "location": "flexible any spacex site",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "spacex",
+   "job_id": "8621756002",
+   "url": "https://job-boards.greenhouse.io/spacex/jobs/8621756002?gh_jid=8621756002",
+   "title": "spring 2027 software engineering internship co op",
+   "location": "flexible any spacex site",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "spacex",
+   "job_id": "8636144002",
+   "url": "https://job-boards.greenhouse.io/spacex/jobs/8636144002?gh_jid=8636144002",
+   "title": "summer 2027 civil engineering internship",
+   "location": "flexible any spacex site",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "spacex",
+   "job_id": "8621763002",
+   "url": "https://job-boards.greenhouse.io/spacex/jobs/8621763002?gh_jid=8621763002",
+   "title": "summer 2027 silicon engineering internship co op",
+   "location": "flexible any spacex site",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "spacex",
+   "job_id": "8621757002",
+   "url": "https://job-boards.greenhouse.io/spacex/jobs/8621757002?gh_jid=8621757002",
+   "title": "summer 2027 software engineering internship co op",
+   "location": "flexible any spacex site",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "8133715002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8133715002",
+   "title": "product management intern 2026 amsterdam",
+   "location": "amsterdam netherlands",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "8863328002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8863328002",
+   "title": "product management intern 2026 belgrade",
+   "location": "belgrade serbia",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "8145776002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8145776002",
+   "title": "product management intern 2026 berlin",
+   "location": "berlin germany",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "6883068002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6883068002",
+   "title": "product management intern summer 2027",
+   "location": "bellevue washington mountain view california san francisco california",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "8133710002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8133710002",
+   "title": "software engineering intern 2027 start aarhus",
+   "location": "aarhus denmark",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "6866534002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6866534002",
+   "title": "software engineering intern 2027 start amsterdam",
+   "location": "amsterdam netherlands",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "7640764002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7640764002",
+   "title": "software engineering intern 2027 start belgrade",
+   "location": "belgrade serbia",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "6866531002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6866531002",
+   "title": "software engineering intern 2027 start berlin",
+   "location": "berlin germany",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "8847738002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8847738002",
+   "title": "software engineering intern 2027 start london",
+   "location": "london united kingdom",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "databricks",
+   "job_id": "8732364002",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8732364002",
+   "title": "software engineering intern 2027 start winter",
+   "location": "bellevue washington mountain view california san francisco california",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "datadog",
+   "job_id": "8143729",
+   "url": "https://careers.datadoghq.com/detail/8143729?gh_jid=8143729",
+   "title": "product management intern",
+   "location": "paris france",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "datadog",
+   "job_id": "8114186",
+   "url": "https://careers.datadoghq.com/detail/8114186?gh_jid=8114186",
+   "title": "software engineering intern",
+   "location": "paris france",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "datadog",
+   "job_id": "8114161",
+   "url": "https://careers.datadoghq.com/detail/8114161?gh_jid=8114161",
+   "title": "software engineering intern",
+   "location": "madrid spain",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "6178851004",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6178851004?gh_jid=6178851004",
+   "title": "data engineer intern 2027",
+   "location": "san francisco ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "6178857004",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6178857004?gh_jid=6178857004",
+   "title": "data science intern 2027",
+   "location": "san francisco ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "6180005004",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6180005004?gh_jid=6180005004",
+   "title": "product design intern 2027",
+   "location": "san francisco ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "6152695004",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6152695004?gh_jid=6152695004",
+   "title": "software engineer intern london united kingdom summer 2027",
+   "location": "london england",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "6143238004",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6143238004?gh_jid=6143238004",
+   "title": "software engineer intern summer 2027",
+   "location": "san francisco ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "figma",
+   "job_id": "6131089004",
+   "url": "https://job-boards.greenhouse.io/figma/jobs/6131089004?gh_jid=6131089004",
+   "title": "software engineer intern winter 2027",
+   "location": "san francisco ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "notion",
+   "job_id": "e66c6658-9e65-4c58-8db2-844628b6e8f8",
+   "url": "https://jobs.ashbyhq.com/notion/e66c6658-9e65-4c58-8db2-844628b6e8f8",
+   "title": "software engineer intern winter 2027",
+   "location": "new york new york; san francisco california",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "notion",
+   "job_id": "3fba1c39-c5cb-47d7-9ad2-1cec4d7e9d0c",
+   "url": "https://jobs.ashbyhq.com/notion/3fba1c39-c5cb-47d7-9ad2-1cec4d7e9d0c",
+   "title": "software engineer intern summer 2027",
+   "location": "new york new york; san francisco california",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "notion",
+   "job_id": "2b587e66-deac-421a-a824-9415ba78b5a7",
+   "url": "https://jobs.ashbyhq.com/notion/2b587e66-deac-421a-a824-9415ba78b5a7",
+   "title": "software engineer intern mobile winter 2027",
+   "location": "new york new york; san francisco california",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "snowflake",
+   "job_id": "fc1923c1-b151-4458-a792-40d58331a5be",
+   "url": "https://jobs.ashbyhq.com/snowflake/fc1923c1-b151-4458-a792-40d58331a5be",
+   "title": "software engineer intern warsaw security",
+   "location": "pl warsaw lixa c",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "cloudflare",
+   "job_id": "8199958",
+   "url": "https://job-boards.greenhouse.io/cloudflare/jobs/8199958?gh_jid=8199958",
+   "title": "software engineer intern 2027 austin tx",
+   "location": "in office",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "scale ai",
+   "job_id": "4730845005",
+   "url": "https://job-boards.greenhouse.io/scaleai/jobs/4730845005",
+   "title": "software engineering intern summer 2027",
+   "location": "san francisco ca",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "scale ai",
+   "job_id": "4730846005",
+   "url": "https://job-boards.greenhouse.io/scaleai/jobs/4730846005",
+   "title": "software engineering intern summer 2027",
+   "location": "london uk",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "doordash",
+   "job_id": "8176863",
+   "url": "https://job-boards.greenhouse.io/doordashusa/jobs/8176863",
+   "title": "product design intern summer 2027",
+   "location": "san francisco ca new york ny",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "vercel",
+   "job_id": "6181759004",
+   "url": "https://job-boards.greenhouse.io/vercel/jobs/6181759004",
+   "title": "software engineering intern summer 27",
+   "location": "hybrid san francisco",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "vercel",
+   "job_id": "6181755004",
+   "url": "https://job-boards.greenhouse.io/vercel/jobs/6181755004",
+   "title": "software engineering intern winter 27",
+   "location": "hybrid san francisco",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group sig",
+   "job_id": "9424072c-485e-43c4-91e8-4f124356a286",
+   "url": "https://careers-sig.icims.com/jobs/10837/job?mobile=true&needsRedirect=false",
+   "title": "trading system engineering intern",
+   "location": "ardmore pa",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group sig",
+   "job_id": "14dcee99-b506-4efe-a80a-63151e541c4d",
+   "url": "https://careers-sig.icims.com/jobs/10838/job?mobile=true&needsRedirect=false",
+   "title": "quantitative strategy developer intern",
+   "location": "ardmore pa",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group sig",
+   "job_id": "101c0a59-cfc7-4ef9-bcf8-d70d2a67c4f7",
+   "url": "https://careers-sig.icims.com/jobs/10945/job?mobile=true&needsRedirect=false",
+   "title": "electricity natural gas analyst intern",
+   "location": "ardmore pa",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group sig",
+   "job_id": "31ba5843-05de-4d5d-bc6f-3182b9d4d812",
+   "url": "https://careers-sig.icims.com/jobs/11099/job?mobile=true&needsRedirect=false",
+   "title": "analytics intern",
+   "location": "richmond va",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "optiver",
+   "job_id": "f49b4766-f352-4e81-9cb2-0f42fb9fd101",
+   "url": "https://optiver.com/join-us/jobs/8604760002?gh_jid=8604760002",
+   "title": "software engineer intern",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "optiver",
+   "job_id": "895ea579-0ca7-4aa8-82a2-db62cfeba95c",
+   "url": "https://optiver.com/join-us/jobs/8401052002?gh_jid=8401052002",
+   "title": "software engineer intern",
+   "location": "austin tx",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "optiver",
+   "job_id": "6f0dbd5a-a41a-4a05-a5f4-7fa193dbc2ab",
+   "url": "https://optiver.com/join-us/jobs/8402215002?gh_jid=8402215002",
+   "title": "quantitative intern",
+   "location": "austin tx; chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "citadel securities",
+   "job_id": "88d4320b-8cb5-44fc-b2ec-b7601a389436",
+   "url": "https://citadelsecurities.com/careers/details/quantitative-trader-intern-us",
+   "title": "quantitative trader intern",
+   "location": "miami fl; nyc",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "citadel securities",
+   "job_id": "c76dbe61-c0f6-47a8-b05e-b219b4e28fb7",
+   "url": "https://citadelsecurities.com/careers/details/software-engineer-intern-us",
+   "title": "software engineer intern",
+   "location": "miami fl; nyc",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "citadel",
+   "job_id": "28286b52-4c99-4d00-a870-d919c13d68c6",
+   "url": "https://citadel.com/careers/details/software-engineer-intern-us",
+   "title": "software engineer intern",
+   "location": "greenwich ct; houston tx; miami fl; nyc",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group sig",
+   "job_id": "5e40a228-3721-4f88-96d5-3f59b73be6c4",
+   "url": "https://careers-sig.icims.com/jobs/11170/job?mobile=true&needsRedirect=false",
+   "title": "quantitative strategy developer intern",
+   "location": "philadelphia pa",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "citadel securities",
+   "job_id": "b977109a-8e8c-4173-a584-460e709a733f",
+   "url": "https://citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe",
+   "title": "quantitative research analyst bachelor s or master s degree intern",
+   "location": "london uk; paris france",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "citadel securities",
+   "job_id": "aeb731f5-2ac3-477e-921b-74a84adcbdb6",
+   "url": "https://citadelsecurities.com/careers/details/quantitative-trading-intern-europe",
+   "title": "quantitative trading intern",
+   "location": "london uk; paris france",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group sig",
+   "job_id": "55c03818-d743-45eb-bb1d-d9d6f3cdcc5b",
+   "url": "https://careers-sig.icims.com/jobs/11005/job?mobile=true&needsRedirect=false",
+   "title": "quantitative trading internship",
+   "location": "london uk",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "citadel securities",
+   "job_id": "1a44500b-c841-4121-ad65-9ed0746573db",
+   "url": "https://citadelsecurities.com/careers/details/software-engineer-intern-europe",
+   "title": "software engineer intern",
+   "location": "london uk",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "citadel securities",
+   "job_id": "a869b3f7-71bd-4b08-9c7e-8c6706e98035",
+   "url": "https://citadelsecurities.com/careers/details/quantitative-research-analyst-intern-bs-ms-europe-2",
+   "title": "quantitative research analyst intern",
+   "location": "london uk",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "optiver",
+   "job_id": "56965bf6-c164-4f90-8d38-c6ccc6fdcd9a",
+   "url": "https://optiver.com/join-us/jobs/8489582002?gh_jid=8489582002",
+   "title": "trading automation and operations intern",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "optiver",
+   "job_id": "48263b7f-c07b-458b-99a8-4af5e13edd67",
+   "url": "https://optiver.com/join-us/jobs/8641352002?gh_jid=8641352002",
+   "title": "fpga engineer intern",
+   "location": "austin tx",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "optiver",
+   "job_id": "a547349d-335a-4ac3-97e7-5f3616c53eae",
+   "url": "https://optiver.com/join-us/jobs/8402114002?gh_jid=8402114002",
+   "title": "fpga engineer intern",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "citadel securities",
+   "job_id": "d4041518-dc22-4f01-96d9-aa0030510fd8",
+   "url": "https://citadelsecurities.com/careers/details/fpga-engineer-intern-us",
+   "title": "fpga engineer intern",
+   "location": "miami fl; nyc",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group sig",
+   "job_id": "249582ff-82d0-4883-adda-90d4315e8a98",
+   "url": "https://careers-sig.icims.com/jobs/11169/job?mobile=true&needsRedirect=false",
+   "title": "trading system engineer intern",
+   "location": "united states",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "two sigma",
+   "job_id": "d7896522-5218-4362-8092-60cacc29a642",
+   "url": "https://twosigma.avature.net/careers/JobDetail/13945",
+   "title": "quantitative researcher intern",
+   "location": "nyc",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "two sigma",
+   "job_id": "6bb2553b-f9bc-4c0b-ae90-ae4d6dabeeee",
+   "url": "https://twosigma.avature.net/careers/JobDetail/14096",
+   "title": "ai research scientist intern 2027 summer",
+   "location": "nyc",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "optiver",
+   "job_id": "789f3f1a-8c80-4c58-bc82-1e831e81e1e7",
+   "url": "https://optiver.com/join-us/jobs/8682750002?gh_jid=8682750002",
+   "title": "quantitative intern summer 2027",
+   "location": "austin tx",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "optiver",
+   "job_id": "b723e864-0d78-4dec-835e-0f2da12a40db",
+   "url": "https://optiver.com/join-us/jobs/8713435002?gh_jid=8713435002",
+   "title": "software engineer intern",
+   "location": "london uk",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group",
+   "job_id": "78f9e1b5-9870-4a25-816c-c69294b6b6cb",
+   "url": "https://careers-sig.icims.com/jobs/11333/job?mobile=true&needsRedirect=false",
+   "title": "quantitative strategy developer intern",
+   "location": "dublin ireland; london uk",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group",
+   "job_id": "0d95ff8f-ccaa-4031-8bc2-ecf6014f6be0",
+   "url": "https://careers-sig.icims.com/jobs/11334/job?mobile=true&needsRedirect=false",
+   "title": "trading systems engineer intern",
+   "location": "london uk",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group",
+   "job_id": "8c7005ad-b3e2-4a02-8174-8b80eed58286",
+   "url": "https://careers-sig.icims.com/jobs/11422/job?mobile=true&needsRedirect=false",
+   "title": "technology co op drexel university",
+   "location": "bala cynwyd pa",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group",
+   "job_id": "773a0053-7c9f-4410-ad10-28e5c8aa0b6d",
+   "url": "https://careers-sig.icims.com/jobs/11446/job?mobile=true&needsRedirect=false",
+   "title": "fpga engineer intern",
+   "location": "bala cynwyd pa",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "two sigma",
+   "job_id": "3bf3d7c6-3d8d-41c3-98eb-a48df978d6e4",
+   "url": "https://twosigma.avature.net/careers/JobDetail/14016",
+   "title": "software engineering intern summer 2027",
+   "location": "nyc",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "two sigma",
+   "job_id": "7d13cca3-9bb7-4870-9711-350dc2d4a39e",
+   "url": "https://twosigma.avature.net/careers/JobDetail/14289",
+   "title": "hardware engineering intern",
+   "location": "nyc",
+   "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "susquehanna international group",
+   "job_id": "b60dd607-5a1b-423f-a318-f333734e8063",
+   "url": "https://careers-sig.icims.com/jobs/11555/job?mobile=true&needsRedirect=false",
+   "title": "machine learning engineer intern",
+   "location": "bala cynwyd pa",
+   "first_seen": "2026-10-05T00:07:28Z"
   }
  ]
 }
