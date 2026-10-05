@@ -197,6 +197,29 @@ def test_multi_region_posting():
     assert result.unrecognized == ("Singapore",)
 
 
+@pytest.mark.parametrize(
+    "location",
+    ["Flexible - Any SpaceX Site", "BLANK,BLANK,Multiple Locations", "In-Office", "Various Locations", ""],
+)
+def test_vague_location_goes_under_unspecified(location):
+    result = classify(posting(title="Software Engineering Internship", locations=(location,)))
+    assert result.announce
+    assert result.regions == {"Unspecified"}
+    assert result.unrecognized == ()
+
+
+def test_vague_location_uses_place_in_title():
+    result = classify(
+        posting(title="Software Engineer Intern (2027) - Austin, TX", locations=("In-Office",))
+    )
+    assert result.regions == {"US"}
+
+
+def test_vague_location_ignored_when_another_location_is_known():
+    result = classify(posting(locations=("Multiple Locations", "Toronto, ON")))
+    assert result.regions == {"Canada"}
+
+
 def test_no_region_is_not_announced():
     result = classify(posting(locations=("Singapore",)))
     assert not result.announce

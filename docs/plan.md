@@ -56,7 +56,8 @@ A scheduled job that finds new internship postings and announces them in Discord
   - normalized URL
   - normalized `company`, `title`, `location` as separate fields
   - first-seen time
-- **Boards section:** maps each board key (e.g. `greenhouse:stripe`, `ashby:<company>`, `simplify:faang`) to its first successful poll time. A board is marked only after a successful fetch. A board with no entry gets a silent first poll.
+- **Boards section:** maps each board key (e.g. `greenhouse:stripe`, `ashby:<company>`, `simplify:<company>`) to its first successful poll time. A board is marked only after a successful fetch. A board with no entry gets a silent first poll.
+- Each FAANG+ company counts as its own Simplify board (`simplify:<normalized company name>`). A company newly added to `faang_plus` gets a silent first poll, so its existing listings are never announced. A successful Simplify fetch marks every company on the list as polled, even companies with no postings.
 
 ### Classification
 
@@ -85,6 +86,7 @@ A scheduled job that finds new internship postings and announces them in Discord
   - Plain `Remote` goes under Remote. Remote-in-a-country (e.g. `Remote (US)`) goes under Remote only if that country is in one of the listed regions, so `Remote (India)` is dropped.
   - A posting spanning several regions appears under each.
   - Locations outside these regions, or not recognized, are dropped.
+  - **Vague locations** (`Multiple Locations`, `Various Locations`, `In-Office`, `Flexible - Any … Site`, `BLANK`, `TBD`, empty): if none of the posting's other locations is recognized, the title is checked for a place (e.g. "… - Austin, TX"). If the title doesn't name one either, the posting goes under a last header, "📍 Location not specified".
 - **Ignored and dropped postings** (no channel match or no region) are **not** recorded as seen, so they are announced once a rule later matches them.
 - Unrecognized location strings are printed in the workflow log.
 

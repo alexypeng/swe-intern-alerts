@@ -12,7 +12,7 @@ class Posting:
     """One job posting, in the same shape regardless of which source it came from."""
 
     source: str  # "simplify", "greenhouse", or "ashby"
-    board_key: str  # e.g. "greenhouse:stripe", "simplify:faang"
+    board_key: str  # e.g. "greenhouse:stripe", "simplify:stripe"
     job_id: str  # the source's own ID for this posting
     company: str
     title: str

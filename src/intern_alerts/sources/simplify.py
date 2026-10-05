@@ -6,9 +6,15 @@ from typing import Any
 import httpx
 
 from intern_alerts.models import Posting
+from intern_alerts.normalize import normalize_text
 from intern_alerts.sources import SourceError, get_json
 
-BOARD_KEY = "simplify:faang"
+LABEL = "simplify"
+
+
+def board_key(company: str) -> str:
+    """Each FAANG+ company is its own board, so adding one to the list gets a silent first poll."""
+    return f"simplify:{normalize_text(company)}"
 
 
 def parse_simplify(data: list[dict[str, Any]], faang_plus: frozenset[str]) -> list[Posting]:
@@ -21,7 +27,7 @@ def parse_simplify(data: list[dict[str, Any]], faang_plus: frozenset[str]) -> li
         postings.append(
             Posting(
                 source="simplify",
-                board_key=BOARD_KEY,
+                board_key=board_key(item["company_name"]),
                 job_id=item["id"],
                 company=item["company_name"].strip(),
                 title=item["title"].strip(),
@@ -36,8 +42,8 @@ def parse_simplify(data: list[dict[str, Any]], faang_plus: frozenset[str]) -> li
 
 
 def fetch_simplify(client: httpx.Client, url: str, faang_plus: frozenset[str]) -> list[Posting]:
-    data = get_json(client, url, BOARD_KEY)
+    data = get_json(client, url, LABEL)
     try:
         return parse_simplify(data, faang_plus)
     except (KeyError, TypeError, ValueError) as e:
-        raise SourceError(f"{BOARD_KEY}: unexpected response format ({e!r})") from e
+        raise SourceError(f"{LABEL}: unexpected response format ({e!r})") from e

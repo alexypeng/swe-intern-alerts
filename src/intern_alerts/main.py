@@ -19,26 +19,34 @@ from intern_alerts.post import PostError, send
 from intern_alerts.sources import SourceError, new_client
 from intern_alerts.sources.ashby import fetch_ashby
 from intern_alerts.sources.greenhouse import fetch_greenhouse
-from intern_alerts.sources.simplify import BOARD_KEY as SIMPLIFY_KEY
+from intern_alerts.sources.simplify import board_key as simplify_board_key
 from intern_alerts.sources.simplify import fetch_simplify
 from intern_alerts.state import Record, State, StateError, load_state, save_state
 
 BOARD_FETCHERS = {"greenhouse": fetch_greenhouse, "ashby": fetch_ashby}
 
 
-def fetch_all(client: httpx.Client, config: Config) -> list[tuple[str, list[Posting]]]:
-    """Fetches company boards first, then Simplify. Failed sources are logged and left out."""
-    jobs: list[tuple[str, Callable[[], list[Posting]]]] = [
-        (board.key, lambda board=board: BOARD_FETCHERS[board.source](client, board))
+def fetch_all(
+    client: httpx.Client, config: Config
+) -> list[tuple[str, set[str], list[Posting]]]:
+    """Fetches company boards first, then Simplify. Failed sources are logged and left out.
+
+    Returns (label, board keys the fetch covered, postings) for each successful fetch.
+    A fetch covers a board even if it returned no postings for it.
+    """
+    jobs: list[tuple[str, set[str], Callable[[], list[Posting]]]] = [
+        (board.key, {board.key}, lambda board=board: BOARD_FETCHERS[board.source](client, board))
         for board in config.boards
     ]
-    jobs.append(
-        (SIMPLIFY_KEY, lambda: fetch_simplify(client, config.simplify_url, config.faang_plus))
-    )
+    jobs.append((
+        "simplify",
+        {simplify_board_key(name) for name in config.faang_plus},
+        lambda: fetch_simplify(client, config.simplify_url, config.faang_plus),
+    ))
     fetched = []
-    for key, fetch in jobs:
+    for label, keys, fetch in jobs:
         try:
-            fetched.append((key, fetch()))
+            fetched.append((label, keys, fetch()))
         except SourceError as e:
             print(f"::warning::skipped {e}")
     return fetched
@@ -62,9 +70,9 @@ def run(
     skipped: Counter[str] = Counter()
     unrecognized: Counter[str] = Counter()
 
-    for board_key, postings in fetch_all(client, config):
-        first_poll = not state.is_board_polled(board_key)
-        new = 0
+    for label, board_keys, postings in fetch_all(client, config):
+        first_poll_keys = {key for key in board_keys if not state.is_board_polled(key)}
+        new = silent = 0
         for posting in postings:
             result = classify(posting)
             unrecognized.update(result.unrecognized)
@@ -75,15 +83,17 @@ def run(
                 skipped[reason] += 1
                 continue
             index.add(Record.from_posting(posting))
-            new += 1
-            if first_poll:
+            if posting.board_key in first_poll_keys:
                 state.record(posting, now)  # silent: existing postings are never announced
+                silent += 1
             else:
+                new += 1
                 for channel in result.channels:
                     queue[channel].append((posting, result.regions))
-        state.mark_board_polled(board_key, now)
-        verb = "recorded silently (first poll)" if first_poll else "new"
-        print(f"{board_key}: {len(postings)} fetched, {new} {verb}")
+        for key in board_keys:
+            state.mark_board_polled(key, now)
+        first = f", {len(first_poll_keys)} first-polled" if first_poll_keys else ""
+        print(f"{label}: {len(postings)} fetched, {new} new, {silent} recorded silently{first}")
 
     save()  # keep silent records even if posting fails below
 

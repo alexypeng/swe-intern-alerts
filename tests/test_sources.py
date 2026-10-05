@@ -39,7 +39,7 @@ def test_simplify_keeps_only_active_visible_faang():
 def test_simplify_maps_fields():
     p = parse_simplify(load("simplify.json"), frozenset({"stripe"}))[0]
     assert p.source == "simplify"
-    assert p.board_key == "simplify:faang"
+    assert p.board_key == "simplify:stripe"
     assert p.company == "Stripe"
     assert p.title == "Software Engineer Intern - Summer or Winter"
     assert p.locations == ("Seattle, WA", "SF", "NYC")

@@ -7,7 +7,9 @@ from intern_alerts.models import Posting
 from intern_alerts.normalize import normalize_text
 
 US, CANADA, UK, EUROPE, REMOTE = "US", "Canada", "UK", "Europe", "Remote"
-REGIONS = (US, CANADA, EUROPE, UK, REMOTE)  # display order in messages
+# For postings whose location is vague ("Multiple Locations") and whose title names no place.
+UNSPECIFIED = "Unspecified"
+REGIONS = (US, CANADA, EUROPE, UK, REMOTE, UNSPECIFIED)  # display order in messages
 
 
 @dataclass(frozen=True)
@@ -32,12 +34,18 @@ def classify(posting: Posting) -> Classification:
         return IGNORED
     regions: set[str] = set()
     unrecognized = []
+    vague = False
     for location in posting.locations:
         found = location_regions(location)
         if found:
             regions |= found
+        elif is_vague_location(location):
+            vague = True
         else:
             unrecognized.append(location)
+    if vague and not regions:
+        # e.g. "Software Engineer Intern - Austin, TX" with location "In-Office"
+        regions = location_regions(posting.title) or {UNSPECIFIED}
     return Classification(frozenset(channels), frozenset(regions), tuple(unrecognized))
 
 
@@ -200,6 +208,16 @@ PLACE_PATTERN = re.compile(
     rf"\b(?:{'|'.join(sorted(map(re.escape, PLACE_TO_REGION), key=len, reverse=True))})\b"
 )
 REMOTE_WORD = re.compile(r"\bremote\b")
+
+# Location strings that say nothing about where the job is.
+VAGUE_LOCATION = re.compile(
+    r"^$|\b(?:multiple locations|various locations|blank|in office|flexible|any \w+ site|"
+    r"tbd|to be determined)\b"
+)
+
+
+def is_vague_location(location: str) -> bool:
+    return bool(VAGUE_LOCATION.search(normalize_text(location)))
 
 
 def location_regions(location: str) -> set[str]:

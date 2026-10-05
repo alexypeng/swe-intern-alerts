@@ -1,6 +1,7 @@
 """End-to-end runs with fake HTTP for every source and for Discord."""
 
 import json
+from dataclasses import replace
 from datetime import UTC, datetime
 
 import httpx
@@ -83,14 +84,14 @@ class FakeWeb:
             return httpx.Response(200, json=self.simplify)
         return httpx.Response(404)
 
-    def run(self, state: State, webhooks=WEBHOOKS) -> int:
+    def run(self, state: State, webhooks=WEBHOOKS, config=CONFIG) -> int:
         client = httpx.Client(transport=httpx.MockTransport(self.handler))
-        return run(CONFIG, state, client, NOW, webhooks, save=lambda: None)
+        return run(config, state, client, NOW, webhooks, save=lambda: None)
 
 
 def polled_state():
     state = State()
-    for key in ("greenhouse:stripe", "ashby:ramp", "simplify:faang"):
+    for key in ("greenhouse:stripe", "ashby:ramp", "simplify:stripe"):
         state.mark_board_polled(key, NOW)
     return state
 
@@ -100,7 +101,7 @@ def test_first_run_records_silently_and_sends_nothing():
     state = State()
     assert web.run(state) == 0
     assert web.sent == {}
-    assert set(state.boards) == {"greenhouse:stripe", "ashby:ramp", "simplify:faang"}
+    assert set(state.boards) == {"greenhouse:stripe", "ashby:ramp", "simplify:stripe"}
     assert {r.job_id for r in state.records} == {"1", "a1"}
 
 
@@ -172,6 +173,29 @@ def test_posting_in_two_channels_goes_to_both_and_is_recorded_once():
     web.run(state)
     assert set(web.sent) == {"data_ml", "hardware"}
     assert len(state.records) == 1
+
+
+def test_company_added_to_fallback_list_gets_silent_first_poll():
+    old = simplify_item("o1", "https://optiver.test/1", company="Optiver")
+    web = FakeWeb(simplify=[old])
+    state = polled_state()  # Simplify already polled, but only for Stripe
+    with_optiver = replace(CONFIG, faang_plus=CONFIG.faang_plus | {"optiver"})
+
+    web.run(state, config=with_optiver)
+    assert web.sent == {}  # Optiver's existing listing is not announced
+    assert state.is_board_polled("simplify:optiver")
+
+    web.simplify.append(simplify_item("o2", "https://optiver.test/2", company="Optiver",
+                                      title="Quant Software Engineer Intern"))
+    web.run(state, config=with_optiver)
+    [message] = web.sent["swe"]
+    assert "Quant Software Engineer Intern" in message
+
+
+def test_fallback_company_with_no_postings_is_still_marked_polled():
+    state = State()
+    FakeWeb().run(state)
+    assert state.is_board_polled("simplify:stripe")
 
 
 def test_dry_run_sends_nothing(capsys):

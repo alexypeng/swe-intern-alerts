@@ -21,7 +21,7 @@ GREENHOUSE = Posting(
 # The same job as Simplify lists it: different ID, title wording, and location format.
 SIMPLIFY = Posting(
     source="simplify",
-    board_key="simplify:faang",
+    board_key="simplify:stripe",
     job_id="7e914cf5-64bf-41bb-a680-71b7d7df80f6",
     company="Stripe",
     title="Software Engineer Intern - Summer or Winter",

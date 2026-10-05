@@ -2,7 +2,8 @@
 simplify_url = "https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json"
 
 # Simplify postings are announced only for these companies (matched case-insensitively
-# against Simplify's company_name). Seeded from Simplify's own FAANG+ list.
+# against Simplify's company_name). Seeded from Simplify's own FAANG+ list. Simplify is the
+# slower fallback: companies also listed under [[boards]] are announced from the board first.
 faang_plus = [
   "adobe", "airbnb", "amazon", "amd", "anthropic", "apple", "asana", "atlassian",
   "bytedance", "cloudflare", "coinbase", "crowdstrike", "databricks", "datadog",
@@ -12,12 +13,16 @@ faang_plus = [
   "rippling", "robinhood", "roblox", "salesforce", "samsara", "servicenow", "shopify",
   "slack", "snap", "snapchat", "snowflake", "spacex", "splunk", "square", "stripe",
   "tesla", "tiktok", "tinder", "uber", "visa", "waymo", "x",
+  # Added: companies not on Greenhouse/Ashby, covered only through Simplify for now.
+  "citadel", "citadel securities", "two sigma", "optiver",
+  "susquehanna international group", "susquehanna international group (sig)",
 ]
 
 # Greenhouse and Ashby boards to poll. slug is the board ID in the API URL:
 #   greenhouse: https://boards-api.greenhouse.io/v1/boards/<slug>/jobs
 #   ashby:      https://api.ashbyhq.com/posting-api/job-board/<slug>
 
+# Your companies
 [[boards]]
 source = "greenhouse"
 slug = "stripe"
@@ -27,3 +32,185 @@ name = "Stripe"
 source = "ashby"
 slug = "ramp"
 name = "Ramp"
+
+[[boards]]
+source = "greenhouse"
+slug = "roblox"
+name = "Roblox"
+
+[[boards]]
+source = "ashby"
+slug = "openai"
+name = "OpenAI"
+
+[[boards]]
+source = "greenhouse"
+slug = "anthropic"
+name = "Anthropic"
+
+[[boards]]
+source = "greenhouse"
+slug = "janestreet"
+name = "Jane Street"
+
+[[boards]]
+source = "greenhouse"
+slug = "wehrtyou"
+name = "Hudson River Trading"
+
+[[boards]]
+source = "greenhouse"
+slug = "hubspotjobs"
+name = "HubSpot"
+
+[[boards]]
+source = "greenhouse"
+slug = "riotgames"
+name = "Riot Games"
+
+[[boards]]
+source = "greenhouse"
+slug = "epicgames"
+name = "Epic Games"
+
+# Quant firms
+[[boards]]
+source = "greenhouse"
+slug = "jumptrading"
+name = "Jump Trading"
+
+[[boards]]
+source = "greenhouse"
+slug = "drweng"
+name = "DRW"
+
+[[boards]]
+source = "greenhouse"
+slug = "imc"
+name = "IMC"
+
+[[boards]]
+source = "greenhouse"
+slug = "akunacapital"
+name = "Akuna Capital"
+
+[[boards]]
+source = "greenhouse"
+slug = "fiveringsllc"
+name = "Five Rings"
+
+[[boards]]
+source = "greenhouse"
+slug = "oldmissioncapital"
+name = "Old Mission"
+
+# Tech companies
+[[boards]]
+source = "greenhouse"
+slug = "waymo"
+name = "Waymo"
+
+[[boards]]
+source = "greenhouse"
+slug = "coinbase"
+name = "Coinbase"
+
+[[boards]]
+source = "greenhouse"
+slug = "robinhood"
+name = "Robinhood"
+
+[[boards]]
+source = "greenhouse"
+slug = "lyft"
+name = "Lyft"
+
+[[boards]]
+source = "greenhouse"
+slug = "pinterest"
+name = "Pinterest"
+
+[[boards]]
+source = "greenhouse"
+slug = "spacex"
+name = "SpaceX"
+
+[[boards]]
+source = "greenhouse"
+slug = "databricks"
+name = "Databricks"
+
+[[boards]]
+source = "greenhouse"
+slug = "datadog"
+name = "Datadog"
+
+[[boards]]
+source = "greenhouse"
+slug = "figma"
+name = "Figma"
+
+[[boards]]
+source = "ashby"
+slug = "notion"
+name = "Notion"
+
+[[boards]]
+source = "ashby"
+slug = "snowflake"
+name = "Snowflake"
+
+[[boards]]
+source = "greenhouse"
+slug = "cloudflare"
+name = "Cloudflare"
+
+[[boards]]
+source = "greenhouse"
+slug = "scaleai"
+name = "Scale AI"
+
+[[boards]]
+source = "greenhouse"
+slug = "doordashusa"
+name = "DoorDash"
+
+[[boards]]
+source = "greenhouse"
+slug = "duolingo"
+name = "Duolingo"
+
+[[boards]]
+source = "greenhouse"
+slug = "vercel"
+name = "Vercel"
+
+[[boards]]
+source = "ashby"
+slug = "plaid"
+name = "Plaid"
+
+[[boards]]
+source = "ashby"
+slug = "perplexity"
+name = "Perplexity"
+
+[[boards]]
+source = "ashby"
+slug = "cursor"
+name = "Cursor"
+
+[[boards]]
+source = "greenhouse"
+slug = "discord"
+name = "Discord"
+
+[[boards]]
+source = "greenhouse"
+slug = "airbnb"
+name = "Airbnb"
+
+[[boards]]
+source = "greenhouse"
+slug = "reddit"
+name = "Reddit"

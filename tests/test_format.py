@@ -80,5 +80,12 @@ def test_header_never_left_alone_at_end_of_message():
     assert "[Canada Role]" in canada_message.content
 
 
+def test_unspecified_location_header_comes_last():
+    us = posting(1, title="US Role")
+    vague = posting(2, title="Vague Role", locations=("Multiple Locations",))
+    [message] = build_messages([(vague, frozenset({"Unspecified"})), (us, frozenset({"US"}))])
+    assert message.content.index("## 🇺🇸 US") < message.content.index("## 📍 Location not specified")
+
+
 def test_no_postings_no_messages():
     assert build_messages([]) == []

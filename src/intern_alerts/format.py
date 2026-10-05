@@ -4,7 +4,7 @@ import re
 from collections.abc import Iterable
 from dataclasses import dataclass, field
 
-from intern_alerts.classify import CANADA, EUROPE, REGIONS, REMOTE, UK, US
+from intern_alerts.classify import CANADA, EUROPE, REGIONS, REMOTE, UK, UNSPECIFIED, US
 from intern_alerts.models import Posting
 
 MAX_LENGTH = 2000  # Discord's limit for a message's content
@@ -17,6 +17,7 @@ HEADERS = {
     EUROPE: "## 🇪🇺 Europe",
     UK: "## 🇬🇧 UK",
     REMOTE: "## 🌐 Remote",
+    UNSPECIFIED: "## 📍 Location not specified",
 }
 
 
