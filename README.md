@@ -4,15 +4,7 @@ Posts new internship openings to Discord, polling company boards every 20 minute
 
 Every 20 minutes cron-job.org triggers a GitHub Actions workflow that polls company job boards, keeps only undergrad internships, and posts the ones it hasn't announced before. Each job type has its own channel, and postings are grouped by region inside each message.
 
-```
-## 🇺🇸 US
-**Stripe** — [Software Engineer, Intern](<https://stripe.com/jobs/search?gh_jid=8128745>)
-San Francisco, Seattle, New York City · Aug 31
-
-## 🇨🇦 Canada
-**Stripe** — [Software Engineer, Intern (Summer or Winter)](<https://stripe.com/jobs/search?gh_jid=8130805>)
-Toronto · Aug 31
-```
+<img width="809" height="437" alt="image" src="https://github.com/user-attachments/assets/2650a7fa-5367-4185-92d0-184515b5fad5" />
 
 Discord can be accessed here: https://discord.gg/hjb77xqxHP
 
