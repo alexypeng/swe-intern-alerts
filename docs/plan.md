@@ -28,6 +28,7 @@ A scheduled job that finds new internship postings and announces them in Discord
 ### Runtime and Discord
 
 - Runs as a scheduled job on GitHub Actions that starts, polls, posts, and exits. It is not an always-on process.
+- cron-job.org supplies the schedule and dispatches the GitHub workflow every 20 minutes. GitHub's built-in cron created no scheduled runs even after disabling and re-enabling the workflow; the external scheduler replaces that trigger.
 - "As soon as possible" means within about an hour. After deploying, check the real gaps between scheduled runs in the Actions history.
 - Planned later move: a Raspberry Pi on a home connection, to reach Microsoft and get exact timing. The Python program only reads and writes a local `state.json`, so the move changes only what runs it, not the code.
 - Posts to Discord via channel webhooks, not a gateway bot account.
@@ -119,7 +120,9 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 ### Workflow
 
-- `.github/workflows/poll.yml`, triggered by `schedule: 7,27,47 * * * *` (every 20 minutes, off the top of the hour when GitHub is busiest) and `workflow_dispatch`.
+- `.github/workflows/poll.yml` is triggered by `workflow_dispatch`, from cron-job.org every 20 minutes (`7,27,47 * * * *`) or manually. It has no built-in GitHub cron trigger.
+- cron-job.org uses a fine-grained GitHub personal access token restricted to this repository with Actions write permission. The token is stored in cron-job.org's Authorization header; it is not a repository secret. Replace it there before its chosen expiration date.
+- A successful scheduler request confirms dispatch was accepted, not that polling and posting completed. Check the GitHub run result as well as the scheduler history.
 - If checking for the `state` branch fails for any reason other than "branch doesn't exist", the run fails instead of starting with empty state.
 - The state commit sets its author per command (`git -c`) and never changes global git config.
 - `.github/workflows/test.yml` runs the tests on pushes to `main` and on pull requests.
@@ -131,7 +134,7 @@ A scheduled job that finds new internship postings and announces them in Discord
   4. Run the program with the `WEBHOOK_*` secrets as environment variables.
   5. Commit `state.json` to the `state` branch as `github-actions[bot]`, only if it changed. The first run creates `state` as a branch with no shared history. This step runs even if the program failed.
 - The program writes `state.json` after each channel's messages are posted, so a crash partway through doesn't cause re-announcements.
-- **Risk:** GitHub disables scheduled workflows in public repos after 60 days without repository activity. It's unverified whether the workflow's own commits count. Re-enable from the Actions tab if it happens.
+- **Risk:** cron-job.org can delay requests and GitHub can queue dispatched jobs; neither guarantees exact timing. Scheduler notifications cover failed HTTP requests, not failures inside the GitHub job.
 
 ### Running
 
@@ -168,4 +171,3 @@ A scheduled job that finds new internship postings and announces them in Discord
 ## Open questions
 
 - When Workday is added: check that Simplify's Workday URLs normalize to the same value as fetched ones.
-

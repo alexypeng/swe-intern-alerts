@@ -1,9 +1,7 @@
 name: Poll internships
 
 on:
-  schedule:
-    # Every 20 minutes, off the top of the hour (GitHub's busiest time for scheduled runs).
-    - cron: "7,27,47 * * * *"
+  # cron-job.org dispatches this workflow every 20 minutes on main.
   workflow_dispatch:
 
 permissions:

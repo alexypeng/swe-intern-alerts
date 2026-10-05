@@ -1,8 +1,8 @@
 # swe-intern-alerts
 
-Posts new internship openings to Discord, within about 20 minutes of a company publishing them.
+Posts new internship openings to Discord, polling company boards every 20 minutes.
 
-Every 20 minutes a GitHub Actions workflow polls company job boards, keeps only undergrad internships, and posts the ones it hasn't announced before. Each job type has its own channel, and postings are grouped by region inside each message.
+Every 20 minutes cron-job.org triggers a GitHub Actions workflow that polls company job boards, keeps only undergrad internships, and posts the ones it hasn't announced before. Each job type has its own channel, and postings are grouped by region inside each message.
 
 ```
 ## 🇺🇸 US
@@ -17,7 +17,7 @@ Toronto · Aug 31
 ## How it works
 
 ```
-GitHub Actions (every 20 min)
+cron-job.org (every 20 min) → GitHub Actions
   → load state.json from the `state` branch
   → fetch Greenhouse, Ashby, Lever, and SmartRecruiters boards, then Simplify (FAANG+ fallback)
   → keep undergrad internships; pick channel(s) and region(s)
@@ -49,7 +49,8 @@ The full design and the reasoning behind each decision are in [`docs/plan.md`](d
    | `WEBHOOK_OTHER_ENG` | Mechanical, civil, aerospace, etc. |
    | `WEBHOOK_PRODUCT` | Product |
 
-3. **First run:** go to *Actions → Poll internships → Run workflow*. It posts nothing and creates the `state` branch. After that, the schedule takes over.
+3. **First run:** go to *Actions → Poll internships → Run workflow*. On an empty state, it posts nothing and creates the `state` branch.
+4. **Scheduler:** follow [the cron-job.org setup guide](docs/external-scheduler.md) to dispatch the workflow every 20 minutes.
 
 ## Adding companies
 
@@ -107,11 +108,11 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 - **Failures:**
   - A board that fails to fetch is logged as a warning and retried on the next run.
   - A Discord message that fails to send turns the run red. Its postings aren't marked as seen, so they're sent on the next run.
-- **Schedule delays:** GitHub may delay or skip scheduled runs when it's busy. Compare scheduled run times with:
+- **Schedule checks:** compare cron-job.org's execution history with GitHub's dispatched runs. GitHub groups external dispatches and manual runs under the same event:
   ```
-  gh run list --workflow poll.yml --event schedule --limit 100 --json createdAt --jq '.[].createdAt'
+  gh run list --workflow poll.yml --event workflow_dispatch --limit 100 --json createdAt,conclusion
   ```
-- **60-day rule:** GitHub disables scheduled workflows in public repos after 60 days with no repository activity. If that happens, re-enable the workflow from the Actions tab.
+- **Scheduler credentials:** replace the GitHub token in cron-job.org before it expires. Enable scheduler failure notifications; they report dispatch failures, while poll failures appear in GitHub Actions.
 - **State:** `state.json` on the `state` branch holds everything announced in the last 12 months, plus when each board was first polled. Older records are pruned automatically.
 
 ## Roadmap
