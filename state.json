@@ -39,6 +39,11 @@
   "greenhouse:vercel": "2026-10-05T00:07:28Z",
   "greenhouse:waymo": "2026-10-05T00:07:28Z",
   "greenhouse:wehrtyou": "2026-10-05T00:07:28Z",
+  "lever:palantir": "2026-10-05T03:56:19Z",
+  "lever:plus-2": "2026-10-05T03:56:19Z",
+  "lever:shieldai": "2026-10-05T03:56:19Z",
+  "lever:tri": "2026-10-05T03:56:19Z",
+  "lever:zoox": "2026-10-05T03:56:19Z",
   "simplify:adobe": "2026-10-05T00:07:28Z",
   "simplify:airbnb": "2026-10-05T00:07:28Z",
   "simplify:amazon": "2026-10-05T00:07:28Z",
@@ -104,7 +109,14 @@
   "simplify:uber": "2026-10-05T00:07:28Z",
   "simplify:visa": "2026-10-05T00:07:28Z",
   "simplify:waymo": "2026-10-05T00:07:28Z",
-  "simplify:x": "2026-10-05T00:07:28Z"
+  "simplify:x": "2026-10-05T00:07:28Z",
+  "smartrecruiters:Intuitive": "2026-10-05T03:56:19Z",
+  "smartrecruiters:LLNL": "2026-10-05T03:56:19Z",
+  "smartrecruiters:RenesasElectronics": "2026-10-05T03:56:19Z",
+  "smartrecruiters:Sandisk": "2026-10-05T03:56:19Z",
+  "smartrecruiters:ServiceNow": "2026-10-05T03:56:19Z",
+  "smartrecruiters:Solidigm": "2026-10-05T03:56:19Z",
+  "smartrecruiters:WesternDigital": "2026-10-05T03:56:19Z"
  },
  "postings": [
   {
@@ -4946,6 +4958,502 @@
    "title": "machine learning engineer intern",
    "location": "bala cynwyd pa",
    "first_seen": "2026-10-05T00:07:28Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "3db7e40a-28e0-4ad1-96c5-93de5bc96aa9",
+   "url": "https://jobs.lever.co/palantir/3db7e40a-28e0-4ad1-96c5-93de5bc96aa9",
+   "title": "forward deployed infrastructure engineer internship us government",
+   "location": "washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "8f362a1f-1eff-4327-94c1-ff46e2101c69",
+   "url": "https://jobs.lever.co/palantir/8f362a1f-1eff-4327-94c1-ff46e2101c69",
+   "title": "forward deployed infrastructure engineer internship us government",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "cf5f44ff-1b0b-4752-bcd4-2dc88798f25b",
+   "url": "https://jobs.lever.co/palantir/cf5f44ff-1b0b-4752-bcd4-2dc88798f25b",
+   "title": "forward deployed infrastructure engineer internship us government",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "1b6f1d82-d459-4dea-8bc2-8d2ffe6f881a",
+   "url": "https://jobs.lever.co/palantir/1b6f1d82-d459-4dea-8bc2-8d2ffe6f881a",
+   "title": "forward deployed software engineer internship",
+   "location": "paris france",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "4d29249a-d7e8-4c39-880d-3b35d7b2f6f6",
+   "url": "https://jobs.lever.co/palantir/4d29249a-d7e8-4c39-880d-3b35d7b2f6f6",
+   "title": "forward deployed software engineer internship commercial",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "599b1907-aba1-4303-837b-66e69a521636",
+   "url": "https://jobs.lever.co/palantir/599b1907-aba1-4303-837b-66e69a521636",
+   "title": "forward deployed software engineer internship commercial",
+   "location": "london united kingdom",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "d5486403-c050-4920-b2e0-91b69b61ebb2",
+   "url": "https://jobs.lever.co/palantir/d5486403-c050-4920-b2e0-91b69b61ebb2",
+   "title": "forward deployed software engineer internship commercial",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "cccfe1bd-f15b-4fe5-b044-c793e7961c1b",
+   "url": "https://jobs.lever.co/palantir/cccfe1bd-f15b-4fe5-b044-c793e7961c1b",
+   "title": "forward deployed software engineer internship defense tech",
+   "location": "washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "ac0dc094-2480-43c2-8495-26ade227ff4f",
+   "url": "https://jobs.lever.co/palantir/ac0dc094-2480-43c2-8495-26ade227ff4f",
+   "title": "forward deployed software engineer internship france",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "9e40d77f-b07c-437b-98e7-def9b0184d89",
+   "url": "https://jobs.lever.co/palantir/9e40d77f-b07c-437b-98e7-def9b0184d89",
+   "title": "forward deployed software engineer internship intel",
+   "location": "washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "26e23f5d-083b-45aa-b223-1a6e43d960bf",
+   "url": "https://jobs.lever.co/palantir/26e23f5d-083b-45aa-b223-1a6e43d960bf",
+   "title": "forward deployed software engineer internship uk government",
+   "location": "london united kingdom",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "315f695d-04d1-4a9a-848e-cb2bec7a997e",
+   "url": "https://jobs.lever.co/palantir/315f695d-04d1-4a9a-848e-cb2bec7a997e",
+   "title": "forward deployed software engineer internship us government",
+   "location": "honolulu hi",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "e0010393-c300-446f-bf67-fa2ef067f16f",
+   "url": "https://jobs.lever.co/palantir/e0010393-c300-446f-bf67-fa2ef067f16f",
+   "title": "forward deployed software engineer internship us government",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "e6ff8bf2-135e-474d-ad37-24f490ae1dd2",
+   "url": "https://jobs.lever.co/palantir/e6ff8bf2-135e-474d-ad37-24f490ae1dd2",
+   "title": "forward deployed software engineer internship us government",
+   "location": "washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "ef725594-42dd-4f0d-ba8e-df8179dbc6cb",
+   "url": "https://jobs.lever.co/palantir/ef725594-42dd-4f0d-ba8e-df8179dbc6cb",
+   "title": "information security engineer internship",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "09846827-b931-4a9f-bd64-c3bb8860187b",
+   "url": "https://jobs.lever.co/palantir/09846827-b931-4a9f-bd64-c3bb8860187b",
+   "title": "privacy and civil liberties software engineer internship",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "1a935143-e857-480c-bc5a-ad625d754eb6",
+   "url": "https://jobs.lever.co/palantir/1a935143-e857-480c-bc5a-ad625d754eb6",
+   "title": "product designer internship",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "44129013-01e0-4699-8fc1-7a189bb37b63",
+   "url": "https://jobs.lever.co/palantir/44129013-01e0-4699-8fc1-7a189bb37b63",
+   "title": "product designer internship",
+   "location": "london united kingdom",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "8f7bbffa-92aa-4d25-9586-943b3322a27d",
+   "url": "https://jobs.lever.co/palantir/8f7bbffa-92aa-4d25-9586-943b3322a27d",
+   "title": "product designer internship us government",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "9db71277-3a9a-481b-a2a3-25c3125b0e8a",
+   "url": "https://jobs.lever.co/palantir/9db71277-3a9a-481b-a2a3-25c3125b0e8a",
+   "title": "product designer internship us government",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "fa060d94-f85d-4d02-be58-b81787fe57e5",
+   "url": "https://jobs.lever.co/palantir/fa060d94-f85d-4d02-be58-b81787fe57e5",
+   "title": "product designer internship us government",
+   "location": "washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "373eb939-6f57-4836-8479-be79a5e07249",
+   "url": "https://jobs.lever.co/palantir/373eb939-6f57-4836-8479-be79a5e07249",
+   "title": "software engineer internship",
+   "location": "denver co",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "76a60923-bb49-40f5-b061-7c7eb1299602",
+   "url": "https://jobs.lever.co/palantir/76a60923-bb49-40f5-b061-7c7eb1299602",
+   "title": "software engineer internship",
+   "location": "london united kingdom",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "7d69cf8a-06fd-4f05-bd84-27149db29c4d",
+   "url": "https://jobs.lever.co/palantir/7d69cf8a-06fd-4f05-bd84-27149db29c4d",
+   "title": "software engineer internship",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "bdcfb29f-4f27-42de-933f-7f83a359b9f0",
+   "url": "https://jobs.lever.co/palantir/bdcfb29f-4f27-42de-933f-7f83a359b9f0",
+   "title": "software engineer internship",
+   "location": "washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "e27af7ab-41fc-40c9-b31d-02c6cb1c505c",
+   "url": "https://jobs.lever.co/palantir/e27af7ab-41fc-40c9-b31d-02c6cb1c505c",
+   "title": "software engineer internship",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "8bcf4f33-0a79-4248-bbfd-49ac4be9dd8e",
+   "url": "https://jobs.lever.co/palantir/8bcf4f33-0a79-4248-bbfd-49ac4be9dd8e",
+   "title": "software engineer internship defense tech",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "a483f41b-0da9-42ea-8ed6-cbf6eb93cc6d",
+   "url": "https://jobs.lever.co/palantir/a483f41b-0da9-42ea-8ed6-cbf6eb93cc6d",
+   "title": "software engineer internship defense tech",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "f17e98d0-046a-4e6e-9d65-ed0b12dd0ff7",
+   "url": "https://jobs.lever.co/palantir/f17e98d0-046a-4e6e-9d65-ed0b12dd0ff7",
+   "title": "software engineer internship defense tech",
+   "location": "washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "b229baac-494b-4a0d-9a13-2e38806e06f3",
+   "url": "https://jobs.lever.co/palantir/b229baac-494b-4a0d-9a13-2e38806e06f3",
+   "title": "software engineer internship infrastructure",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "f221738b-e97c-4ce3-a12a-17ada2b855e4",
+   "url": "https://jobs.lever.co/palantir/f221738b-e97c-4ce3-a12a-17ada2b855e4",
+   "title": "software engineer internship infrastructure",
+   "location": "palo alto ca",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "fd3603a9-7016-45c6-9c8d-04c9279ab85e",
+   "url": "https://jobs.lever.co/palantir/fd3603a9-7016-45c6-9c8d-04c9279ab85e",
+   "title": "software engineer internship infrastructure",
+   "location": "london united kingdom",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "373367a9-3160-49d8-b7af-2efec062fad1",
+   "url": "https://jobs.lever.co/palantir/373367a9-3160-49d8-b7af-2efec062fad1",
+   "title": "software engineer internship production infrastructure",
+   "location": "seattle wa",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "37964982-9b4c-471e-a1d8-fb8f45d7f116",
+   "url": "https://jobs.lever.co/palantir/37964982-9b4c-471e-a1d8-fb8f45d7f116",
+   "title": "software engineer internship production infrastructure",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "3ab9e715-1ea9-4c6c-ad50-7340eac14e86",
+   "url": "https://jobs.lever.co/palantir/3ab9e715-1ea9-4c6c-ad50-7340eac14e86",
+   "title": "software engineer internship production infrastructure",
+   "location": "washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "75cc1c09-8ebd-44c8-b3bc-d122cd1fecb3",
+   "url": "https://jobs.lever.co/palantir/75cc1c09-8ebd-44c8-b3bc-d122cd1fecb3",
+   "title": "year at palantir forward deployed software engineer internship commercial",
+   "location": "chicago il",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "e6789b17-62fb-4226-a079-f8c17ff19e2d",
+   "url": "https://jobs.lever.co/palantir/e6789b17-62fb-4226-a079-f8c17ff19e2d",
+   "title": "year at palantir forward deployed software engineer internship commercial",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "5c4c65c5-77da-4d36-856c-4ade87631019",
+   "url": "https://jobs.lever.co/palantir/5c4c65c5-77da-4d36-856c-4ade87631019",
+   "title": "year at palantir forward deployed software engineer internship usg",
+   "location": "washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "5c7bb70c-83ea-43e7-8055-0c8f319f4333",
+   "url": "https://jobs.lever.co/palantir/5c7bb70c-83ea-43e7-8055-0c8f319f4333",
+   "title": "year at palantir forward deployed software engineer internship usg",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "palantir",
+   "job_id": "655f9937-a4ce-4e7d-80e2-a6659af07329",
+   "url": "https://jobs.lever.co/palantir/655f9937-a4ce-4e7d-80e2-a6659af07329",
+   "title": "year at palantir software engineer internship",
+   "location": "new york ny",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "shield ai",
+   "job_id": "87d982f2-8b2b-4c73-9a19-71e461c7b724",
+   "url": "https://jobs.lever.co/shieldai/87d982f2-8b2b-4c73-9a19-71e461c7b724",
+   "title": "electrical engineering spring co op january 2027 r4475",
+   "location": "boston massachusetts; dallas texas; san diego california",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "shield ai",
+   "job_id": "c41c41a2-83d8-41a0-8a3b-ff8b84dc1c8a",
+   "url": "https://jobs.lever.co/shieldai/c41c41a2-83d8-41a0-8a3b-ff8b84dc1c8a",
+   "title": "summer 2027 advanced manufacturing engineering intern",
+   "location": "dallas texas; seattle washington",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "shield ai",
+   "job_id": "8c6cfcee-c6da-4a73-9bdf-3ef098ff59e6",
+   "url": "https://jobs.lever.co/shieldai/8c6cfcee-c6da-4a73-9bdf-3ef098ff59e6",
+   "title": "summer 2027 electrical engineering co op june 2027",
+   "location": "boston massachusetts; dallas texas; san diego california; seattle washington",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "shield ai",
+   "job_id": "200a293f-71ce-4982-a100-ac4b500c4cf7",
+   "url": "https://jobs.lever.co/shieldai/200a293f-71ce-4982-a100-ac4b500c4cf7",
+   "title": "summer 2027 electrical engineering intern",
+   "location": "boston massachusetts; dallas texas; san diego california; seattle washington",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "shield ai",
+   "job_id": "da54c482-fe62-4f60-98b1-55ac0b82b3bc",
+   "url": "https://jobs.lever.co/shieldai/da54c482-fe62-4f60-98b1-55ac0b82b3bc",
+   "title": "summer 2027 mechanical engineering intern",
+   "location": "dallas texas; seattle washington",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "shield ai",
+   "job_id": "8c850c75-081d-4d09-bebf-096379a93010",
+   "url": "https://jobs.lever.co/shieldai/8c850c75-081d-4d09-bebf-096379a93010",
+   "title": "summer 2027 software engineer intern",
+   "location": "dallas texas; san diego california; seattle washington; washington d c",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "toyota research institute",
+   "job_id": "6433edb6-76be-409f-9a73-9b9d9c207f9f",
+   "url": "https://jobs.lever.co/tri/6433edb6-76be-409f-9a73-9b9d9c207f9f",
+   "title": "human centered ai research intern causal reasoning models",
+   "location": "los altos ca",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "western digital",
+   "job_id": "744000149367234",
+   "url": "https://jobs.smartrecruiters.com/WesternDigital/744000149367234",
+   "title": "spring 2027 co op ai systems strategy",
+   "location": "rochester mn united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "western digital",
+   "job_id": "744000143171017",
+   "url": "https://jobs.smartrecruiters.com/WesternDigital/744000143171017",
+   "title": "summer 2027 intern software engineering",
+   "location": "san jose ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "western digital",
+   "job_id": "744000140949875",
+   "url": "https://jobs.smartrecruiters.com/WesternDigital/744000140949875",
+   "title": "summer 2027 intern hardware engineering",
+   "location": "san jose ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "solidigm",
+   "job_id": "744000147613839",
+   "url": "https://jobs.smartrecruiters.com/Solidigm/744000147613839",
+   "title": "2027 undergraduate hardware product development engineering internships us",
+   "location": "rancho cordova ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "solidigm",
+   "job_id": "744000147613629",
+   "url": "https://jobs.smartrecruiters.com/Solidigm/744000147613629",
+   "title": "2027 undergraduate software development firmware engineering internships us",
+   "location": "rancho cordova ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "intuitive surgical",
+   "job_id": "744000151714759",
+   "url": "https://jobs.smartrecruiters.com/Intuitive/744000151714759",
+   "title": "ai research intern",
+   "location": "sunnyvale ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "intuitive surgical",
+   "job_id": "744000147091674",
+   "url": "https://jobs.smartrecruiters.com/Intuitive/744000147091674",
+   "title": "mechanical engineering intern",
+   "location": "sunnyvale ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "intuitive surgical",
+   "job_id": "744000147092239",
+   "url": "https://jobs.smartrecruiters.com/Intuitive/744000147092239",
+   "title": "manufacturing equipment supplier engineering intern mechanical or biomedical engineering majors",
+   "location": "sunnyvale ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "renesas electronics",
+   "job_id": "744000138837009",
+   "url": "https://jobs.smartrecruiters.com/RenesasElectronics/744000138837009",
+   "title": "integrated сircuit test engineer intern",
+   "location": "lviv ukraine",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "lawrence livermore national laboratory",
+   "job_id": "3743990015817356",
+   "url": "https://jobs.smartrecruiters.com/LLNL/3743990015817356",
+   "title": "materials and chemistry institute maci undergraduate intern summer 2027",
+   "location": "livermore ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "lawrence livermore national laboratory",
+   "job_id": "3743990015817346",
+   "url": "https://jobs.smartrecruiters.com/LLNL/3743990015817346",
+   "title": "materials science division undergraduate intern winter spring 2027",
+   "location": "livermore ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "lawrence livermore national laboratory",
+   "job_id": "3743990015408206",
+   "url": "https://jobs.smartrecruiters.com/LLNL/3743990015408206",
+   "title": "computing undergraduate student intern devops internship program summer 2027",
+   "location": "livermore ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "lawrence livermore national laboratory",
+   "job_id": "3743990015289136",
+   "url": "https://jobs.smartrecruiters.com/LLNL/3743990015289136",
+   "title": "data science institute undergraduate student intern summer 2027",
+   "location": "livermore ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "lawrence livermore national laboratory",
+   "job_id": "3743990015127766",
+   "url": "https://jobs.smartrecruiters.com/LLNL/3743990015127766",
+   "title": "materials engineering division med undergraduate intern summer 2027",
+   "location": "livermore ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
+  },
+  {
+   "company": "lawrence livermore national laboratory",
+   "job_id": "3743990013626030",
+   "url": "https://jobs.smartrecruiters.com/LLNL/3743990013626030",
+   "title": "materials science division undergraduate intern fall 2026",
+   "location": "livermore ca united states",
+   "first_seen": "2026-10-05T03:56:19Z"
   }
  ]
 }
