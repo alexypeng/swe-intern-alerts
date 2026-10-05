@@ -133,6 +133,7 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 - `uv run python -m intern_alerts` runs one poll. `--dry-run` prints messages instead of sending them and doesn't save state; webhook secrets aren't needed for it.
 - `STATE_PATH` sets the state file location. The default is `state.json`.
+- `--backfill DAYS` is a one-off: it starts from empty state, sends every open posting published in the last `DAYS` days instead of recording them silently, and saves nothing.
 - Company boards are fetched before Simplify, so a new job seen in both is announced from the direct source.
 - A board that fails to fetch logs a warning and isn't marked polled. A failed Discord message logs an error, stops that channel, and makes the run exit with code 1. Its postings stay unrecorded and retry next run.
 

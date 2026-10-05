@@ -5,7 +5,7 @@ import os
 import sys
 from collections import Counter, defaultdict
 from collections.abc import Callable
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import httpx
@@ -60,6 +60,7 @@ def run(
     webhooks: dict[str, str] | None,  # None means dry run: print instead of sending
     save: Callable[[], None],
     post: Callable[[httpx.Client, str, str], None] = send,
+    backfill_since: datetime | None = None,  # first-poll postings newer than this are sent
 ) -> int:
     pruned = state.prune(now)
     if pruned:
@@ -83,7 +84,8 @@ def run(
                 skipped[reason] += 1
                 continue
             index.add(Record.from_posting(posting))
-            if posting.board_key in first_poll_keys:
+            backfill = backfill_since is not None and posting.posted_at >= backfill_since
+            if posting.board_key in first_poll_keys and not backfill:
                 state.record(posting, now)  # silent: existing postings are never announced
                 silent += 1
             else:
@@ -137,21 +139,27 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="intern_alerts", description=__doc__)
     parser.add_argument("--dry-run", action="store_true",
                         help="print messages instead of sending them; don't save state")
+    parser.add_argument("--backfill", type=int, metavar="DAYS",
+                        help="one-off: send every open posting from the last DAYS days, "
+                             "ignoring and not saving state (running it twice sends twice)")
     parser.add_argument("--config", default="config.toml", type=Path)
     args = parser.parse_args(argv)
 
     state_path = Path(os.environ.get("STATE_PATH", "state.json"))
+    now = datetime.now(UTC)
+    persist = not (args.dry_run or args.backfill)
     try:
         config = load_config(args.config)
         webhooks = None if args.dry_run else load_webhooks()
-        state = load_state(state_path)
+        state = State() if args.backfill else load_state(state_path)
     except (ConfigError, StateError) as e:
         print(f"::error::{e}")
         return 1
 
     def save() -> None:
-        if not args.dry_run:
+        if persist:
             save_state(state, state_path)
 
+    backfill_since = now - timedelta(days=args.backfill) if args.backfill else None
     with new_client() as client:
-        return run(config, state, client, datetime.now(UTC), webhooks, save)
+        return run(config, state, client, now, webhooks, save, backfill_since=backfill_since)

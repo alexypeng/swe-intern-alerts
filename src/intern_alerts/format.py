@@ -10,6 +10,7 @@ from intern_alerts.models import Posting
 MAX_LENGTH = 2000  # Discord's limit for a message's content
 MAX_LOCATIONS = 3
 MAX_TITLE = 300
+SEPARATOR = "\n\n"  # blank line between postings, and before each region header
 
 HEADERS = {
     US: "## 🇺🇸 US",
@@ -53,23 +54,22 @@ def build_messages(items: Iterable[tuple[Posting, frozenset[str]]]) -> list[Mess
             by_region[region].append(posting)
 
     # Units are never split across messages. A region header travels with its first posting.
-    units: list[tuple[str, Posting, bool]] = []  # (text, posting, starts a region)
+    units: list[tuple[str, Posting]] = []
     for region in REGIONS:
         postings = sorted(by_region[region], key=lambda p: (-p.posted_at.timestamp(), p.company, p.title))
         for i, posting in enumerate(postings):
             text = posting_block(posting)
             if i == 0:
                 text = f"{HEADERS[region]}\n{text}"
-            units.append((text, posting, i == 0))
+            units.append((text, posting))
 
     messages: list[Message] = []
     current: Message | None = None
     shown: set[Posting] = set()
-    for text, posting, starts_region in units:
+    for text, posting in units:
         if current is not None:
-            separator = "\n\n" if starts_region else "\n"
-            if len(current.content) + len(separator) + len(text) <= MAX_LENGTH:
-                current.content += separator + text
+            if len(current.content) + len(SEPARATOR) + len(text) <= MAX_LENGTH:
+                current.content += SEPARATOR + text
             else:
                 current = None
         if current is None:

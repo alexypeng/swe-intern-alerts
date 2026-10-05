@@ -2,7 +2,7 @@
 
 import json
 from dataclasses import replace
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 
 import httpx
 
@@ -84,9 +84,10 @@ class FakeWeb:
             return httpx.Response(200, json=self.simplify)
         return httpx.Response(404)
 
-    def run(self, state: State, webhooks=WEBHOOKS, config=CONFIG) -> int:
+    def run(self, state: State, webhooks=WEBHOOKS, config=CONFIG, backfill_since=None) -> int:
         client = httpx.Client(transport=httpx.MockTransport(self.handler))
-        return run(config, state, client, NOW, webhooks, save=lambda: None)
+        return run(config, state, client, NOW, webhooks, save=lambda: None,
+                   backfill_since=backfill_since)
 
 
 def polled_state():
@@ -196,6 +197,17 @@ def test_fallback_company_with_no_postings_is_still_marked_polled():
     state = State()
     FakeWeb().run(state)
     assert state.is_board_polled("simplify:stripe")
+
+
+def test_backfill_sends_recent_postings_on_first_poll():
+    recent = gh_job(1, title="Recent Software Intern")  # first_published 2026-10-01
+    old = gh_job(2, title="Old Software Intern")
+    old["first_published"] = "2026-08-01T00:00:00-04:00"
+    web = FakeWeb(greenhouse=[recent, old])
+    web.run(State(), backfill_since=NOW - timedelta(days=14))
+    [message] = web.sent["swe"]
+    assert "Recent Software Intern" in message
+    assert "Old Software Intern" not in message
 
 
 def test_dry_run_sends_nothing(capsys):

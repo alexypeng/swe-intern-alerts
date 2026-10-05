@@ -90,6 +90,14 @@ uv run python -m intern_alerts
 
 This writes a local `state.json` (ignored by git). `STATE_PATH` changes where it's stored.
 
+To fill the channels with what's already open (for example, when they're first set up):
+
+```powershell
+uv run python -m intern_alerts --backfill 14   # every open posting from the last 14 days
+```
+
+A backfill ignores state and saves none. The scheduled bot has already recorded these postings, so it won't send them again. Running the backfill twice sends everything twice.
+
 ## Operating notes
 
 - **Failures:**
