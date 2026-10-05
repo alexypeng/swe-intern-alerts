@@ -11,7 +11,7 @@ CHANNELS = ("swe", "data_ml", "hardware", "quant", "other_eng", "product")
 class Posting:
     """One job posting, in the same shape regardless of which source it came from."""
 
-    source: str  # "simplify", "greenhouse", or "ashby"
+    source: str  # "simplify", "greenhouse", "ashby", "lever", or "smartrecruiters"
     board_key: str  # e.g. "greenhouse:stripe", "simplify:stripe"
     job_id: str  # the source's own ID for this posting
     company: str
@@ -20,5 +20,5 @@ class Posting:
     url: str
     posted_at: datetime  # UTC
     category: str | None = None  # Simplify only
-    employment_type: str | None = None  # Ashby only
+    employment_type: str | None = None  # Ashby, Lever, SmartRecruiters
     degrees: tuple[str, ...] = ()  # Simplify only; empty means not stated

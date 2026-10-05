@@ -64,6 +64,14 @@ def is_intern(posting: Posting) -> bool:
         return True  # Simplify only lists internships
     if posting.source == "ashby":
         return posting.employment_type == "Intern"
+    if posting.source in ("lever", "smartrecruiters"):
+        # Either signal counts: labels vary by company ("Intern", "Internship"), and some
+        # internships are mislabelled "Full-time". Word boundaries keep out labels like
+        # "International Office Entity".
+        return bool(
+            INTERN_TITLE.search(posting.employment_type or "")
+            or INTERN_TITLE.search(posting.title)
+        )
     return bool(INTERN_TITLE.search(posting.title))
 
 
@@ -227,7 +235,11 @@ def location_regions(location: str) -> set[str]:
         return {WHOLE_STRING_ABBREVIATIONS[text]}
 
     regions = {PLACE_TO_REGION[m.group(0)] for m in PLACE_PATTERN.finditer(text)}
-    for code in CODE_AFTER_COMMA.findall(location):
+    codes = CODE_AFTER_COMMA.findall(location)
+    has_province = any(code in CANADA_PROVINCES for code in codes)
+    for code in codes:
+        if code == "CA" and has_province:
+            continue  # "Toronto, ON, CA": country code for Canada, not California
         if code in US_STATES:
             regions.add(US)
         elif code in CANADA_PROVINCES:

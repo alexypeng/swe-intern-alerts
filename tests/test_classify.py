@@ -164,6 +164,9 @@ def test_simplify_category(category, expected):
         ("Cambridge, MA", {"US"}),
         ("New York, Seattle, South San Francisco HQ", {"US"}),
         ("Toronto, ON, Canada", {"Canada"}),
+        ("Toronto, ON, CA", {"Canada"}),  # CA after a province is the country, not California
+        ("Vancouver, BC, CA", {"Canada"}),
+        ("San Jose, CA", {"US"}),
         ("Montréal, QC", {"Canada"}),
         ("London, UK", {"UK"}),
         ("Cambridge, England", {"UK"}),

@@ -38,7 +38,7 @@ def test_unknown_board_source(tmp_path):
     path = write(
         tmp_path,
         'simplify_url = "u"\nfaang_plus = []\n'
-        '[[boards]]\nsource = "lever"\nslug = "x"\nname = "X"\n',
+        '[[boards]]\nsource = "workday"\nslug = "x"\nname = "X"\n',
     )
     with pytest.raises(ConfigError, match="unknown source"):
         load_config(path)

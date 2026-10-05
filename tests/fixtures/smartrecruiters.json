@@ -1,0 +1,109 @@
+{
+ "offset": 0,
+ "limit": 100,
+ "totalFound": 2,
+ "content": [
+  {
+   "id": "744000152934243",
+   "name": "Intern – Business Development Representative (German, Spanish, Italian, French, Dutch, Arabic OR Nordic Languages)",
+   "uuid": "7df17f6f-7863-4b69-b960-6a0ae1b468ca",
+   "jobAdId": "21fc0725-b901-40a5-8ef3-ec1f85da22c6",
+   "defaultJobAd": true,
+   "refNumber": "JB0076003",
+   "company": {
+    "identifier": "ServiceNow",
+    "name": "ServiceNow"
+   },
+   "releasedDate": "2026-10-01T12:57:47.361Z",
+   "location": {
+    "city": "Dublin",
+    "country": "ie",
+    "address": "Dawson 60 Dawson Street",
+    "postalCode": "D02 K330",
+    "remote": false,
+    "hybrid": false,
+    "fullLocation": "Dublin, , Ireland"
+   },
+   "industry": {
+    "id": "it_and_services",
+    "label": "Information Technology And Services"
+   },
+   "department": {
+    "id": "2294157",
+    "label": "Marketing, Communications, and Brand"
+   },
+   "function": {
+    "id": "other",
+    "label": "Other"
+   },
+   "typeOfEmployment": {
+    "id": "intern",
+    "label": "Intern"
+   },
+   "experienceLevel": {
+    "id": "not_applicable",
+    "label": "Not Applicable"
+   },
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/ServiceNow/postings/744000152934243",
+   "creator": {
+    "name": "Priya Pitrola"
+   },
+   "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+   }
+  },
+  {
+   "id": "744000153333219",
+   "name": "Sr Software Engineer",
+   "uuid": "b0d8ef99-923a-4865-83e7-4dda1c710feb",
+   "jobAdId": "87abe2ab-b10e-4f55-a46f-e4640390c4c6",
+   "defaultJobAd": true,
+   "refNumber": "JB0075717",
+   "company": {
+    "identifier": "ServiceNow",
+    "name": "ServiceNow"
+   },
+   "releasedDate": "2026-10-03T16:02:30.623Z",
+   "location": {
+    "city": "Santa Clara",
+    "region": "CALIFORNIA",
+    "country": "us",
+    "address": "Building A,B,C 2225 Lawson Lane",
+    "postalCode": "95054",
+    "remote": false,
+    "hybrid": false,
+    "fullLocation": "Santa Clara, CALIFORNIA, United States"
+   },
+   "industry": {
+    "id": "it_and_services",
+    "label": "Information Technology And Services"
+   },
+   "department": {
+    "id": "2294038",
+    "label": "Engineering, Infrastructure and Operations"
+   },
+   "function": {
+    "id": "engineering",
+    "label": "Engineering"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "not_applicable",
+    "label": "Not Applicable"
+   },
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/ServiceNow/postings/744000153333219",
+   "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+   }
+  }
+ ]
+}

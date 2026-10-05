@@ -1,15 +1,19 @@
 import json
+from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
 
 import httpx
 import pytest
 
+from intern_alerts.classify import classify, is_intern
 from intern_alerts.config import Board
 from intern_alerts.sources import SourceError
 from intern_alerts.sources.ashby import fetch_ashby, parse_ashby
 from intern_alerts.sources.greenhouse import fetch_greenhouse, parse_greenhouse
+from intern_alerts.sources.lever import fetch_lever, parse_lever
 from intern_alerts.sources.simplify import fetch_simplify, parse_simplify
+from intern_alerts.sources.smartrecruiters import fetch_smartrecruiters, parse_smartrecruiters
 
 FIXTURES = Path(__file__).parent / "fixtures"
 STRIPE = Board(source="greenhouse", slug="stripe", name="Stripe")
@@ -113,3 +117,97 @@ def test_unexpected_shape_raises_source_error():
 def test_fetch_success_uses_parser():
     body = (FIXTURES / "ashby.json").read_text(encoding="utf-8")
     assert len(fetch_ashby(client_returning(200, body), RAMP)) == 2
+
+
+# Lever
+
+PALANTIR = Board(source="lever", slug="palantir", name="Palantir")
+SERVICENOW = Board(source="smartrecruiters", slug="ServiceNow", name="ServiceNow")
+
+
+def test_lever_maps_fields():
+    p = parse_lever(load("lever.json"), PALANTIR)[0]
+    assert p.source == "lever"
+    assert p.board_key == "lever:palantir"
+    assert p.company == "Palantir"
+    assert p.title == "Forward Deployed Infrastructure Engineer, Internship - US Government"
+    assert p.locations == ("Washington, D.C.",)
+    assert p.url.startswith("https://jobs.lever.co/palantir/")
+    assert p.employment_type == "Internship"
+    assert p.posted_at.tzinfo == UTC
+
+
+def test_lever_intern_by_label_or_title():
+    by_title = {p.title: p for p in parse_lever(load("lever.json"), PALANTIR)}
+    assert is_intern(by_title["Forward Deployed Infrastructure Engineer, Internship - US Government"])
+    # Labelled Full-time, but the title says Internship.
+    assert is_intern(by_title["Forward Deployed Software Engineer, Internship - AUS Government"])
+    assert not is_intern(by_title["Administrative Business Partner"])
+
+
+def test_lever_label_needs_whole_word():
+    p = parse_lever(load("lever.json"), PALANTIR)[2]
+    assert not is_intern(replace(p, employment_type="International Office Entity"))
+    assert is_intern(replace(p, employment_type="Intern"))
+
+
+def test_lever_remote_postings_marked_remote():
+    data = load("lever.json")[:1]
+    data[0]["workplaceType"] = "remote"
+    data[0]["categories"]["allLocations"] = ["United States"]
+    [p] = parse_lever(data, PALANTIR)
+    assert p.locations == ("Remote - United States",)
+    assert classify(p).regions == {"Remote"}
+
+
+# SmartRecruiters
+
+
+def test_smartrecruiters_maps_fields():
+    by_type = {p.employment_type: p for p in parse_smartrecruiters(load("smartrecruiters.json")["content"], SERVICENOW)}
+    intern = by_type["Intern"]
+    assert intern.source == "smartrecruiters"
+    assert intern.board_key == "smartrecruiters:ServiceNow"
+    assert intern.url == f"https://jobs.smartrecruiters.com/ServiceNow/{intern.job_id}"
+    assert intern.locations == ("Dublin, , Ireland",)
+    assert is_intern(intern)
+    assert not is_intern(by_type["Full-time"])
+
+
+def test_smartrecruiters_coop_title_counts_as_intern():
+    item = dict(load("smartrecruiters.json")["content"][1], name="Spring 2027 Co-Op - AI Systems")
+    [p] = parse_smartrecruiters([item], SERVICENOW)
+    assert is_intern(p)
+
+
+def test_smartrecruiters_remote_location():
+    item = dict(load("smartrecruiters.json")["content"][1])
+    item["location"] = dict(item["location"], remote=True)
+    [p] = parse_smartrecruiters([item], SERVICENOW)
+    assert p.locations == ("Remote - Santa Clara, CALIFORNIA, United States",)
+
+
+def test_smartrecruiters_fetches_every_page():
+    base = load("smartrecruiters.json")["content"][1]
+    jobs = [dict(base, id=str(i)) for i in range(250)]
+    offsets = []
+
+    def handler(request):
+        offset = int(request.url.params["offset"])
+        offsets.append(offset)
+        return httpx.Response(200, json={"totalFound": 250, "content": jobs[offset:offset + 100]})
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    postings = fetch_smartrecruiters(client, SERVICENOW)
+    assert offsets == [0, 100, 200]
+    assert len(postings) == 250
+
+
+def test_smartrecruiters_error_raises_source_error():
+    with pytest.raises(SourceError, match="smartrecruiters:ServiceNow"):
+        fetch_smartrecruiters(client_returning(500, "down"), SERVICENOW)
+
+
+def test_lever_error_raises_source_error():
+    with pytest.raises(SourceError, match="lever:palantir"):
+        fetch_lever(client_returning(404, "nope"), PALANTIR)

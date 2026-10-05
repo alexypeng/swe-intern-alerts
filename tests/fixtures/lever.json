@@ -1,0 +1,53 @@
+[
+ {
+  "categories": {
+   "commitment": "Internship",
+   "location": "Washington, D.C.",
+   "team": "Delta",
+   "allLocations": [
+    "Washington, D.C."
+   ]
+  },
+  "createdAt": 1783723333024,
+  "id": "3db7e40a-28e0-4ad1-96c5-93de5bc96aa9",
+  "text": "Forward Deployed Infrastructure Engineer, Internship - US Government",
+  "country": "US",
+  "workplaceType": "onsite",
+  "hostedUrl": "https://jobs.lever.co/palantir/3db7e40a-28e0-4ad1-96c5-93de5bc96aa9",
+  "applyUrl": "https://jobs.lever.co/palantir/3db7e40a-28e0-4ad1-96c5-93de5bc96aa9/apply"
+ },
+ {
+  "categories": {
+   "commitment": "Full-time",
+   "location": "Sydney, Australia",
+   "team": "Delta",
+   "allLocations": [
+    "Sydney, Australia"
+   ]
+  },
+  "createdAt": 1780058819423,
+  "id": "395a4483-fc3d-4b77-a500-501923fd0976",
+  "text": "Forward Deployed Software Engineer, Internship - AUS Government",
+  "country": "AU",
+  "workplaceType": "hybrid",
+  "hostedUrl": "https://jobs.lever.co/palantir/395a4483-fc3d-4b77-a500-501923fd0976",
+  "applyUrl": "https://jobs.lever.co/palantir/395a4483-fc3d-4b77-a500-501923fd0976/apply"
+ },
+ {
+  "categories": {
+   "commitment": "Full-time",
+   "location": "Singapore, Singapore",
+   "team": "Administrative",
+   "allLocations": [
+    "Singapore, Singapore"
+   ]
+  },
+  "createdAt": 1786469891368,
+  "id": "6ed76ce8-4156-4b60-b120-403538bd66cd",
+  "text": "Administrative Business Partner",
+  "country": "SG",
+  "workplaceType": "hybrid",
+  "hostedUrl": "https://jobs.lever.co/palantir/6ed76ce8-4156-4b60-b120-403538bd66cd",
+  "applyUrl": "https://jobs.lever.co/palantir/6ed76ce8-4156-4b60-b120-403538bd66cd/apply"
+ }
+]

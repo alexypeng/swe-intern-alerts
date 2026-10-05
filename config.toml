@@ -18,7 +18,7 @@ faang_plus = [
   "susquehanna international group", "susquehanna international group (sig)",
 ]
 
-# Greenhouse and Ashby boards to poll. slug is the board ID in the API URL:
+# Company boards to poll directly. slug is the board ID in the API URL:
 #   greenhouse: https://boards-api.greenhouse.io/v1/boards/<slug>/jobs
 #   ashby:      https://api.ashbyhq.com/posting-api/job-board/<slug>
 
@@ -214,3 +214,66 @@ name = "Airbnb"
 source = "greenhouse"
 slug = "reddit"
 name = "Reddit"
+
+# Lever boards: https://api.lever.co/v0/postings/<slug>?mode=json
+[[boards]]
+source = "lever"
+slug = "palantir"
+name = "Palantir"
+
+[[boards]]
+source = "lever"
+slug = "shieldai"
+name = "Shield AI"
+
+[[boards]]
+source = "lever"
+slug = "tri"
+name = "Toyota Research Institute"
+
+[[boards]]
+source = "lever"
+slug = "zoox"
+name = "Zoox"
+
+[[boards]]
+source = "lever"
+slug = "plus-2"
+name = "PlusAI"
+
+# SmartRecruiters boards: https://api.smartrecruiters.com/v1/companies/<slug>/postings
+# (slug is case-sensitive)
+[[boards]]
+source = "smartrecruiters"
+slug = "ServiceNow"
+name = "ServiceNow"
+
+[[boards]]
+source = "smartrecruiters"
+slug = "WesternDigital"
+name = "Western Digital"
+
+[[boards]]
+source = "smartrecruiters"
+slug = "Sandisk"
+name = "Sandisk"
+
+[[boards]]
+source = "smartrecruiters"
+slug = "Solidigm"
+name = "Solidigm"
+
+[[boards]]
+source = "smartrecruiters"
+slug = "Intuitive"
+name = "Intuitive Surgical"
+
+[[boards]]
+source = "smartrecruiters"
+slug = "RenesasElectronics"
+name = "Renesas Electronics"
+
+[[boards]]
+source = "smartrecruiters"
+slug = "LLNL"
+name = "Lawrence Livermore National Laboratory"

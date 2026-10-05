@@ -19,11 +19,18 @@ from intern_alerts.post import PostError, send
 from intern_alerts.sources import SourceError, new_client
 from intern_alerts.sources.ashby import fetch_ashby
 from intern_alerts.sources.greenhouse import fetch_greenhouse
+from intern_alerts.sources.lever import fetch_lever
 from intern_alerts.sources.simplify import board_key as simplify_board_key
 from intern_alerts.sources.simplify import fetch_simplify
+from intern_alerts.sources.smartrecruiters import fetch_smartrecruiters
 from intern_alerts.state import Record, State, StateError, load_state, save_state
 
-BOARD_FETCHERS = {"greenhouse": fetch_greenhouse, "ashby": fetch_ashby}
+BOARD_FETCHERS = {
+    "greenhouse": fetch_greenhouse,
+    "ashby": fetch_ashby,
+    "lever": fetch_lever,
+    "smartrecruiters": fetch_smartrecruiters,
+}
 
 
 def fetch_all(

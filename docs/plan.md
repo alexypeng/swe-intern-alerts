@@ -13,8 +13,8 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 ### Sources
 
-- **Company sources (primary):** poll the company boards on a manually maintained approved list. Greenhouse and Ashby are built. More platforms come later, most reliable first:
-  1. Lever, SmartRecruiters
+- **Company sources (primary):** poll the company boards on a manually maintained approved list. Greenhouse, Ashby, Lever, and SmartRecruiters are built. More platforms come later, most reliable first:
+  1. ~~Lever, SmartRecruiters~~ (done)
   2. Workday
   3. Amazon, Eightfold
   4. Apple
@@ -31,6 +31,7 @@ A scheduled job that finds new internship postings and announces them in Discord
 - "As soon as possible" means within about an hour. After deploying, check the real gaps between scheduled runs in the Actions history.
 - Planned later move: a Raspberry Pi on a home connection, to reach Microsoft and get exact timing. The Python program only reads and writes a local `state.json`, so the move changes only what runs it, not the code.
 - Posts to Discord via channel webhooks, not a gateway bot account.
+- The channels are announcement channels, so other servers can **Follow** them. Webhook messages reach followers only after they're published, and publishing is currently done by hand. Discord allows 10 publishes per hour per announcement channel.
 
 ### Stack
 
@@ -77,12 +78,14 @@ A scheduled job that finds new internship postings and announces them in Discord
   - **product:** product manager, product management, apm, product design
 - **Intern detection:**
   - Ashby: `employmentType == "Intern"`.
+  - Lever and SmartRecruiters: the platform's label (Lever `commitment`, SmartRecruiters `typeOfEmployment`) **or** the title matches the intern regex. Labels vary by company, and some internships are labelled "Full-time". Word boundaries keep out labels like "International Office Entity".
   - Greenhouse: title matches `\b(intern|internship|co-op|coop)s?\b`, case-insensitive.
   - All sources: titles containing "high school" are excluded.
 - **Undergrad only:**
   - Simplify postings are kept if `degrees` is empty or includes `Bachelor's` or `Associate's`.
   - On all sources, a title naming a graduate degree (PhD, MS, MSc, Master's, MBA, Doctoral) is excluded unless it also names BS, BSc, Bachelor's, or Undergrad.
 - **Regions:** Canada, US, UK, Europe, Remote, parsed with a lookup table: country names, US states and abbreviations, Canadian provinces, major cities and city abbreviations (`NYC`, `SF`), European countries.
+  - Two-letter codes after a comma are US states or Canadian provinces. A `CA` that follows a province code (`Toronto, ON, CA`) is Canada's country code, not California.
   - Plain `Remote` goes under Remote. Remote-in-a-country (e.g. `Remote (US)`) goes under Remote only if that country is in one of the listed regions, so `Remote (India)` is dropped.
   - A posting spanning several regions appears under each.
   - Locations outside these regions, or not recognized, are dropped.
@@ -158,6 +161,9 @@ A scheduled job that finds new internship postings and announces them in Discord
 - **Greenhouse:** `https://boards-api.greenhouse.io/v1/boards/<board>/jobs` (`?content=true` adds descriptions). Fields include `id`, `title`, `location.name` (one free-text string), `absolute_url`, `departments`, `offices`, `first_published`, `updated_at`. No employment-type field, so interns must be found by title. `absolute_url` may be on the company's own domain with the job ID in a query parameter (e.g. `https://stripe.com/jobs/search?gh_jid=8194291`), and Simplify uses the same URL, so URL normalization must keep such parameters.
 - **Simplify latency:** `listings.json` is committed about every 30 minutes (gaps up to 5 hours observed). For 8 Stripe internships on both Simplify and Greenhouse, Simplify's `date_posted` was 6.7–10.9 hours after Greenhouse's `first_published` (median ~7 hours).
 - **Ashby:** `https://api.ashbyhq.com/posting-api/job-board/<board>`. Fields include `id` (UUID), `title`, `department`, `team`, `employmentType` (e.g. `Intern`), `location`, `secondaryLocations`, structured `address.postalAddress` (country/region/locality), `isRemote`, `workplaceType`, `jobUrl`, `publishedAt`.
+
+- **Lever:** `https://api.lever.co/v0/postings/<slug>?mode=json` returns every posting in one list. It has `text` (title), `categories.commitment` (a free-text label per company), `categories.location` / `allLocations`, `workplaceType`, `hostedUrl`, and `createdAt` (milliseconds).
+- **SmartRecruiters:** `https://api.smartrecruiters.com/v1/companies/<slug>/postings?limit=100&offset=N` is paged (max 100 per page, with `totalFound`). The slug is case-sensitive. It has `name`, `typeOfEmployment.label`, `location.fullLocation` / `remote`, and `releasedDate`. The list has no job URL, so it's built as `https://jobs.smartrecruiters.com/<slug>/<id>`, the same form Simplify uses. All pages are fetched, capped at 50.
 
 ## Open questions
 

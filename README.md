@@ -19,7 +19,7 @@ Toronto · Aug 31
 ```
 GitHub Actions (every 20 min)
   → load state.json from the `state` branch
-  → fetch Greenhouse and Ashby boards, then Simplify (FAANG+ fallback)
+  → fetch Greenhouse, Ashby, Lever, and SmartRecruiters boards, then Simplify (FAANG+ fallback)
   → keep undergrad internships; pick channel(s) and region(s)
   → skip anything already announced (job ID → URL → company + title + location)
   → post to each channel's Discord webhook
@@ -27,7 +27,7 @@ GitHub Actions (every 20 min)
 ```
 
 - **Sources:**
-  - Greenhouse and Ashby company boards, polled directly. This is the fast path.
+  - Greenhouse, Ashby, Lever, and SmartRecruiters company boards, polled directly. This is the fast path.
   - Simplify's internship list for the companies in `faang_plus`. It's a slower fallback (Simplify lags company boards by hours) for companies with no supported board.
 - **Channels:** SWE, data/ML, hardware/firmware, quant, other engineering, product.
 - **Regions:** US, Canada, Europe, UK, Remote, and "Location not specified" for vague locations.
@@ -55,16 +55,20 @@ The full design and the reasoning behind each decision are in [`docs/plan.md`](d
 
 Edit [`config.toml`](config.toml), then commit and push. Each new entry gets a silent first poll, so adding companies never floods your channels.
 
-- **Greenhouse or Ashby board.** Add a `[[boards]]` entry. `slug` is the board's ID in the API URL:
+- **Greenhouse, Ashby, Lever, or SmartRecruiters board.** Add a `[[boards]]` entry. `slug` is the board's ID in the API URL:
 
   ```toml
   [[boards]]
-  source = "greenhouse"   # or "ashby"
+  source = "greenhouse"   # or "ashby", "lever", "smartrecruiters"
   slug = "stripe"         # boards-api.greenhouse.io/v1/boards/<slug>/jobs
   name = "Stripe"         # shown in messages
   ```
 
-  To check a slug, open `https://boards-api.greenhouse.io/v1/boards/<slug>/jobs` or `https://api.ashbyhq.com/posting-api/job-board/<slug>` in a browser. A valid slug returns JSON with a `jobs` list.
+  To check a slug, open its API URL in a browser. A valid slug returns JSON with jobs in it:
+  - Greenhouse: `https://boards-api.greenhouse.io/v1/boards/<slug>/jobs`
+  - Ashby: `https://api.ashbyhq.com/posting-api/job-board/<slug>`
+  - Lever: `https://api.lever.co/v0/postings/<slug>?mode=json`
+  - SmartRecruiters: `https://api.smartrecruiters.com/v1/companies/<slug>/postings` (the slug is case-sensitive)
 - **Company with no supported board** (e.g. Google, Microsoft): add its name to `faang_plus` exactly as Simplify spells it (case doesn't matter).
 - **Every hiring cycle:** update `simplify_url` to the new Simplify repo (e.g. `Summer2028-Internships`).
 
@@ -112,4 +116,4 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 ## Roadmap
 
-More platforms, most reliable first: Lever and SmartRecruiters, Workday, Amazon and Eightfold, Apple, then Google, Meta and custom sites. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.
+More platforms, most reliable first: Workday, Amazon and Eightfold, Apple, then Google, Meta and custom sites. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.

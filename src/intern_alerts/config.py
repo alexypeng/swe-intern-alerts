@@ -8,7 +8,7 @@ from pathlib import Path
 
 from intern_alerts.models import CHANNELS
 
-BOARD_SOURCES = ("greenhouse", "ashby")
+BOARD_SOURCES = ("greenhouse", "ashby", "lever", "smartrecruiters")
 
 
 class ConfigError(Exception):
@@ -17,7 +17,7 @@ class ConfigError(Exception):
 
 @dataclass(frozen=True)
 class Board:
-    source: str  # "greenhouse" or "ashby"
+    source: str  # one of BOARD_SOURCES
     slug: str  # the board ID in the source's API URL
     name: str  # display name, also the company name used for dedup
 
