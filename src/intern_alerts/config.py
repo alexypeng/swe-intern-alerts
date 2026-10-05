@@ -23,6 +23,8 @@ class Board:
     name: str  # display name, also the company name used for dedup
     host: str | None = None  # Workday: <tenant>.wd<number>.myworkdayjobs.com
     partition_facet: str | None = None  # verified Workday large-board partition
+    filter_facet: str | None = None  # native Workday filter, validated per board
+    filter_value: str | None = None  # display label; resolve its ID each poll
 
     @property
     def key(self) -> str:
@@ -52,7 +54,8 @@ def load_config(path: Path) -> Config:
     for i, raw in enumerate(raw_boards):
         try:
             board = Board(source=raw["source"], slug=raw["slug"], name=raw["name"],
-                          host=raw.get("host"), partition_facet=raw.get("partition_facet"))
+                          host=raw.get("host"), partition_facet=raw.get("partition_facet"),
+                          filter_facet=raw.get("filter_facet"), filter_value=raw.get("filter_value"))
         except KeyError as e:
             raise ConfigError(f"{path}: board #{i + 1} is missing {e}") from None
         if board.source not in BOARD_SOURCES:
@@ -60,6 +63,12 @@ def load_config(path: Path) -> Config:
                 f"{path}: board {board.slug!r} has unknown source {board.source!r} "
                 f"(expected one of {', '.join(BOARD_SOURCES)})"
             )
+        if board.filter_facet is not None or board.filter_value is not None:
+            if (board.source != "workday"
+                    or board.filter_facet not in ("workerSubType", "jobFamilyGroup")
+                    or not isinstance(board.filter_value, str) or not board.filter_value.strip()):
+                raise ConfigError(f"{path}: native filter requires a Workday filter_facet "
+                                  "(workerSubType or jobFamilyGroup) and nonempty filter_value")
         if board.source == "workday":
             if not isinstance(board.host, str) or not isinstance(board.slug, str):
                 raise ConfigError(f"{path}: Workday board requires a matching host and tenant/site slug")

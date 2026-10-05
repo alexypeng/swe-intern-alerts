@@ -6,6 +6,7 @@ import sys
 from collections import Counter, defaultdict
 from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from time import perf_counter
@@ -177,13 +178,21 @@ def main(argv: list[str] | None = None) -> int:
                         help="one-off: send every open posting from the last DAYS days, "
                              "ignoring and not saving state (running it twice sends twice)")
     parser.add_argument("--config", default="config.toml", type=Path)
+    parser.add_argument("--unfiltered", action="store_true",
+                        help="ignore native source filters for a coverage check; requires --dry-run")
     args = parser.parse_args(argv)
+    if args.unfiltered and not args.dry_run:
+        parser.error("--unfiltered requires --dry-run")
 
     state_path = Path(os.environ.get("STATE_PATH", "state.json"))
     now = datetime.now(UTC)
     persist = not (args.dry_run or args.backfill)
     try:
         config = load_config(args.config)
+        if args.unfiltered:
+            config = replace(config, boards=tuple(
+                replace(board, filter_facet=None, filter_value=None) for board in config.boards
+            ))
         webhooks = None if args.dry_run else load_webhooks()
         state = State() if args.backfill else load_state(state_path)
     except (ConfigError, StateError) as e:

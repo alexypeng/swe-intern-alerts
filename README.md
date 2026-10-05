@@ -76,7 +76,17 @@ Edit [`config.toml`](config.toml), then commit and push. Each new entry gets a s
 
   Every search page and required detail must succeed before the board is processed. Workday URLs for the same tenant and verified `JR` requisition are compared as one job across career sites; messages retain the original application URL. Existing state needs no reset.
 
-  NVIDIA uses `partition_facet = "jobFamilyGroup"` to read all categories beyond the 2,000-result window, with cross-checks for coverage and changing counts. Other capped boards are rejected unless partition coverage has been verified and explicitly enabled. A category that itself reaches 2,000 results is also rejected. [NVIDIA validation](docs/nvidia-workday.md) records the evidence and limits.
+  NVIDIA uses its native Job Type filter on every search page:
+
+  ```toml
+  filter_facet = "workerSubType"
+  filter_value = "Intern (Fixed Term)"
+  partition_facet = "jobFamilyGroup"
+  ```
+
+  The filter ID is discovered from the board each poll. Filtered totals, page sizes, unique paths, and the final filter count are checked before fetching eligible details. Existing title, degree, channel, and region rules still apply. If the label is unavailable, a warning precedes a complete unfiltered scan. Filters are configured per validated Workday board; no hourly scan schedule or extra state is needed.
+
+  `partition_facet = "jobFamilyGroup"` remains for manual unfiltered scans and fallback beyond the 2,000-result window. Category pages share four workers, with cross-checks for coverage and changing counts. Other capped boards are rejected unless partition coverage has been verified and explicitly enabled. A category that itself reaches 2,000 results is also rejected. [NVIDIA validation](docs/nvidia-workday.md) records the evidence and limits.
 
   Workday eligibility also checks explicit education requirements in descriptions: graduate-only requirements are excluded, mixed requirements accepting bachelor's students remain eligible, and preferred degrees do not exclude roles. Unrecognized education wording retains the existing title-based policy.
 - **Company with no supported board** (e.g. Google, Microsoft): add its name to `faang_plus` exactly as Simplify spells it (case doesn't matter).
@@ -91,9 +101,12 @@ Requires [uv](https://docs.astral.sh/uv/).
 ```
 uv run pytest                                   # tests
 uv run python -m intern_alerts --dry-run        # fetch and print messages; sends nothing, saves nothing
+uv run python -m intern_alerts --dry-run --unfiltered  # manual comparison without native filters
 ```
 
 A dry run with no `state.json` treats everything as a first poll, so it only prints summary lines.
+
+`--unfiltered` requires `--dry-run`. It preserves Workday partition coverage and local eligibility rules while bypassing native source filters. Workday logs separate search-scan and detail durations.
 
 To send real messages from your machine (PowerShell), set the webhook URLs for the session first:
 
@@ -126,4 +139,4 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 ## Roadmap
 
-Next: deploy and check the concurrent company-board fetches, then investigate Meta before Amazon and Eightfold, followed by Apple, Google and custom sites. Additional Workday boards require individual completeness checks. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.
+Next: deploy and check NVIDIA native filtering, validate native filters on other supported boards where the API supports them, then investigate Meta before Amazon and Eightfold, followed by Apple, Google and custom sites. Additional Workday boards require individual completeness checks. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.

@@ -285,10 +285,12 @@ slug = "salesforce/Futureforce_Internships"
 host = "salesforce.wd12.myworkdayjobs.com"
 name = "Salesforce"
 
-# Verified category partitions avoid NVIDIA's capped unfiltered result window.
+# Native internship filter; verified partitions remain for manual full scans/fallback.
 [[boards]]
 source = "workday"
 slug = "nvidia/NVIDIAExternalCareerSite"
 host = "nvidia.wd5.myworkdayjobs.com"
 partition_facet = "jobFamilyGroup"
+filter_facet = "workerSubType"
+filter_value = "Intern (Fixed Term)"
 name = "NVIDIA"

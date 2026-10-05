@@ -28,6 +28,24 @@ def test_repo_config_loads():
     assert {b.key for b in config.boards} >= {"greenhouse:stripe", "ashby:ramp"}
     nvidia = next(b for b in config.boards if b.key == "workday:nvidia/NVIDIAExternalCareerSite")
     assert nvidia.partition_facet == "jobFamilyGroup"
+    assert nvidia.filter_facet == "workerSubType"
+    assert nvidia.filter_value == "Intern (Fixed Term)"
+
+
+@pytest.mark.parametrize("source,fields", [
+    ("workday", 'filter_facet = "workerSubType"'),
+    ("workday", 'filter_value = "Intern"'),
+    ("workday", 'filter_facet = "searchText"\nfilter_value = "Intern"'),
+    ("workday", 'filter_facet = "workerSubType"\nfilter_value = " "'),
+    ("workday", 'filter_facet = "workerSubType"\nfilter_value = 42'),
+    ("lever", 'filter_facet = "workerSubType"\nfilter_value = "Intern"'),
+])
+def test_invalid_native_filter_config_is_rejected(tmp_path, source, fields):
+    text = ('simplify_url = "u"\nfaang_plus = []\n[[boards]]\n'
+            f'source = "{source}"\nname = "NVIDIA"\nslug = "nvidia/site"\n'
+            'host = "nvidia.wd5.myworkdayjobs.com"\n' + fields + '\n')
+    with pytest.raises(ConfigError, match="native filter"):
+        load_config(write(tmp_path, text))
 
 
 def test_workday_config_rejects_unverified_partition_facet(tmp_path):
