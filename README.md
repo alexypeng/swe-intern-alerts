@@ -14,6 +14,8 @@ San Francisco, Seattle, New York City · Aug 31
 Toronto · Aug 31
 ```
 
+Discord can be accessed here: https://discord.gg/hjb77xqxHP
+
 ## How it works
 
 ```
