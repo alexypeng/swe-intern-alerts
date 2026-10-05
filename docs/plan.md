@@ -172,6 +172,24 @@ A scheduled job that finds new internship postings and announces them in Discord
 - **Lever:** `https://api.lever.co/v0/postings/<slug>?mode=json` returns every posting in one list. It has `text` (title), `categories.commitment` (a free-text label per company), `categories.location` / `allLocations`, `workplaceType`, `hostedUrl`, and `createdAt` (milliseconds).
 - **SmartRecruiters:** `https://api.smartrecruiters.com/v1/companies/<slug>/postings?limit=100&offset=N` is paged (max 100 per page, with `totalFound`). The slug is case-sensitive. It has `name`, `typeOfEmployment.label`, `location.fullLocation` / `remote`, and `releasedDate`. The list has no job URL, so it's built as `https://jobs.smartrecruiters.com/<slug>/<id>`, the same form Simplify uses. All pages are fetched, capped at 50.
 
-## Open questions
+## Current progress (2026-10-05)
+
+- Salesforce and NVIDIA Workday support is committed and pushed to `main`. The push rejection was resolved by merging the remote README Discord-link change; both changes are preserved.
+- Local regression suite: 231 tests passed. GitHub's Tests workflow succeeded on deployed merge commit `61c4ff4`.
+- The user confirmed that the deployed Workday poll verification worked. Both new boards use silent first successful polls; later eligible postings are announced only if unseen through both direct sources and Simplify. The live dry-run counts in the validation notes are test evidence, not production announcement counts.
+- Subsequently inspected production run `37269532808` on commit `61c4ff4`: success; NVIDIA verified 2,679 search rows and fetched 100 candidate details. Salesforce was first-polled with no new silent records because eligible existing roles were already seen; NVIDIA was first-polled with four additional silent records. The workflow saved updated state in commit `2e67c6c`. Poll and post took 71 seconds; source fetches currently run sequentially across boards, while Workday uses up to four requests internally. Bounded parallel board fetching and per-source timing are proposed performance work, not implemented.
+- GitHub history showed successful external dispatches at 05:00, 05:20, and 05:40 UTC, confirming the observed 20-minute cadence for those runs.
+- Next task: optimize polling with bounded parallel board fetching, as scoped below. The user deferred implementation; no concurrency changes have been made. After that, investigate Amazon's direct job source, including complete pagination, required fields, internship/degree eligibility, and Simplify duplicate identity. No Amazon adapter has been implemented yet. Additional Workday tenants still require individual validation.
+
+## Next task: shorten polling (implementation deferred)
+
+- **Baseline:** deployed run `37269532808` spent 71 seconds in Poll and post. Company boards are currently fetched sequentially; Workday already uses up to four concurrent HTTP requests internally. First-poll recording does not reduce future fetch counts.
+- **Change:** fetch company boards with a pool of four board workers. Keep successful results in configuration order and process Simplify after direct sources so duplicate checks continue to prefer direct postings. Workday's existing internal request pool remains separate; four board workers is not a global limit of four HTTP requests.
+- **Safety:** only fetching runs concurrently. Classification, deduplication, board initialization, state writes, and Discord sends remain sequential. A failed board stays omitted and uninitialized; Workday's complete-page/detail requirement remains intact.
+- **Measurement:** add per-source fetch timing and total fetch timing logs. Compare sequential and concurrent live dry runs on the same machine/configuration, checking both duration and successful board coverage. The deployed 71-second step is a reference, not an identical-environment benchmark.
+- **Verification:** test overlapping fetches and the four-worker bound, deterministic result order, direct/Simplify duplicate precedence when requests finish out of order, and failure isolation with silent first-poll behavior. Run the regression suite and a live dry run that sends no messages and saves no state. After deployment, compare scheduled run timings.
+- **Status:** plan only, at the user's explicit request. Resume implementation when requested, then continue with Amazon source investigation.
+
+## Remaining source questions
 
 - Workday expansion: verify other tenants' partition coverage, posting dates, requisition formats, and education wording before adding boards. NVIDIA's category partitions returned all 2,678 observed postings; a category growing to 2,000 or more is deliberately rejected until further partitioning is verified. See `workday-adapter.md` and `nvidia-workday.md` for evidence and verification.

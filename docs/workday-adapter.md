@@ -1,6 +1,6 @@
 # Workday adapter investigation
 
-Checked 2026-10-05. Salesforce's adapter and NVIDIA's verified category partitions are implemented locally. Earlier observations below record the investigation that informed these changes. The agreed pagination failure policy is in `plan.md`; NVIDIA expansion evidence is in `nvidia-workday.md`.
+Checked 2026-10-05. Salesforce's adapter and NVIDIA's verified category partitions are committed and deployed; the user confirmed production poll verification worked. Earlier observations below record the investigation that informed these changes. The agreed pagination failure policy and current progress are in `plan.md`; NVIDIA expansion evidence and deployment follow-up are in `nvidia-workday.md`.
 
 ## Verified source behavior
 
