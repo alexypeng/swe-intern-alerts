@@ -16,10 +16,11 @@ A scheduled job that finds new internship postings and announces them in Discord
 - **Company sources (primary):** poll the company boards on a manually maintained approved list. Greenhouse, Ashby, Lever, SmartRecruiters, and Workday (Salesforce internship board and NVIDIA) are built. More platforms come later, most reliable first:
   1. ~~Lever, SmartRecruiters~~ (done)
   2. Expand Workday after validating each tenant's completeness and field mapping.
-  3. Amazon, Eightfold
-  4. Apple
-  5. Google (HTML), Meta (rotating GraphQL), custom sites
-  6. Microsoft, which blocks datacenter IPs, so it needs the Raspberry Pi host
+  3. Meta (rotating GraphQL)
+  4. Amazon, Eightfold
+  5. Apple
+  6. Google (HTML), custom sites
+  7. Microsoft, which blocks datacenter IPs, so it needs the Raspberry Pi host
 - **Simplify (slower fallback):** take postings from companies on the manually maintained FAANG+ list. Simplify lags company boards by hours, so it only catches what direct sources can't fetch yet. The duplicate check skips its copies of postings already seen directly.
 - **Build order:** get the core pipeline working end to end with Greenhouse, Ashby, and Simplify before adding platforms.
 - **Workday pagination:** return a board's results only after every required page succeeds. If any page fails, discard that board's partial results and retry the entire board on the next poll. A partial fetch never marks the board successfully polled; this preserves silent first-poll behavior without adding page-resume state.
@@ -177,18 +178,19 @@ A scheduled job that finds new internship postings and announces them in Discord
 - Salesforce and NVIDIA Workday support is committed and pushed to `main`. The push rejection was resolved by merging the remote README Discord-link change; both changes are preserved.
 - Local regression suite: 231 tests passed. GitHub's Tests workflow succeeded on deployed merge commit `61c4ff4`.
 - The user confirmed that the deployed Workday poll verification worked. Both new boards use silent first successful polls; later eligible postings are announced only if unseen through both direct sources and Simplify. The live dry-run counts in the validation notes are test evidence, not production announcement counts.
-- Subsequently inspected production run `37269532808` on commit `61c4ff4`: success; NVIDIA verified 2,679 search rows and fetched 100 candidate details. Salesforce was first-polled with no new silent records because eligible existing roles were already seen; NVIDIA was first-polled with four additional silent records. The workflow saved updated state in commit `2e67c6c`. Poll and post took 71 seconds; source fetches currently run sequentially across boards, while Workday uses up to four requests internally. Bounded parallel board fetching and per-source timing are proposed performance work, not implemented.
+- Subsequently inspected production run `37269532808` on commit `61c4ff4`: success; NVIDIA verified 2,679 search rows and fetched 100 candidate details. Salesforce was first-polled with no new silent records because eligible existing roles were already seen; NVIDIA was first-polled with four additional silent records. The workflow saved updated state in commit `2e67c6c`. Poll and post took 71 seconds with sequential board fetching; Workday used up to four requests internally. The local concurrency change has not yet been deployed.
 - GitHub history showed successful external dispatches at 05:00, 05:20, and 05:40 UTC, confirming the observed 20-minute cadence for those runs.
-- Next task: optimize polling with bounded parallel board fetching, as scoped below. The user deferred implementation; no concurrency changes have been made. After that, investigate Amazon's direct job source, including complete pagination, required fields, internship/degree eligibility, and Simplify duplicate identity. No Amazon adapter has been implemented yet. Additional Workday tenants still require individual validation.
+- Polling optimization is authorized, implemented locally, and verified with 235 passing tests. Same-machine live dry runs took 88.73 seconds with one board worker and 58.67 seconds with four (33.9% reduction); both succeeded on all 52 company boards plus Simplify with identical per-source posting counts. NVIDIA verified 2,684 search rows and fetched 107 candidate details in both runs. Both dry runs sent nothing and saved no state. This is one measured pair, not a production timing guarantee.
+- Next: commit and deploy the polling optimization, then compare scheduled run timings. Investigate Meta's direct job source before Amazon, including complete pagination, required fields, internship/degree eligibility, and Simplify duplicate identity. Neither adapter has been implemented yet. Additional Workday tenants still require individual validation.
 
-## Next task: shorten polling (implementation deferred)
+## Current task: shorten polling
 
-- **Baseline:** deployed run `37269532808` spent 71 seconds in Poll and post. Company boards are currently fetched sequentially; Workday already uses up to four concurrent HTTP requests internally. First-poll recording does not reduce future fetch counts.
+- **Baseline:** deployed run `37269532808` spent 71 seconds in Poll and post with sequential company-board fetching. Workday already uses up to four concurrent HTTP requests internally. First-poll recording does not reduce future fetch counts.
 - **Change:** fetch company boards with a pool of four board workers. Keep successful results in configuration order and process Simplify after direct sources so duplicate checks continue to prefer direct postings. Workday's existing internal request pool remains separate; four board workers is not a global limit of four HTTP requests.
 - **Safety:** only fetching runs concurrently. Classification, deduplication, board initialization, state writes, and Discord sends remain sequential. A failed board stays omitted and uninitialized; Workday's complete-page/detail requirement remains intact.
 - **Measurement:** add per-source fetch timing and total fetch timing logs. Compare sequential and concurrent live dry runs on the same machine/configuration, checking both duration and successful board coverage. The deployed 71-second step is a reference, not an identical-environment benchmark.
 - **Verification:** test overlapping fetches and the four-worker bound, deterministic result order, direct/Simplify duplicate precedence when requests finish out of order, and failure isolation with silent first-poll behavior. Run the regression suite and a live dry run that sends no messages and saves no state. After deployment, compare scheduled run timings.
-- **Status:** plan only, at the user's explicit request. Resume implementation when requested, then continue with Amazon source investigation.
+- **Status:** implemented and verified locally; not committed or deployed. Regression tests cover overlapping fetches and the four-worker bound, deterministic order, direct/Simplify precedence with forced out-of-order completion, failed-board recovery and silent initialization, timing logs, and fallback-only configuration. After deployment and production timing verification, continue with Meta source investigation, then Amazon.
 
 ## Remaining source questions
 

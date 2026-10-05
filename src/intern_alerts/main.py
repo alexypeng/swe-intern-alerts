@@ -5,8 +5,10 @@ import os
 import sys
 from collections import Counter, defaultdict
 from collections.abc import Callable
+from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from time import perf_counter
 
 import httpx
 
@@ -33,12 +35,13 @@ BOARD_FETCHERS = {
     "smartrecruiters": fetch_smartrecruiters,
     "workday": fetch_workday,
 }
+BOARD_WORKERS = 4
 
 
 def fetch_all(
     client: httpx.Client, config: Config
 ) -> list[tuple[str, set[str], list[Posting]]]:
-    """Fetches company boards first, then Simplify. Failed sources are logged and left out.
+    """Fetches boards concurrently in config order, then Simplify; omits failed sources.
 
     Returns (label, board keys the fetch covered, postings) for each successful fetch.
     A fetch covers a board even if it returned no postings for it.
@@ -47,17 +50,39 @@ def fetch_all(
         (board.key, {board.key}, lambda board=board: BOARD_FETCHERS[board.source](client, board))
         for board in config.boards
     ]
-    jobs.append((
+    simplify = (
         "simplify",
         {simplify_board_key(name) for name in config.faang_plus},
         lambda: fetch_simplify(client, config.simplify_url, config.faang_plus),
-    ))
-    fetched = []
-    for label, keys, fetch in jobs:
+    )
+
+    def fetch_timed(job):
+        label, keys, fetch = job
+        started = perf_counter()
         try:
-            fetched.append((label, keys, fetch()))
+            postings = fetch()
         except SourceError as e:
-            print(f"::warning::skipped {e}")
+            return label, keys, None, str(e), perf_counter() - started
+        return label, keys, postings, None, perf_counter() - started
+
+    fetched = []
+
+    def collect(result):
+        label, keys, postings, error, elapsed = result
+        if error is not None:
+            print(f"::warning::skipped {error}")
+        else:
+            fetched.append((label, keys, postings))
+        print(f"fetch {label}: {elapsed:.2f}s ({'failed' if error else 'ok'})")
+
+    started = perf_counter()
+    # map yields in input order even when requests finish out of order. Only
+    # network fetching touches workers; run() processes all state sequentially.
+    with ThreadPoolExecutor(max_workers=BOARD_WORKERS) as pool:
+        for result in pool.map(fetch_timed, jobs):
+            collect(result)
+    collect(fetch_timed(simplify))
+    print(f"fetch total: {perf_counter() - started:.2f}s")
     return fetched
 
 

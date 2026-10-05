@@ -134,4 +134,4 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 ## Roadmap
 
-Next: expand Workday coverage after verifying complete fetching, then Amazon and Eightfold, Apple, Google, Meta and custom sites. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.
+Next: deploy and check the concurrent company-board fetches, then investigate Meta before Amazon and Eightfold, followed by Apple, Google and custom sites. Additional Workday boards require individual completeness checks. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.

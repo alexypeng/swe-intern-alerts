@@ -3,11 +3,13 @@
 import json
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
+from threading import Barrier, Event, Lock
 
 import httpx
 
+import intern_alerts.main as pipeline
 from intern_alerts.config import Board, Config
-from intern_alerts.main import run
+from intern_alerts.main import fetch_all, run
 from intern_alerts.models import CHANNELS
 from intern_alerts.state import State
 
@@ -135,12 +137,25 @@ def test_non_matching_postings_are_neither_sent_nor_recorded():
 
 
 def test_failed_board_is_not_marked_polled():
-    web = FakeWeb(ashby=[ashby_job("a1")])
+    web = FakeWeb(greenhouse=[gh_job(1)], ashby=[ashby_job("a1")])
     web.fail.add("boards-api.greenhouse.io")
     state = State()
     assert web.run(state) == 0  # a flaky source is a warning, not a failed run
     assert "greenhouse:stripe" not in state.boards
     assert "ashby:ramp" in state.boards
+    assert [record.job_id for record in state.records] == ["a1"]
+    assert web.sent == {}
+
+    # A recovered board still gets its silent first poll, then announces new jobs.
+    web.fail.clear()
+    assert web.run(state) == 0
+    assert state.is_board_polled("greenhouse:stripe")
+    assert web.sent == {}
+    web.greenhouse.append(gh_job(2, title="Backend Software Engineer Intern"))
+    assert web.run(state) == 0
+    [message] = web.sent["swe"]
+    assert "gh_jid=2>" in message
+    assert "gh_jid=1>" not in message
 
 
 def test_failed_post_is_retried_next_run():
@@ -215,3 +230,102 @@ def test_dry_run_sends_nothing(capsys):
     web.run(polled_state(), webhooks=None)
     assert web.sent == {}
     assert "--- swe ---" in capsys.readouterr().out
+
+
+def test_board_fetches_overlap_with_at_most_four_workers(monkeypatch):
+    config = replace(CONFIG, boards=tuple(
+        Board("greenhouse", str(i), f"Company {i}") for i in range(8)
+    ))
+    barrier = Barrier(4, timeout=5)
+    lock = Lock()
+    active = peak = completed = 0
+
+    def fetch_board(client, board):
+        nonlocal active, peak, completed
+        with lock:
+            active += 1
+            peak = max(peak, active)
+            assert active <= 4
+        try:
+            # Two batches of four must each overlap; no timing/sleep assumption.
+            barrier.wait()
+            barrier.wait()
+            return []
+        finally:
+            with lock:
+                active -= 1
+                completed += 1
+
+    def fetch_fallback(*args):
+        assert active == 0
+        assert completed == 8
+        return []
+
+    monkeypatch.setitem(pipeline.BOARD_FETCHERS, "greenhouse", fetch_board)
+    monkeypatch.setattr(pipeline, "fetch_simplify", fetch_fallback)
+    with httpx.Client() as client:
+        results = fetch_all(client, config)
+    assert peak == 4
+    assert [label for label, _, _ in results] == [b.key for b in config.boards] + ["simplify"]
+
+
+def test_out_of_order_fetches_keep_config_order_and_direct_duplicate_priority(monkeypatch):
+    ashby_finished = Event()
+    finished = []
+    greenhouse_fetch = pipeline.BOARD_FETCHERS["greenhouse"]
+    ashby_fetch = pipeline.BOARD_FETCHERS["ashby"]
+
+    def slow_greenhouse(client, board):
+        assert ashby_finished.wait(timeout=5)
+        postings = greenhouse_fetch(client, board)
+        finished.append("greenhouse")
+        return postings
+
+    def fast_ashby(client, board):
+        postings = ashby_fetch(client, board)
+        finished.append("ashby")
+        ashby_finished.set()
+        return postings
+
+    monkeypatch.setitem(pipeline.BOARD_FETCHERS, "greenhouse", slow_greenhouse)
+    monkeypatch.setitem(pipeline.BOARD_FETCHERS, "ashby", fast_ashby)
+    web = FakeWeb(
+        greenhouse=[gh_job(5)], ashby=[ashby_job("a1")],
+        simplify=[simplify_item("s5", "https://stripe.com/jobs/search?gh_jid=5&utm_source=Simplify")],
+    )
+    with httpx.Client(transport=httpx.MockTransport(web.handler)) as client:
+        results = fetch_all(client, CONFIG)
+    assert finished == ["ashby", "greenhouse"]
+    assert [label for label, _, _ in results] == ["greenhouse:stripe", "ashby:ramp", "simplify"]
+
+    ashby_finished.clear()
+    finished.clear()
+    state = polled_state()
+    assert web.run(state) == 0
+    assert finished == ["ashby", "greenhouse"]
+    [message] = web.sent["swe"]
+    assert message.count("**Stripe**") == 1
+    assert "utm_source" not in message
+    assert {record.job_id for record in state.records} == {"5", "a1"}
+
+
+def test_fetch_timings_include_failed_sources_and_total(capsys):
+    web = FakeWeb()
+    web.fail.add("boards-api.greenhouse.io")
+    assert web.run(State()) == 0
+    output = capsys.readouterr().out
+    assert "fetch greenhouse:stripe:" in output
+    assert "s (failed)" in output
+    assert "fetch ashby:ramp:" in output
+    assert "fetch simplify:" in output
+    assert "fetch total:" in output
+
+
+def test_no_company_boards_still_fetches_simplify():
+    config = replace(CONFIG, boards=())
+    web = FakeWeb(simplify=[simplify_item("s5", "https://stripe.test/5")])
+    state = State()
+    assert web.run(state, config=config) == 0
+    assert set(state.boards) == {"simplify:stripe"}
+    assert [record.job_id for record in state.records] == ["s5"]
+    assert web.sent == {}
