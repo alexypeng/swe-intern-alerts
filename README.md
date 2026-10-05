@@ -19,7 +19,7 @@ Toronto · Aug 31
 ```
 cron-job.org (every 20 min) → GitHub Actions
   → load state.json from the `state` branch
-  → fetch Greenhouse, Ashby, Lever, and SmartRecruiters boards, then Simplify (FAANG+ fallback)
+  → fetch Greenhouse, Ashby, Lever, SmartRecruiters, and Workday boards, then Simplify (FAANG+ fallback)
   → keep undergrad internships; pick channel(s) and region(s)
   → skip anything already announced (job ID → URL → company + title + location)
   → post to each channel's Discord webhook
@@ -27,7 +27,7 @@ cron-job.org (every 20 min) → GitHub Actions
 ```
 
 - **Sources:**
-  - Greenhouse, Ashby, Lever, and SmartRecruiters company boards, polled directly. This is the fast path.
+  - Greenhouse, Ashby, Lever, SmartRecruiters, and Workday company boards, polled directly. This is the fast path. Workday coverage includes Salesforce's internship board and NVIDIA.
   - Simplify's internship list for the companies in `faang_plus`. It's a slower fallback (Simplify lags company boards by hours) for companies with no supported board.
 - **Channels:** SWE, data/ML, hardware/firmware, quant, other engineering, product.
 - **Regions:** US, Canada, Europe, UK, Remote, and "Location not specified" for vague locations.
@@ -70,6 +70,21 @@ Edit [`config.toml`](config.toml), then commit and push. Each new entry gets a s
   - Ashby: `https://api.ashbyhq.com/posting-api/job-board/<slug>`
   - Lever: `https://api.lever.co/v0/postings/<slug>?mode=json`
   - SmartRecruiters: `https://api.smartrecruiters.com/v1/companies/<slug>/postings` (the slug is case-sensitive)
+- **Workday board.** Use the host from its public career URL and a `tenant/site` slug:
+
+  ```toml
+  [[boards]]
+  source = "workday"
+  slug = "salesforce/Futureforce_Internships"
+  host = "salesforce.wd12.myworkdayjobs.com"
+  name = "Salesforce"
+  ```
+
+  Every search page and required detail must succeed before the board is processed. Workday URLs for the same tenant and verified `JR` requisition are compared as one job across career sites; messages retain the original application URL. Existing state needs no reset.
+
+  NVIDIA uses `partition_facet = "jobFamilyGroup"` to read all categories beyond the 2,000-result window, with cross-checks for coverage and changing counts. Other capped boards are rejected unless partition coverage has been verified and explicitly enabled. A category that itself reaches 2,000 results is also rejected. [NVIDIA validation](docs/nvidia-workday.md) records the evidence and limits.
+
+  Workday eligibility also checks explicit education requirements in descriptions: graduate-only requirements are excluded, mixed requirements accepting bachelor's students remain eligible, and preferred degrees do not exclude roles. Unrecognized education wording retains the existing title-based policy.
 - **Company with no supported board** (e.g. Google, Microsoft): add its name to `faang_plus` exactly as Simplify spells it (case doesn't matter).
 - **Every hiring cycle:** update `simplify_url` to the new Simplify repo (e.g. `Summer2028-Internships`).
 
@@ -117,4 +132,4 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 ## Roadmap
 
-More platforms, most reliable first: Workday, Amazon and Eightfold, Apple, then Google, Meta and custom sites. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.
+Next: expand Workday coverage after verifying complete fetching, then Amazon and Eightfold, Apple, Google, Meta and custom sites. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.

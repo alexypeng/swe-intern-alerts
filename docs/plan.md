@@ -13,15 +13,17 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 ### Sources
 
-- **Company sources (primary):** poll the company boards on a manually maintained approved list. Greenhouse, Ashby, Lever, and SmartRecruiters are built. More platforms come later, most reliable first:
+- **Company sources (primary):** poll the company boards on a manually maintained approved list. Greenhouse, Ashby, Lever, SmartRecruiters, and Workday (Salesforce internship board and NVIDIA) are built. More platforms come later, most reliable first:
   1. ~~Lever, SmartRecruiters~~ (done)
-  2. Workday
+  2. Expand Workday after validating each tenant's completeness and field mapping.
   3. Amazon, Eightfold
   4. Apple
   5. Google (HTML), Meta (rotating GraphQL), custom sites
   6. Microsoft, which blocks datacenter IPs, so it needs the Raspberry Pi host
 - **Simplify (slower fallback):** take postings from companies on the manually maintained FAANG+ list. Simplify lags company boards by hours, so it only catches what direct sources can't fetch yet. The duplicate check skips its copies of postings already seen directly.
 - **Build order:** get the core pipeline working end to end with Greenhouse, Ashby, and Simplify before adding platforms.
+- **Workday pagination:** return a board's results only after every required page succeeds. If any page fails, discard that board's partial results and retry the entire board on the next poll. A partial fetch never marks the board successfully polled; this preserves silent first-poll behavior without adding page-resume state.
+- **Large Workday boards:** NVIDIA uses opt-in `jobFamilyGroup` partitions discovered from the unfiltered response. Fetch every category; each must stay below 2,000 results. Require category totals to equal the independent time-type total, exact page counts, disjoint unique paths, and unchanged category/time-type counts after scanning. Any failed check rejects the entire board. Use four concurrent HTTP requests at most. For configured partition boards, shared title/degree rules select detail candidates after the complete search scan; channel and region rules still run on full details.
 
 - No filtering by internship term. The silent first poll keeps existing old-term postings from being announced.
 
@@ -49,6 +51,7 @@ A scheduled job that finds new internship postings and announces them in Discord
   1. Identity key (company + source job posting ID).
   2. Normalized original job URL, which catches the same job from Simplify and from Greenhouse/Ashby.
   3. Normalized company + title + location, as a last resort.
+- **Workday copies:** postings from the same Workday tenant with the same requisition ID count as one job, even across career-site URLs. Normalize those URL variants for duplicate checks while keeping the original application link for Discord. Apply the same normalization to historical stored URLs so existing state continues to prevent duplicate announcements.
 
 ### State file
 
@@ -80,11 +83,12 @@ A scheduled job that finds new internship postings and announces them in Discord
 - **Intern detection:**
   - Ashby: `employmentType == "Intern"`.
   - Lever and SmartRecruiters: the platform's label (Lever `commitment`, SmartRecruiters `typeOfEmployment`) **or** the title matches the intern regex. Labels vary by company, and some internships are labelled "Full-time". Word boundaries keep out labels like "International Office Entity".
-  - Greenhouse: title matches `\b(intern|internship|co-op|coop)s?\b`, case-insensitive.
+  - Greenhouse and Workday: title matches `\b(intern|internship|co-op|coop)s?\b`, case-insensitive. Workday's `timeType` can be `Full time` for internships and is not used as an eligibility signal.
   - All sources: titles containing "high school" are excluded.
 - **Undergrad only:**
   - Simplify postings are kept if `degrees` is empty or includes `Bachelor's` or `Associate's`.
   - On all sources, a title naming a graduate degree or graduate students (PhD, MS, MSc, Master's, MBA, Doctoral, Graduate, Grad) is excluded unless it also names BS, BSc, Bachelor's, or Undergrad. "Undergraduate" does not count as "Graduate".
+  - Workday additionally extracts explicit enrollment/education requirements from description paragraphs. A graduate-only requirement excludes the role; a requirement allowing bachelor's or associate's students remains eligible. Preferred qualifications do not establish a required degree, and a generic mixed-degree introduction cannot override a specific graduate-only requirement. Unrecognized or unstated education retains the existing title-based policy. The user approved this extension after a confirmed NVIDIA graduate-only false positive. Partition-mode detail candidates must have an inspectable description.
 - **Regions:** Canada, US, UK, Europe, Remote, parsed with a lookup table: country names, US states and abbreviations, Canadian provinces, major cities and city abbreviations (`NYC`, `SF`), European countries.
   - Two-letter codes after a comma are US states or Canadian provinces. A `CA` that follows a province code (`Toronto, ON, CA`) is Canada's country code, not California.
   - Plain `Remote` goes under Remote. Remote-in-a-country (e.g. `Remote (US)`) goes under Remote only if that country is in one of the listed regions, so `Remote (India)` is dropped.
@@ -114,7 +118,7 @@ A scheduled job that finds new internship postings and announces them in Discord
 - `config.toml` at the repo root holds:
   - `simplify_url`: the listings URL, which changes each hiring cycle.
   - `faang_plus`: lowercase company names, matched case-insensitively against Simplify's `company_name`. Seeded from Simplify's current list.
-  - `[[boards]]` entries, each with `source` (`greenhouse` or `ashby`), `slug` (the board ID in the API URL), and `name` (display name, also used as the company name for dedup).
+  - `[[boards]]` entries, each with `source` (`greenhouse`, `ashby`, `lever`, `smartrecruiters`, or `workday`), `slug` (the board ID in the API URL), and `name` (display name, also used as the company name for dedup). Workday additionally requires a validated `host` and uses a `tenant/site` slug. NVIDIA opts into verified partitions with `partition_facet = "jobFamilyGroup"`; omitted means capped boards still fail.
 - Webhook URLs are GitHub repository secrets, one per channel: `WEBHOOK_SWE`, `WEBHOOK_DATA_ML`, `WEBHOOK_HARDWARE`, `WEBHOOK_QUANT`, `WEBHOOK_OTHER_ENG`, `WEBHOOK_PRODUCT`. The workflow passes them to the program as environment variables.
 - If any webhook secret is missing, the run exits with an error naming it, before fetching anything.
 
@@ -170,4 +174,4 @@ A scheduled job that finds new internship postings and announces them in Discord
 
 ## Open questions
 
-- When Workday is added: check that Simplify's Workday URLs normalize to the same value as fetched ones.
+- Workday expansion: verify other tenants' partition coverage, posting dates, requisition formats, and education wording before adding boards. NVIDIA's category partitions returned all 2,678 observed postings; a category growing to 2,000 or more is deliberately rejected until further partitioning is verified. See `workday-adapter.md` and `nvidia-workday.md` for evidence and verification.

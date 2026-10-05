@@ -23,6 +23,7 @@ from intern_alerts.sources.lever import fetch_lever
 from intern_alerts.sources.simplify import board_key as simplify_board_key
 from intern_alerts.sources.simplify import fetch_simplify
 from intern_alerts.sources.smartrecruiters import fetch_smartrecruiters
+from intern_alerts.sources.workday import fetch_workday
 from intern_alerts.state import Record, State, StateError, load_state, save_state
 
 BOARD_FETCHERS = {
@@ -30,6 +31,7 @@ BOARD_FETCHERS = {
     "ashby": fetch_ashby,
     "lever": fetch_lever,
     "smartrecruiters": fetch_smartrecruiters,
+    "workday": fetch_workday,
 }
 
 

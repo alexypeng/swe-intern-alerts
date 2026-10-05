@@ -277,3 +277,18 @@ name = "Renesas Electronics"
 source = "smartrecruiters"
 slug = "LLNL"
 name = "Lawrence Livermore National Laboratory"
+
+# Workday: first rollout uses the validated small Salesforce internship board.
+[[boards]]
+source = "workday"
+slug = "salesforce/Futureforce_Internships"
+host = "salesforce.wd12.myworkdayjobs.com"
+name = "Salesforce"
+
+# Verified category partitions avoid NVIDIA's capped unfiltered result window.
+[[boards]]
+source = "workday"
+slug = "nvidia/NVIDIAExternalCareerSite"
+host = "nvidia.wd5.myworkdayjobs.com"
+partition_facet = "jobFamilyGroup"
+name = "NVIDIA"

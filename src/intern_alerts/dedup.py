@@ -3,6 +3,7 @@
 from collections.abc import Iterable
 
 from intern_alerts.models import Posting
+from intern_alerts.normalize import normalize_url
 from intern_alerts.state import Record
 
 
@@ -18,7 +19,7 @@ class SeenIndex:
         """Call as soon as a posting is chosen, so a second copy later in the same run is caught."""
         self._ids.add((record.company, record.job_id))
         if record.url:
-            self._urls.add(record.url)
+            self._urls.add(normalize_url(record.url))
         self._fields.add((record.company, record.title, record.location))
 
     def seen_by(self, posting: Posting) -> str | None:

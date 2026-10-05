@@ -57,6 +57,11 @@ INTERN_TITLE = re.compile(r"\b(intern|internship|co-op|coop)s?\b", re.IGNORECASE
 EXCLUDED_TITLE = re.compile(r"\bhigh school\b")
 
 
+def is_intern_title(title: str) -> bool:
+    """Shared title eligibility for title-based sources and early detail filtering."""
+    return bool(INTERN_TITLE.search(title)) and not EXCLUDED_TITLE.search(normalize_text(title))
+
+
 def is_intern(posting: Posting) -> bool:
     if EXCLUDED_TITLE.search(normalize_text(posting.title)):
         return False
@@ -72,7 +77,7 @@ def is_intern(posting: Posting) -> bool:
             INTERN_TITLE.search(posting.employment_type or "")
             or INTERN_TITLE.search(posting.title)
         )
-    return bool(INTERN_TITLE.search(posting.title))
+    return is_intern_title(posting.title)
 
 
 # Degree level: only postings open to undergrads
@@ -88,7 +93,11 @@ UNDERGRAD_TITLE = re.compile(r"\b(?:bs|bsc|bachelor|bachelors|undergrad|undergra
 def is_undergrad(posting: Posting) -> bool:
     if posting.degrees and not UNDERGRAD_DEGREES & set(posting.degrees):
         return False
-    title = normalize_text(posting.title)
+    return is_undergrad_title(posting.title)
+
+
+def is_undergrad_title(title: str) -> bool:
+    title = normalize_text(title)
     return not (GRAD_TITLE.search(title) and not UNDERGRAD_TITLE.search(title))
 
 

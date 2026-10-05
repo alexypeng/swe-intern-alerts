@@ -1,0 +1,60 @@
+# NVIDIA Workday validation
+
+Checked 2026-10-05 using live public API responses and current Simplify listings. These findings describe observed behavior, not a documented Workday contract. The initial three-detail investigation was followed by a complete category scan and a live dry run of the implemented adapter, recorded below.
+
+## Detail mapping
+
+Board host: `nvidia.wd5.myworkdayjobs.com`; slug: `nvidia/NVIDIAExternalCareerSite`. Detail requests use `https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite` followed by the search result's `externalPath`. Each inspected response contained `jobPostingInfo` with nonempty `jobReqId`, `title`, `externalUrl`, `startDate`, and `location`; `posted` and `canApply` were true. All three parsed successfully through the existing Workday adapter. [Data-processing detail](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/Germany-Munich/Data-Processing-Developer-Technology-Intern---2027_JR2024708), [systems-software detail](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Systems-Software-Engineering_JR2023492), [software detail](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Software-Engineering_JR2023495).
+
+| Requisition | Title | `startDate` | `postedOn` | Locations |
+| --- | --- | --- | --- | --- |
+| JR2024708 | Data Processing Developer Technology Intern - 2027 | 2026-10-05 | Posted Today | Six, spanning Europe and UK |
+| JR2023492 | NVIDIA 2027 Internships: Systems Software Engineering | 2026-08-19 | Posted 30+ Days Ago | US, CA, Santa Clara |
+| JR2023495 | NVIDIA 2027 Internships: Software Engineering | 2026-08-19 | Posted 30+ Days Ago | US, CA, Santa Clara |
+
+The dates agree with the displayed publication ages, despite all titles naming the 2027 internship cycle. This supports the existing interpretation of `startDate` as a publication date for these NVIDIA samples. Mapping the date to UTC midnight remains an application convention: the response supplies no publication time or timezone. [Data-processing detail](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/Germany-Munich/Data-Processing-Developer-Technology-Intern---2027_JR2024708), [systems-software detail](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Systems-Software-Engineering_JR2023492).
+
+JR2024708's primary location is Germany, Munich; `additionalLocations` adds France, Courbevoie; UK, Bristol; Switzerland, Zurich; Germany, Wuerselen; and Germany, Berlin. Preserve the primary location and every additional location: the existing classifier recognizes Europe and UK. The other two responses omit additional locations. All three have `timeType: Full time` despite internship titles, so this field must not override title-based internship detection. [Data-processing detail](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/Germany-Munich/Data-Processing-Developer-Technology-Intern---2027_JR2024708), [software detail](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Software-Engineering_JR2023495).
+
+## Eligibility gap found during investigation
+
+JR2024708 passes the current Workday internship and undergrad title rules, but its description's required qualifications specify current PhD or Master's enrollment. Simplify independently labels its degrees as Master's and PhD, which the fallback excludes. Enabling NVIDIA with title-only degree checks would therefore introduce a verified graduate-only false positive. This conflicts with the broad undergrad-only goal even though it follows the currently recorded Workday title rule. Decide how to extract required degree eligibility from descriptions before claiming NVIDIA's postings are adequately filtered. [First-party qualifications](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/Germany-Munich/Data-Processing-Developer-Technology-Intern---2027_JR2024708), [Simplify listings](https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json).
+
+Avoid treating every mention of a graduate degree as exclusion: descriptions can contain alternatives, preferences, or undergraduate eligibility alongside advanced degrees. The existing classifier categorizes JR2024708 as SWE because its title contains Developer; Simplify categorizes it as AI/ML/Data. The sources currently use different category evidence by design. No description-based eligibility or category changes were made during this investigation.
+
+The required-qualification section of JR2024708 uses the explicit enrollment clause `Currently pursuing a PhD or Master degree`. In contrast, JR2023492 and JR2023495 both require university enrollment and allow B.S., M.S., or Ph.D. as alternatives. Parsing must accommodate dotted abbreviations, HTML tags and entities, and multiple degree alternatives. A conservative proposed approach is to inspect education requirements within individual paragraphs or list items, distinguish required enrollment from preferences, and retain undergraduate eligibility whenever the same requirement explicitly allows a bachelor's degree. This proposal is not a validated general parser. [Graduate-only clause](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/Germany-Munich/Data-Processing-Developer-Technology-Intern---2027_JR2024708), [mixed-degree clause](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Systems-Software-Engineering_JR2023492).
+
+## Duplicate identity and fallback overlap
+
+All three URLs end with the same `JR` plus numeric requisition ID found in `jobReqId`. The existing normalizer produces tenant/requisition keys such as `https://nvidia.myworkdayjobs.com/job/JR2023492`; this is an internal comparison key, while the original Workday URL remains the application link. The current samples fit the already implemented normalization; they do not establish support for every possible Workday requisition format. [Systems-software detail](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Systems-Software-Engineering_JR2023492).
+
+| Requisition | Simplify UUID | Current fallback status | URL comparison |
+| --- | --- | --- | --- |
+| JR2023492 | ea8c5ebd-a6c4-49ff-9dac-f3532c41737a | Active and visible; includes Bachelor's eligibility | Exact direct URL match |
+| JR2024708 | bf2b1b62-c87b-4491-b5c6-ea8a6220c718 | Active and visible; graduate-only, excluded by fallback | Exact direct URL match |
+| JR2023495 | be628885-fde3-4b73-bb0a-58e11856e97b | Inactive and visible; not fallback coverage | Exact direct URL match |
+
+These are current [Simplify listing records](https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json). Simplify's shortened titles and independent UUIDs differ from the direct responses, so normalized original URLs are the dependable shared identity in these samples. JR2024708's direct response also includes Switzerland, Zurich, which its Simplify location list omits; preserve direct locations rather than replacing them with fallback locations.
+
+## Limits of this validation
+
+The initial mapping investigation checked only three job details. The subsequent live pipeline validated required fields for all 100 title-eligible detail candidates. This does not establish a universal Workday schema or understand every possible education phrase. No Discord messages were sent or application state files read or written. Source links above allow the observations to be rechecked as listings change.
+
+## Complete category coverage
+
+The unfiltered [NVIDIA search endpoint](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs) reported 2,000 results, while its `jobFamilyGroup`, `workerSubType`, and `timeType` facet counts each summed to 2,678. Categories were Engineering (1,734), Sales (334), Univ Employment (122), Operations (117), Program Manager (100), Marketing (89), IT (47), Research (37), Professional Services (36), Finance (34), Human Resources (10), Business Development (8), Legal (5), and Facilities (5). Every category was below the observed result-window cap.
+
+POSTing the same endpoint with `appliedFacets: {"jobFamilyGroup": [category_id]}` returned each category's reported count. Fetching all pages from all 14 categories yielded exactly 2,678 distinct `externalPath` values, with no within-category duplicates or overlaps between categories. All rows on the unfiltered first page were included. Category counts remained unchanged in a final unfiltered request. The separate completeness probe made 142 requests with four workers and took about 28 seconds. These are observed counts and timing, not a guarantee that the board stays unchanged between API calls. [Primary search API](https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs).
+
+## Implemented controls
+
+- NVIDIA is configured with `partition_facet = "jobFamilyGroup"`; IDs and counts are discovered afresh each poll rather than hardcoded. All categories are scanned, including categories other than university employment, so a platform label cannot hide an eligible title.
+- Require category counts to cover the independent time-type total, each partition's initial total to match its facet count, every page to have the expected number of unique rows, the category union to have the expected size, and initial/final category and time-type counts to match. Fail the entire board on missing facets, overlaps, changed counts, failed requests, or any category reaching 2,000 results. Other capped boards without explicit partition configuration still fail.
+- Four concurrent requests at most. After complete search coverage, the shared title internship/undergrad rules select detail candidates. Every required candidate detail must succeed before returning postings. The existing pipeline then applies full education, channel, region, and duplicate checks.
+- The user approved checking explicit education requirements. HTML paragraphs/list items are decoded and checked for required enrollment or education clauses, including dotted abbreviations and mixed alternatives. Graduate-only clauses map to graduate degrees for the existing classifier to exclude; bachelor's/associate's alternatives remain eligible. Preferred qualifications are ignored, and a general mixed-degree introduction cannot override a specific graduate-only requirement. Unrecognized or unstated education retains the existing title policy; this is rule-based parsing rather than a complete language interpreter.
+
+## Final verification
+
+- Live dry run with NVIDIA, Salesforce, and both Simplify fallback companies: 23 Salesforce details fetched; NVIDIA's complete category scan selected 100 title-eligible details; one Salesforce and eight NVIDIA postings recorded silently. Simplify returned 15 postings, recorded two unmatched eligible fallbacks silently, and six duplicates matched direct records by URL. Exit status 0; elapsed about 53 seconds; no Discord sends or saved state.
+- Re-fetched the three original NVIDIA samples through the new education parser: JR2024708 produced Master's/PhD and was excluded; JR2023492 and JR2023495 produced Bachelor's/Master's/PhD and remained eligible.
+- Full regression suite: 231 tests passed. New checks cover complete partition coverage, ignored filters, capped categories, overlaps, early empty pages, changed counts, missing descriptions, detail failures, title filtering, education requirements and preferences, and silent recovery after a failed first poll followed by new-job announcements.

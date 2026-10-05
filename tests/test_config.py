@@ -26,6 +26,16 @@ def test_repo_config_loads():
     config = load_config(REPO_CONFIG)
     assert "stripe" in config.faang_plus
     assert {b.key for b in config.boards} >= {"greenhouse:stripe", "ashby:ramp"}
+    nvidia = next(b for b in config.boards if b.key == "workday:nvidia/NVIDIAExternalCareerSite")
+    assert nvidia.partition_facet == "jobFamilyGroup"
+
+
+def test_workday_config_rejects_unverified_partition_facet(tmp_path):
+    text = ('simplify_url = "u"\nfaang_plus = []\n[[boards]]\n'
+            'source = "workday"\nname = "NVIDIA"\nslug = "nvidia/site"\n'
+            'host = "nvidia.wd5.myworkdayjobs.com"\npartition_facet = "searchText"\n')
+    with pytest.raises(ConfigError, match="partition_facet"):
+        load_config(write(tmp_path, text))
 
 
 def test_faang_names_are_lowercased(tmp_path):
@@ -38,7 +48,7 @@ def test_unknown_board_source(tmp_path):
     path = write(
         tmp_path,
         'simplify_url = "u"\nfaang_plus = []\n'
-        '[[boards]]\nsource = "workday"\nslug = "x"\nname = "X"\n',
+        '[[boards]]\nsource = "unknown"\nslug = "x"\nname = "X"\n',
     )
     with pytest.raises(ConfigError, match="unknown source"):
         load_config(path)
@@ -48,6 +58,19 @@ def test_board_missing_field(tmp_path):
     path = write(tmp_path, 'simplify_url = "u"\nfaang_plus = []\n[[boards]]\nsource = "ashby"\n')
     with pytest.raises(ConfigError, match="board #1 is missing"):
         load_config(path)
+
+
+@pytest.mark.parametrize("host,slug", [
+    ("", "salesforce/Futureforce_Internships"),
+    ("example.com", "salesforce/Futureforce_Internships"),
+    ("salesforce.wd12.myworkdayjobs.com", "other/Futureforce_Internships"),
+    ("salesforce.wd12.myworkdayjobs.com", "salesforce/site/extra"),
+])
+def test_workday_config_rejects_invalid_board_address(tmp_path, host, slug):
+    text = ('simplify_url = "u"\nfaang_plus = []\n[[boards]]\n'
+            f'source = "workday"\nname = "Salesforce"\nhost = "{host}"\nslug = "{slug}"\n')
+    with pytest.raises(ConfigError, match="Workday board requires"):
+        load_config(write(tmp_path, text))
 
 
 def test_duplicate_board(tmp_path):

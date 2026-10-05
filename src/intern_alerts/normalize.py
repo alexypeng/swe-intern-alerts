@@ -22,6 +22,12 @@ def normalize_url(url: str) -> str:
     host = (parts.hostname or "").removeprefix("www.")
     host = HOST_ALIASES.get(host, host)
     path = parts.path.rstrip("/")
+    # Verified Workday copies differ by site, locale, title, and optional copy suffix.
+    # Unknown requisition formats retain the ordinary URL comparison.
+    tenant = re.fullmatch(r"([a-z0-9-]+)\.wd\d+\.myworkdayjobs\.com", host)
+    requisition = re.search(r"/job/.+_(JR\d+)(?:-\d+)?$", path)
+    if tenant and requisition:
+        return f"https://{tenant[1]}.myworkdayjobs.com/job/{requisition[1]}"
     query = sorted(
         (k, v)
         for k, v in parse_qsl(parts.query, keep_blank_values=True)

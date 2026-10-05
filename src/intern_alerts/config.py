@@ -1,6 +1,7 @@
 """Loads config.toml and the per-channel webhook secrets."""
 
 import os
+import re
 import tomllib
 from collections.abc import Mapping
 from dataclasses import dataclass
@@ -8,7 +9,7 @@ from pathlib import Path
 
 from intern_alerts.models import CHANNELS
 
-BOARD_SOURCES = ("greenhouse", "ashby", "lever", "smartrecruiters")
+BOARD_SOURCES = ("greenhouse", "ashby", "lever", "smartrecruiters", "workday")
 
 
 class ConfigError(Exception):
@@ -20,6 +21,8 @@ class Board:
     source: str  # one of BOARD_SOURCES
     slug: str  # the board ID in the source's API URL
     name: str  # display name, also the company name used for dedup
+    host: str | None = None  # Workday: <tenant>.wd<number>.myworkdayjobs.com
+    partition_facet: str | None = None  # verified Workday large-board partition
 
     @property
     def key(self) -> str:
@@ -48,7 +51,8 @@ def load_config(path: Path) -> Config:
     seen_keys = set()
     for i, raw in enumerate(raw_boards):
         try:
-            board = Board(source=raw["source"], slug=raw["slug"], name=raw["name"])
+            board = Board(source=raw["source"], slug=raw["slug"], name=raw["name"],
+                          host=raw.get("host"), partition_facet=raw.get("partition_facet"))
         except KeyError as e:
             raise ConfigError(f"{path}: board #{i + 1} is missing {e}") from None
         if board.source not in BOARD_SOURCES:
@@ -56,6 +60,15 @@ def load_config(path: Path) -> Config:
                 f"{path}: board {board.slug!r} has unknown source {board.source!r} "
                 f"(expected one of {', '.join(BOARD_SOURCES)})"
             )
+        if board.source == "workday":
+            if not isinstance(board.host, str) or not isinstance(board.slug, str):
+                raise ConfigError(f"{path}: Workday board requires a matching host and tenant/site slug")
+            host = re.fullmatch(r"([a-z0-9-]+)\.wd\d+\.myworkdayjobs\.com", board.host or "")
+            slug = re.fullmatch(r"([a-z0-9-]+)/([A-Za-z0-9_-]+)", board.slug)
+            if not host or not slug or host[1] != slug[1]:
+                raise ConfigError(f"{path}: Workday board requires a matching host and tenant/site slug")
+            if board.partition_facet not in (None, "jobFamilyGroup"):
+                raise ConfigError(f"{path}: unsupported Workday partition_facet")
         if board.key in seen_keys:
             raise ConfigError(f"{path}: board {board.key!r} is listed twice")
         seen_keys.add(board.key)
