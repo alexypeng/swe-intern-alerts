@@ -83,7 +83,7 @@ A scheduled job that finds new internship postings and announces them in Discord
   - All sources: titles containing "high school" are excluded.
 - **Undergrad only:**
   - Simplify postings are kept if `degrees` is empty or includes `Bachelor's` or `Associate's`.
-  - On all sources, a title naming a graduate degree (PhD, MS, MSc, Master's, MBA, Doctoral) is excluded unless it also names BS, BSc, Bachelor's, or Undergrad.
+  - On all sources, a title naming a graduate degree or graduate students (PhD, MS, MSc, Master's, MBA, Doctoral, Graduate, Grad) is excluded unless it also names BS, BSc, Bachelor's, or Undergrad. "Undergraduate" does not count as "Graduate".
 - **Regions:** Canada, US, UK, Europe, Remote, parsed with a lookup table: country names, US states and abbreviations, Canadian provinces, major cities and city abbreviations (`NYC`, `SF`), European countries.
   - Two-letter codes after a comma are US states or Canadian provinces. A `CA` that follows a province code (`Toronto, ON, CA`) is Canada's country code, not California.
   - Plain `Remote` goes under Remote. Remote-in-a-country (e.g. `Remote (US)`) goes under Remote only if that country is in one of the listed regions, so `Remote (India)` is dropped.

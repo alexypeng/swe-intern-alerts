@@ -78,7 +78,10 @@ def is_intern(posting: Posting) -> bool:
 # Degree level: only postings open to undergrads
 
 UNDERGRAD_DEGREES = {"Bachelor's", "Associate's"}
-GRAD_TITLE = re.compile(r"\b(?:phd|ph d|ms|msc|master|masters|mba|doctoral|doctorate)\b")
+# "graduate"/"grad" as whole words, so "undergraduate"/"undergrad" don't match.
+GRAD_TITLE = re.compile(
+    r"\b(?:phd|ph d|ms|msc|master|masters|mba|doctoral|doctorate|graduate|grad)\b"
+)
 UNDERGRAD_TITLE = re.compile(r"\b(?:bs|bsc|bachelor|bachelors|undergrad|undergraduate)\b")
 
 

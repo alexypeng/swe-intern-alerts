@@ -96,6 +96,12 @@ def test_simplify_degrees(degrees, expected):
         ("Software Engineer Intern (BS/MS)", True),
         ("Undergraduate or PhD Research Intern", True),
         ("Systems Intern", True),  # "ms" only as a whole word
+        ("2027 Graduate Software, Firmware & AI Engineering Internships - US", False),
+        ("Data Engineering & Analytics Graduate Intern", False),
+        ("Grad Research Intern", False),
+        ("2027 Undergraduate Software Development & Firmware Engineering Internships", True),
+        ("Undergrad Software Intern", True),
+        ("Undergraduate or Graduate Hardware Intern", True),  # open to undergrads
     ],
 )
 def test_degree_in_title(title, expected):
