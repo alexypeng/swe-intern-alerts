@@ -1,0 +1,44 @@
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Electrical Engineering Intern",
+  "description": "Required and preferred qualifications are merged.",
+  "responsibilities": "Help on various validation of EE designs&nbsp;Design schematic and layout for test boards&nbsp;Write scripts for data processing or test automations",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Meta",
+    "sameAs": "https://www.meta.com/",
+    "logo": "https://static.xx.fbcdn.net/rsrc.php/y3/r/7ngPh_7s-rQ.webp"
+  },
+  "datePosted": "2026-10-05T10:25:59-07:00",
+  "jobLocation": [
+    {
+      "@type": "Place",
+      "name": "Sunnyvale, CA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sunnyvale",
+        "addressRegion": "California",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "New York, NY",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New York",
+        "addressRegion": "New York",
+        "addressCountry": "US"
+      }
+    }
+  ],
+  "qualifications": "Required and preferred qualifications are merged.",
+  "employmentType": "INTERN",
+  "directApply": true,
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Meta",
+    "value": "a1KiE0000002DE5UAM"
+  }
+}

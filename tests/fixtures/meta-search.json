@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1105729655266553",
+    "title": "Electrical Engineering Intern",
+    "locations": [
+      "Sunnyvale, CA",
+      "New York, NY"
+    ],
+    "teams": [
+      "AR/VR",
+      "Facebook Reality Labs",
+      "Internship - Engineering, Tech & Design"
+    ],
+    "sub_teams": [
+      "Engineering",
+      "Hardware"
+    ]
+  },
+  {
+    "id": "1940312740718917",
+    "title": "Research Scientist Intern, Robotics - Meta Superintelligence Labs (PhD)",
+    "locations": [
+      "Menlo Park, CA"
+    ],
+    "teams": [
+      "AI Research",
+      "Internship - Engineering, Tech & Design",
+      "Internship - PhD",
+      "Research",
+      "Artificial Intelligence"
+    ],
+    "sub_teams": [
+      "Research",
+      "Artificial Intelligence"
+    ]
+  },
+  {
+    "id": "1754853365771854",
+    "title": "ASIC Engineer, Architecture Kernel Development",
+    "locations": [
+      "Sunnyvale, CA",
+      "Austin, TX"
+    ],
+    "teams": [
+      "Infrastructure"
+    ],
+    "sub_teams": [
+      "Engineering",
+      "Hardware"
+    ]
+  }
+]

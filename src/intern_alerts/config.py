@@ -9,7 +9,7 @@ from pathlib import Path
 
 from intern_alerts.models import CHANNELS
 
-BOARD_SOURCES = ("greenhouse", "ashby", "lever", "smartrecruiters", "workday")
+BOARD_SOURCES = ("greenhouse", "ashby", "lever", "smartrecruiters", "workday", "meta")
 
 
 class ConfigError(Exception):
@@ -63,6 +63,9 @@ def load_config(path: Path) -> Config:
                 f"{path}: board {board.slug!r} has unknown source {board.source!r} "
                 f"(expected one of {', '.join(BOARD_SOURCES)})"
             )
+        if board.source == "meta" and (board.slug != "meta" or board.name != "Meta"
+                                       or board.host is not None or board.partition_facet is not None):
+            raise ConfigError(f"{path}: Meta board requires slug 'meta', name 'Meta', and no host/partition")
         if board.filter_facet is not None or board.filter_value is not None:
             if (board.source != "workday"
                     or board.filter_facet not in ("workerSubType", "jobFamilyGroup")

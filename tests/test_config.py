@@ -108,3 +108,16 @@ def test_webhooks_missing_names_each_missing_secret():
     env = {k: v for k, v in ALL_WEBHOOKS.items() if k not in ("WEBHOOK_QUANT", "WEBHOOK_PRODUCT")}
     with pytest.raises(ConfigError, match="WEBHOOK_QUANT, WEBHOOK_PRODUCT"):
         load_webhooks(env)
+
+
+def test_meta_board_config(tmp_path):
+    text = ('simplify_url = "u"\nfaang_plus = []\n[[boards]]\n'
+            'source = "meta"\nslug = "meta"\nname = "Meta"\n')
+    assert load_config(write(tmp_path, text)).boards[0].key == 'meta:meta'
+    for change in ('slug = "other"', 'name = "Other"', 'host = "example.com"',
+                   'partition_facet = "jobFamilyGroup"'):
+        lines = text.splitlines()
+        key = change.split(' = ')[0]
+        modified = '\n'.join(line for line in lines if not line.startswith(key + ' = '))
+        with pytest.raises(ConfigError, match='Meta board requires'):
+            load_config(write(tmp_path, modified + '\n' + change + '\n'))

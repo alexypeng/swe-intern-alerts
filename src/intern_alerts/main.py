@@ -23,6 +23,7 @@ from intern_alerts.sources import SourceError, new_client
 from intern_alerts.sources.ashby import fetch_ashby
 from intern_alerts.sources.greenhouse import fetch_greenhouse
 from intern_alerts.sources.lever import fetch_lever
+from intern_alerts.sources.meta import fetch_meta
 from intern_alerts.sources.simplify import board_key as simplify_board_key
 from intern_alerts.sources.simplify import fetch_simplify
 from intern_alerts.sources.smartrecruiters import fetch_smartrecruiters
@@ -35,6 +36,7 @@ BOARD_FETCHERS = {
     "lever": fetch_lever,
     "smartrecruiters": fetch_smartrecruiters,
     "workday": fetch_workday,
+    "meta": fetch_meta,
 }
 BOARD_WORKERS = 4
 

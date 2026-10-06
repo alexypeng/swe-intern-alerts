@@ -69,7 +69,7 @@ def is_intern(posting: Posting) -> bool:
         return True  # Simplify only lists internships
     if posting.source == "ashby":
         return posting.employment_type == "Intern"
-    if posting.source in ("lever", "smartrecruiters"):
+    if posting.source in ("lever", "smartrecruiters", "meta"):
         # Either signal counts: labels vary by company ("Intern", "Internship"), and some
         # internships are mislabelled "Full-time". Word boundaries keep out labels like
         # "International Office Entity".
@@ -155,7 +155,14 @@ def job_channels(posting: Posting) -> set[str]:
         channel = SIMPLIFY_CATEGORIES.get(posting.category or "")
         return {channel} if channel else set()
     title = normalize_text(posting.title)
-    return {channel for channel, pattern in CHANNEL_PATTERNS.items() if pattern.search(title)}
+    channels = {channel for channel, pattern in CHANNEL_PATTERNS.items() if pattern.search(title)}
+    # Meta's descriptions establish software infrastructure and manufacturing duties.
+    if posting.source == "meta":
+        if re.search(r"\bproduction engineers?\b", title):
+            channels.add("swe")
+        if re.search(r"\bdfx engineering\b", title):
+            channels.add("other_eng")
+    return channels
 
 
 # Regions

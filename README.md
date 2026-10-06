@@ -139,4 +139,20 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 ## Roadmap
 
-Next: deploy and check NVIDIA native filtering, validate native filters on other supported boards where the API supports them, then investigate Meta before Amazon and Eightfold, followed by Apple, Google and custom sites. Additional Workday boards require individual completeness checks. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.
+Next: validate Meta access on the GitHub runner after deploying the local search adapter, then investigate Amazon and Eightfold, followed by Apple, Google and custom sites. Native-filter expansion is deferred. Additional Workday boards require individual completeness checks. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.
+
+### Meta adapter
+
+Meta is enabled in the local configuration. It uses the anonymous requests behind [Meta's job search](https://www.metacareers.com/jobsearch/), discovers current query IDs from the site's JavaScript, and checks the complete unfiltered result list against a separate count before and after fetching candidate details. The webpage's pagination currently happens in the frontend; a truncated API list is rejected rather than treated as complete.
+
+Internship title/team signals and the shared undergraduate-title rule select detail candidates. Their JSON-LD supplies posting dates, locations, and employment types. Details use four workers with one retry. Any unresolved candidate failure discards the board; the first successful poll records existing eligible postings silently. Numeric job URL IDs and verified URL aliases preserve Simplify deduplication. No browser dependency, persistent detail cache, state-schema change, or native internship filter is used.
+
+A local complete search verified 1,086 records and nine candidate details in 4.84 seconds. After validating Meta's Production/Network Production Engineer duties for SWE and DFX Engineering for Other Engineering, replaying the captured 11-internship snapshot produces nine announceable postings; two PhD titles are excluded. This verifies the observed data and local connection, not future schema stability or GitHub-runner access. Search availability has no verified publication-latency guarantee. See [Meta research and validation](docs/meta-research.md).
+
+After committing and pushing, run the read-only **Validate Meta source** workflow before relying on scheduled Meta polls:
+
+```sh
+gh workflow run validate-meta.yml
+```
+
+That workflow fetches Meta and fails on incomplete data without webhooks or state writes. Confirm its successful result and verified-search log. A normal poll workflow can succeed while skipping a failed source, so workflow success alone does not confirm Meta access.

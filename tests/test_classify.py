@@ -140,6 +140,21 @@ def test_title_keywords(title, expected):
 
 
 @pytest.mark.parametrize(
+    "title, channel",
+    [
+        ("DFX Engineering Intern", "other_eng"),
+        ("Production Engineer Intern", "swe"),
+        ("Network Production Engineer Intern", "swe"),
+    ],
+)
+def test_meta_specialized_engineering_roles(title, channel):
+    result = classify(posting(source="meta", title=title))
+    assert result.announce
+    assert result.channels == {channel}
+    assert not job_channels(posting(title=title))  # Other employers need their own evidence.
+
+
+@pytest.mark.parametrize(
     "category, expected",
     [
         ("Software", {"swe"}),

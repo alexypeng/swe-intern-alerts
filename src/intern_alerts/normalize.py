@@ -22,6 +22,9 @@ def normalize_url(url: str) -> str:
     host = (parts.hostname or "").removeprefix("www.")
     host = HOST_ALIASES.get(host, host)
     path = parts.path.rstrip("/")
+    meta = re.fullmatch(r"/(?:jobs|profile/job_details)/(\d+)", path)
+    if host == "metacareers.com" and meta:
+        return f"https://metacareers.com/profile/job_details/{meta[1]}"
     # Verified Workday copies differ by site, locale, title, and optional copy suffix.
     # Unknown requisition formats retain the ordinary URL comparison.
     tenant = re.fullmatch(r"([a-z0-9-]+)\.wd\d+\.myworkdayjobs\.com", host)

@@ -294,3 +294,9 @@ partition_facet = "jobFamilyGroup"
 filter_facet = "workerSubType"
 filter_value = "Intern (Fixed Term)"
 name = "NVIDIA"
+
+# Anonymous full-search discovery, count validation, and internship candidate details.
+[[boards]]
+source = "meta"
+slug = "meta"
+name = "Meta"
