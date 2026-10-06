@@ -44,6 +44,7 @@
   "lever:shieldai": "2026-10-05T03:56:19Z",
   "lever:tri": "2026-10-05T03:56:19Z",
   "lever:zoox": "2026-10-05T03:56:19Z",
+  "meta:meta": "2026-10-06T01:47:19Z",
   "simplify:adobe": "2026-10-05T00:07:28Z",
   "simplify:airbnb": "2026-10-05T00:07:28Z",
   "simplify:amazon": "2026-10-05T00:07:28Z",
@@ -5624,6 +5625,70 @@
    "title": "embedded software engineer intern thermal systems",
    "location": "palo alto ca",
    "first_seen": "2026-10-05T23:20:22Z"
+  },
+  {
+   "company": "meta",
+   "job_id": "1613359540444032",
+   "url": "https://metacareers.com/profile/job_details/1613359540444032",
+   "title": "product design engineering intern",
+   "location": "redmond wa united states; seattle wa united states; sunnyvale ca united states",
+   "first_seen": "2026-10-06T01:47:19Z"
+  },
+  {
+   "company": "meta",
+   "job_id": "921722064324989",
+   "url": "https://metacareers.com/profile/job_details/921722064324989",
+   "title": "mechanical engineering intern infrastructure",
+   "location": "menlo park ca united states",
+   "first_seen": "2026-10-06T01:47:19Z"
+  },
+  {
+   "company": "meta",
+   "job_id": "1095054769939445",
+   "url": "https://metacareers.com/profile/job_details/1095054769939445",
+   "title": "dfx engineering intern",
+   "location": "seattle wa united states; sunnyvale ca united states",
+   "first_seen": "2026-10-06T01:47:19Z"
+  },
+  {
+   "company": "meta",
+   "job_id": "1373603594867455",
+   "url": "https://metacareers.com/profile/job_details/1373603594867455",
+   "title": "data engineer intern product analytics summer 2027",
+   "location": "menlo park ca united states; new york ny united states; seattle wa united states",
+   "first_seen": "2026-10-06T01:47:19Z"
+  },
+  {
+   "company": "meta",
+   "job_id": "2558941294546763",
+   "url": "https://metacareers.com/profile/job_details/2558941294546763",
+   "title": "network production engineer intern",
+   "location": "dublin ireland ireland; london uk united kingdom",
+   "first_seen": "2026-10-06T01:47:19Z"
+  },
+  {
+   "company": "meta",
+   "job_id": "1442284501111979",
+   "url": "https://metacareers.com/profile/job_details/1442284501111979",
+   "title": "production engineer intern",
+   "location": "london uk united kingdom",
+   "first_seen": "2026-10-06T01:47:19Z"
+  },
+  {
+   "company": "meta",
+   "job_id": "1412139847020398",
+   "url": "https://metacareers.com/profile/job_details/1412139847020398",
+   "title": "network production engineer intern",
+   "location": "menlo park ca united states",
+   "first_seen": "2026-10-06T01:47:19Z"
+  },
+  {
+   "company": "meta",
+   "job_id": "1609178343953401",
+   "url": "https://metacareers.com/profile/job_details/1609178343953401",
+   "title": "production engineer intern",
+   "location": "bellevue wa united states; menlo park ca united states",
+   "first_seen": "2026-10-06T01:47:19Z"
   }
  ]
 }
