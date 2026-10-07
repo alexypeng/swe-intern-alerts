@@ -6,7 +6,6 @@ Every 20 minutes cron-job.org triggers a GitHub Actions workflow that polls comp
 
 <img width="809" height="437" alt="image" src="https://github.com/user-attachments/assets/2650a7fa-5367-4185-92d0-184515b5fad5" />
 
-Discord can be accessed here: https://discord.gg/hjb77xqxHP
 
 ## How it works
 
