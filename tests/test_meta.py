@@ -365,3 +365,54 @@ def test_live_search_fixture_covers_undergrad_grad_and_full_time_signals():
     assert jobs[1]['title'].endswith('(PhD)')
     assert not is_intern(parse_meta(html(job(title=jobs[2]['title'], employmentType='FULL_TIME')),
                                    URL, BOARD))
+
+
+def test_fallback_title_verification_deduplicates_aliases_and_keeps_metadata():
+    from dataclasses import replace
+    from intern_alerts.sources.meta import verify_meta_fallback
+    p = replace(parse_meta(html(), URL, BOARD), source='simplify', board_key='simplify:meta',
+                job_id='fallback-id', category='Software', title='Software Engineer Intern',
+                url='https://www.metacareers.com/jobs/123/?utm_source=Simplify')
+    calls = []
+    def handler(request):
+        calls.append(str(request.url))
+        return httpx.Response(200, text=html(job(title='Software Engineer Intern (PhD)')))
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        results = verify_meta_fallback(client, [p, replace(p, url=URL)])
+    assert len(calls) == 1
+    assert all(not classify(r).announce for r in results)
+    assert all(r.job_id == p.job_id and r.board_key == p.board_key and r.posted_at == p.posted_at for r in results)
+    assert results[0].url == p.url
+
+
+@pytest.mark.parametrize('mode', ['missing_data', 'wrong_id', 'bad_host'])
+def test_fallback_requires_valid_official_details_and_matching_id(mode):
+    from dataclasses import replace
+    from intern_alerts.sources.meta import verify_meta_fallback
+    p = replace(parse_meta(html(), URL, BOARD), source='simplify', board_key='simplify:meta', category='Software')
+    if mode == 'bad_host':
+        p = replace(p, url='https://other.test/jobs/123')
+    def handler(request):
+        if mode == 'wrong_id':
+            if request.url.path.endswith('/123'):
+                return httpx.Response(302, headers={'Location': URL.replace('123', '456')})
+            return httpx.Response(200, text=html())
+        return httpx.Response(200, text='<html>Login</html>')
+    with httpx.Client(transport=httpx.MockTransport(handler), follow_redirects=True) as client:
+        with pytest.raises(SourceError, match='official title verification'):
+            verify_meta_fallback(client, [p])
+
+
+def test_fallback_verification_retries_and_avoids_ineligible_or_other_companies():
+    from dataclasses import replace
+    from intern_alerts.sources.meta import verify_meta_fallback
+    p = replace(parse_meta(html(), URL, BOARD), source='simplify', board_key='simplify:meta', category='Software')
+    calls = []
+    def handler(request):
+        calls.append(str(request.url))
+        return httpx.Response(503) if len(calls) == 1 else httpx.Response(200, text=html())
+    ignored = [replace(p, title='Intern (PhD)'), replace(p, company='Stripe')]
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        assert verify_meta_fallback(client, ignored) == ignored
+        assert len(verify_meta_fallback(client, [p])) == 1
+    assert len(calls) == 2

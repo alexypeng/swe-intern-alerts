@@ -329,3 +329,64 @@ def test_no_company_boards_still_fetches_simplify():
     assert set(state.boards) == {"simplify:stripe"}
     assert [record.job_id for record in state.records] == ["s5"]
     assert web.sent == {}
+
+
+def test_meta_fallback_uses_official_phd_title_even_without_direct_board():
+    url = 'https://www.metacareers.com/jobs/2180490782513668?utm_source=Simplify'
+    fallback = simplify_item('e458bd10-4f0d-449d-9f51-dcb595087eb9', url,
+                             title='Software Engineer Intern - Machine Learning', company='Meta')
+    fallback['degrees'] = []
+    web = FakeWeb(simplify=[fallback])
+    original = web.handler
+    official = {
+        '@type': 'JobPosting', 'title': 'Software Engineer Intern, Machine Learning (PhD)',
+        'description': 'As a PhD intern at Meta, build machine learning systems.',
+        'qualifications': 'Currently has, or is in the process of obtaining, a PhD in Computer Science',
+        'hiringOrganization': {'name': 'Meta'}, 'datePosted': '2026-10-06T12:00:00Z',
+        'employmentType': 'INTERN',
+        'jobLocation': {'name': 'Seattle, WA', 'address': {'addressCountry': 'US'}},
+    }
+    requests = []
+    def handler(request):
+        if request.url.host == 'metacareers.com':
+            requests.append(str(request.url))
+            return httpx.Response(200, text='<script type="application/ld+json">' + json.dumps(official) + '</script>')
+        return original(request)
+    web.handler = handler
+    config = Config(SIMPLIFY_URL, frozenset({'meta'}), ())
+    state = State()
+    state.mark_board_polled('simplify:meta', NOW)
+    web.run(state, config=config)
+    assert requests == ['https://metacareers.com/profile/job_details/2180490782513668']
+    assert web.sent == {}
+    assert state.records == []
+
+
+def test_failed_meta_fallback_defers_only_meta_then_recovers_silently():
+    from test_meta import html, job
+    meta = simplify_item('meta1', 'https://www.metacareers.com/jobs/123/', company='Meta')
+    web = FakeWeb(simplify=[meta, simplify_item('stripe1', 'https://stripe.test/1')])
+    original = web.handler
+    failed = True
+    def handler(request):
+        if request.url.host == 'metacareers.com':
+            return httpx.Response(503) if failed else httpx.Response(200, text=html(job(
+                title='New Software Engineer Intern' if request.url.path.endswith('/456') else 'Software Engineer Intern')))
+        return original(request)
+    web.handler = handler
+    config = Config(SIMPLIFY_URL, frozenset({'meta', 'stripe'}), ())
+    state = State()
+    web.run(state, config=config)
+    assert state.is_board_polled('simplify:stripe')
+    assert not state.is_board_polled('simplify:meta')
+    assert {r.job_id for r in state.records} == {'stripe1'}
+    failed = False
+    web.run(state, config=config)
+    assert state.is_board_polled('simplify:meta')
+    assert not web.sent
+    web.simplify.append(simplify_item('meta2', 'https://www.metacareers.com/jobs/456/',
+                                     company='Meta', title='New Software Engineer Intern'))
+    web.run(state, config=config)
+    assert len(web.sent['swe']) == 1
+    web.run(state, config=config)
+    assert len(web.sent['swe']) == 1

@@ -11,9 +11,10 @@ from urllib.parse import urlsplit
 
 import httpx
 
-from intern_alerts.classify import INTERN_TITLE, is_undergrad_title
+from intern_alerts.classify import INTERN_TITLE, classify, is_undergrad_title
 from intern_alerts.config import Board
 from intern_alerts.models import Posting
+from intern_alerts.normalize import normalize_text, normalize_url
 from intern_alerts.sources import SourceError
 
 SEARCH_URL = "https://www.metacareers.com/jobsearch/"
@@ -315,3 +316,37 @@ def fetch_meta(client: httpx.Client, board: Board) -> list[Posting]:
         return postings
     except (httpx.HTTPError, KeyError, TypeError, ValueError, AttributeError) as e:
         raise SourceError(f"{board.key}: incomplete or invalid Meta response ({e})") from e
+
+
+def verify_meta_fallback(client: httpx.Client, postings: list[Posting]) -> list[Posting]:
+    """Use official titles for eligible Simplify Meta copies, including old jobs.
+
+    No rejected-job cache: each poll verifies these URLs independently. A failure
+    lets the caller defer Meta's fallback board while retaining other companies.
+    """
+    try:
+        urls = list(dict.fromkeys(
+            normalize_url(p.url) for p in postings
+            if normalize_text(p.company) == "meta" and classify(p).announce
+        ))
+
+        def title(url):
+            job_id = _job_id(url)
+            for attempt in range(2):
+                try:
+                    response = client.get(url)
+                    response.raise_for_status()
+                    if _job_id(str(response.url)) != job_id:
+                        raise ValueError("job redirected to another posting")
+                    return parse_meta(response.text, url, Board("meta", "meta", "Meta")).title
+                except (httpx.HTTPError, KeyError, TypeError, ValueError, AttributeError) as e:
+                    if attempt:
+                        raise ValueError(f"job {job_id}: {e}") from e
+
+        with ThreadPoolExecutor(max_workers=DETAIL_WORKERS) as pool:
+            titles = dict(zip(urls, pool.map(title, urls)))
+        return [replace(p, title=titles[normalize_url(p.url)])
+                if normalize_text(p.company) == "meta" and normalize_url(p.url) in titles
+                else p for p in postings]
+    except (httpx.HTTPError, KeyError, TypeError, ValueError, AttributeError) as e:
+        raise SourceError(f"simplify:meta: official title verification failed ({e})") from e

@@ -18,13 +18,14 @@ from intern_alerts.config import Config, ConfigError, load_config, load_webhooks
 from intern_alerts.dedup import SeenIndex
 from intern_alerts.format import build_messages
 from intern_alerts.models import CHANNELS, Posting
+from intern_alerts.normalize import normalize_text
 from intern_alerts.post import PostError, send
 from intern_alerts.sources import SourceError, new_client
 from intern_alerts.sources.ashby import fetch_ashby
 from intern_alerts.sources.amazon import fetch_amazon, fetch_amazon_full_scan
 from intern_alerts.sources.greenhouse import fetch_greenhouse
 from intern_alerts.sources.lever import fetch_lever
-from intern_alerts.sources.meta import fetch_meta
+from intern_alerts.sources.meta import fetch_meta, verify_meta_fallback
 from intern_alerts.sources.simplify import board_key as simplify_board_key
 from intern_alerts.sources.simplify import fetch_simplify
 from intern_alerts.sources.smartrecruiters import fetch_smartrecruiters
@@ -91,7 +92,17 @@ def fetch_all(
     with ThreadPoolExecutor(max_workers=BOARD_WORKERS) as pool:
         for result in pool.map(fetch_timed, jobs):
             collect(result)
-    collect(fetch_timed(simplify))
+    label, keys, postings, error, elapsed = fetch_timed(simplify)
+    if postings is not None:
+        verification_started = perf_counter()
+        try:
+            postings = verify_meta_fallback(client, postings)
+        except SourceError as e:
+            print(f"::warning::deferred {e}")
+            keys = keys - {simplify_board_key("meta")}
+            postings = [p for p in postings if normalize_text(p.company) != "meta"]
+        elapsed += perf_counter() - verification_started
+    collect((label, keys, postings, error, elapsed))
     print(f"fetch total: {perf_counter() - started:.2f}s")
     return fetched
 

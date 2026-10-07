@@ -134,3 +134,14 @@ Verification: three regression cases reproduce the missing channels before the f
 ## GitHub-runner verification
 
 [Validate Meta source run 37400514018](https://github.com/alexypeng/swe-intern-alerts/actions/runs/37400514018) succeeded on deployed commit `5a804ac`. The source verified 1,089 search jobs and fetched nine candidate details in 3.16 seconds; all nine were announceable, including DFX and both regional Production/Network Production Engineer postings. This check sent no Discord messages and saved no state. Scheduled polling/state initialization were not inspected.
+
+
+## Simplify degree-label bypass and fix (2026-10-07)
+
+User reported [job 2180490782513668](https://www.metacareers.com/profile/job_details/2180490782513668/). Official JSON-LD title is `Software Engineer Intern, Machine Learning (PhD)` and the qualifications explicitly require PhD enrollment. Direct classification correctly excludes this title. Public state instead contained Simplify ID `e458bd10-4f0d-449d-9f51-dcb595087eb9`, first seen 2026-10-06T23:20:35Z. The corresponding Simplify row used `Software Engineer Intern - Machine Learning`, degrees `[]`, and the same Meta job URL. Its replay reproduced an eligible SWE result. Excluded direct jobs are not recorded, so deduplication did not reject that fallback copy.
+
+The fix verifies eligible Simplify Meta URLs against official JSON-LD and replaces titles before shared classification. It preserves fallback identity, URL, date, degree metadata, locations and category. This works for links absent from current search and when Meta direct polling is unavailable/unconfigured. Four requests maximum, one retry, aliases fetched once per poll. Missing/invalid data or a wrong-ID redirect defers the entire Meta fallback company without initializing it; other fallback companies proceed. No blacklist/cache/state change or interpretation of merged qualification text. Official titles lacking degree restrictions remain a limitation.
+
+Regression initially sent the PhD-only job; after correction, no message or state record. Live read-only replay confirmed original fallback announce=True, official-title fallback announce=False. The suite passes 361 tests, including aliases/identity preservation, retry, invalid/redirected details, failure isolation and silent recovery. No Discord sends, production-state updates, commits or deletion of historical records.
+
+Complete configured dry poll: Meta direct search verified 1,108 jobs / 13 candidates in 7.03s; Simplify including official-title verification completed in 2.62s without a Meta deferral. Total fetch 29.08s. HubSpot returned 404 and one NVIDIA detail returned 502, so those unrelated boards were omitted; no claim of all-source success. Dry run wrote no state and sent no messages.
