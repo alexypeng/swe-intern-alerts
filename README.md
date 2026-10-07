@@ -129,6 +129,7 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 - **Failures:**
   - A board that fails to fetch is logged as a warning and retried on the next run.
+  - Workday detail requests retry once after 0.5 seconds for HTTP 502/503/504 or transport failures, within the existing four-worker pool. Search requests, other HTTP statuses, malformed JSON and invalid metadata do not retry. An unresolved detail failure skips the whole board and cannot initialize its first poll.
   - A Discord message that fails to send turns the run red. Its postings aren't marked as seen, so they're sent on the next run.
 - **Schedule checks:** compare cron-job.org's execution history with GitHub's dispatched runs. GitHub groups external dispatches and manual runs under the same event:
   ```
@@ -139,7 +140,16 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 ## Roadmap
 
-Meta is deployed and runner-validated. Amazon is implemented and locally validated; its runner check is pending. Next: Eightfold, followed by Apple, Google and custom sites. Native-filter expansion is deferred. Additional Workday boards require individual completeness checks. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.
+Meta and Amazon are deployed, with successful source fetches verified on GitHub runners. The Workday detail retry is pushed on `1c2f14d` and its GitHub tests passed; a scheduled poll on that commit remains to be checked.
+
+Remaining source work:
+
+1. Research and implement Eightfold support.
+2. Add more Workday boards after validating each tenant's completeness and field mapping.
+3. Add Apple, followed by Google and other custom careers sites.
+4. Add Microsoft after the planned move to a Raspberry Pi on a home connection; its careers site blocks cloud IPs.
+
+HubSpot's direct source remains unresolved; see below. Meta/Amazon publication latency and future internship coverage remain unverified. Native-filter expansion on other supported platforms is deferred.
 
 ### Meta adapter
 
@@ -161,13 +171,15 @@ That workflow fetches Meta and fails on incomplete data without webhooks or stat
 
 ### Amazon adapter
 
-Amazon is enabled locally in `config.toml`. Regular polls combine its native internship filter with `intern`, `internship`, `co-op`, and `coop` searches. Every query is fully paginated with 100-row pages and four bounded workers, checked for stable counts, and deduplicated by ID. Count churn retries the union up to three passes. Failed/incomplete queries reject the board; a query reaching the 10,000 cap falls back to a complete business-partition scan.
+Amazon is enabled in the deployed `config.toml`. Regular polls combine its native internship filter with `intern`, `internship`, `co-op`, and `coop` searches. Every query is fully paginated with 100-row pages and four bounded workers, checked for stable counts, and deduplicated by ID. Count churn retries the union up to three passes. Failed/incomplete queries reject the board; a query reaching the 10,000 cap falls back to a complete business-partition scan.
 
 Basic qualifications determine degree eligibility. Amazon's Business Developer phrase does not by itself match SWE. Every location is retained, dates have day precision, and verified URL aliases deduplicate Simplify copies. The first successful poll silently records existing eligible postings.
 
 A local comparison returned identical 32 eligible internships in **9.21s**, versus **47.09s** for the complete scan, including the ASIC role omitted by the native filter. Future keyword coverage is unverified; count equality cannot detect every simultaneous removal/addition. Use `uv run python -m intern_alerts --dry-run --unfiltered` for a complete Amazon/Workday audit without sending or saving state. See [Amazon validation](docs/amazon-research.md).
 
-After pushing, run the read-only runner check and inspect its verified candidate-query log:
+The [scheduled poll on October 7, 2026](https://github.com/alexypeng/swe-intern-alerts/actions/runs/37671176069) verified every candidate query, parsed 354 unique candidates and completed the Amazon fetch successfully in **10.24s**. This confirms runner access, not a publication-latency guarantee. Amazon's initial silent initialization has not been independently inspected.
+
+To repeat the read-only runner check, inspect its verified candidate-query log:
 
 ```sh
 gh workflow run validate-amazon.yml --ref main
@@ -176,3 +188,9 @@ gh run watch <RUN_ID> --exit-status
 ```
 
 This validation fails if any required Amazon query is incomplete, and sends no Discord messages or state updates.
+
+### HubSpot source status
+
+HubSpot's configured Greenhouse endpoint returns 404, and its official careers directory also fails through its GraphQL backend. A failed board stays skipped; the existing Simplify fallback continues.
+
+HubSpot directs North American emerging-talent applicants to RippleMatch. Its anonymous public roles API works but currently returns an empty list. RippleMatch supports private roles excluded from company pages, so this feed cannot establish complete internship coverage. Two officially shared US/Canada SWE roles have readable detail APIs with titles, locations, internship types and posted dates, but both are closed. An active role still needs to be verified against the public feed before enabling a supplemental adapter. See [HubSpot/RippleMatch research and NVIDIA retry validation](docs/source-errors-research.md).
