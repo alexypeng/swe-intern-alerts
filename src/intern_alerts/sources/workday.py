@@ -3,7 +3,7 @@
 import re
 from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, date, datetime, time
-from time import perf_counter
+from time import perf_counter, sleep
 from typing import Any
 from urllib.parse import urlsplit
 
@@ -12,18 +12,37 @@ import httpx
 from intern_alerts.classify import is_intern_title, is_undergrad_title
 from intern_alerts.config import Board
 from intern_alerts.models import Posting
-from intern_alerts.sources import SourceError, get_json
+from intern_alerts.sources import SourceError
 from intern_alerts.sources.workday_education import required_degrees
 
 PAGE_SIZE = 20
 # NVIDIA repeats results beyond this window. Refuse potentially capped boards.
 RESULT_WINDOW = 2000
+DETAIL_RETRY_STATUSES = {502, 503, 504}
+DETAIL_RETRY_DELAY_SECONDS = 0.5
 
 
 def _text(value: Any) -> str:
     if not isinstance(value, str) or not value.strip():
         raise ValueError("missing or invalid required text")
     return value.strip()
+
+
+def _detail(client: httpx.Client, url: str, board: Board) -> Posting:
+    """Retry transient reads once inside the existing detail worker."""
+    for attempt in range(2):
+        try:
+            response = client.get(url)
+            response.raise_for_status()
+        except (httpx.TransportError, httpx.HTTPStatusError) as error:
+            if (attempt or isinstance(error, httpx.HTTPStatusError)
+                    and error.response.status_code not in DETAIL_RETRY_STATUSES):
+                raise
+            print(f"{board.key}: transient detail failure; retrying once: {url}")
+            sleep(DETAIL_RETRY_DELAY_SECONDS)
+        else:
+            # JSON/schema/eligibility failures are not transient read errors.
+            return parse_workday(response.json(), board)
 
 
 def parse_workday(data: dict[str, Any], board: Board) -> Posting:
@@ -221,8 +240,8 @@ def fetch_workday(client: httpx.Client, board: Board) -> list[Posting]:
                 print(f"{board.key}: verified {len(rows)} search rows, "
                       f"{len(candidates)} title-eligible detail requests")
             details_started = perf_counter()
-            postings = list(pool.map(lambda row: parse_workday(
-                get_json(client, base + row["externalPath"], board.key), board
+            postings = list(pool.map(lambda row: _detail(
+                client, base + row["externalPath"], board
             ), candidates))
             print(f"{board.key}: details {perf_counter() - details_started:.2f}s, "
                   f"{len(postings)} postings")

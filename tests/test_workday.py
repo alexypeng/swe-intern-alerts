@@ -5,6 +5,8 @@ from copy import deepcopy
 from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
+from collections import Counter
+from threading import Barrier, Lock
 
 import httpx
 import pytest
@@ -72,6 +74,93 @@ def test_complete_pagination_uses_initial_total_and_all_details():
     assert web.offsets == [0, 20]
     assert len(postings) == 23
     assert {p.job_id for p in postings} == {f"JR{i}" for i in range(23)}
+
+
+@pytest.mark.parametrize("failure", [502, 503, 504, "timeout", "connection"])
+def test_transient_detail_read_recovers_once_without_refetching_board(failure, monkeypatch):
+    web = WorkdayWeb()
+    attempts = Counter()
+    delays = []
+    monkeypatch.setattr("intern_alerts.sources.workday.sleep", delays.append)
+
+    def handler(request):
+        if request.method == "GET":
+            attempts[request.url.path] += 1
+            if request.url.path.endswith("_JR0") and attempts[request.url.path] == 1:
+                if failure == "timeout":
+                    raise httpx.ReadTimeout("temporary timeout", request=request)
+                if failure == "connection":
+                    raise httpx.ConnectError("temporary connection failure", request=request)
+                return httpx.Response(failure)
+        return web.handler(request)
+
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        postings = fetch_workday(client, BOARD)
+    assert [p.job_id for p in postings] == [f"JR{i}" for i in range(23)]
+    assert web.offsets == [0, 20]
+    assert sorted(attempts.values()) == [1] * 22 + [2]
+    assert delays == [0.5]
+
+
+@pytest.mark.parametrize("failure,expected_attempts", [
+    (502, 2), (503, 2), (504, 2), ("timeout", 2),
+    (404, 1), (500, 1), (429, 1), ("json", 1), ("metadata", 1),
+])
+def test_detail_retry_limit_and_nontransient_failures_reject_whole_board(
+        failure, expected_attempts, monkeypatch):
+    web = WorkdayWeb()
+    attempts = []
+    monkeypatch.setattr("intern_alerts.sources.workday.sleep", lambda _: None)
+
+    def handler(request):
+        if request.method == "GET" and request.url.path.endswith("_JR22"):
+            attempts.append(request.url.path)
+            if failure == "timeout":
+                raise httpx.ReadTimeout("persistent timeout", request=request)
+            if failure == "json":
+                return httpx.Response(200, text="not JSON")
+            if failure == "metadata":
+                return httpx.Response(200, json={"jobPostingInfo": {}})
+            return httpx.Response(failure)
+        return web.handler(request)
+
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        with pytest.raises(SourceError, match=BOARD.key):
+            fetch_workday(client, BOARD)
+    assert len(attempts) == expected_attempts
+
+
+def test_retries_share_four_detail_workers_and_keep_result_order(monkeypatch):
+    web = WorkdayWeb()
+    web.jobs = web.jobs[:4]
+    attempts = Counter()
+    barrier = Barrier(4, timeout=5)
+    lock = Lock()
+    active = peak = 0
+    monkeypatch.setattr("intern_alerts.sources.workday.sleep", lambda _: None)
+
+    def handler(request):
+        nonlocal active, peak
+        if request.method != "GET":
+            return web.handler(request)
+        with lock:
+            active += 1
+            peak = max(peak, active)
+            attempts[request.url.path] += 1
+            attempt = attempts[request.url.path]
+            assert active <= 4
+        try:
+            barrier.wait()  # Both initial attempts and retries overlap in the same pool.
+            return httpx.Response(502) if attempt == 1 else web.handler(request)
+        finally:
+            with lock:
+                active -= 1
+
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        postings = fetch_workday(client, BOARD)
+    assert [p.job_id for p in postings] == [f"JR{i}" for i in range(4)]
+    assert list(attempts.values()) == [2] * 4
+    assert peak == 4
 
 
 def test_verified_detail_preserves_required_fields_and_full_locations():

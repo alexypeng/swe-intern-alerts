@@ -1,6 +1,7 @@
 """Large Workday boards must prove complete coverage before yielding any jobs."""
 
 import json
+from collections import Counter
 from copy import deepcopy
 from dataclasses import replace
 from datetime import UTC, datetime
@@ -307,6 +308,8 @@ def test_native_detail_failure_leaves_first_poll_uninitialized_then_recovers_sil
 
     assert poll() == 0
     assert not state.boards and not state.records
+    assert len(set(web.details)) == 2
+    assert set(Counter(web.details).values()) == {2}  # Both details exhausted one retry.
     web.failure = None
     assert poll() == 0
     assert state.is_board_polled(BOARD.key)
