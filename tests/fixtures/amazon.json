@@ -1,0 +1,17 @@
+{
+  "id_icims": "10517535",
+  "title": "ASIC Engineer Intern, Annapurna Labs - 2027",
+  "job_path": "/en/jobs/10517535/asic-engineer-intern-annapurna-labs-2027",
+  "posted_date": "August 27, 2026",
+  "locations": [
+    "{\"normalizedStateName\":\"Texas\",\"normalizedCountryCode\":\"USA\",\"city\":\"Austin\",\"countryIso3a\":\"USA\",\"countryIso2a\":\"US\",\"locationNonStemming\":\"United States, TX, Austin\",\"coordinates\":\"30.26759,-97.74299\",\"normalizedCountyName\":\"Travis\",\"type\":\"ONSITE\",\"normalizedCountryName\":\"United States\",\"normalizedLocation\":\"Austin, Texas, USA\",\"location\":\"US, TX, Austin\",\"region\":\"TX\",\"buildingCodeList\":[\"AUS18\"],\"normalizedCityName\":\"Austin\"}",
+    "{\"normalizedStateName\":\"Washington\",\"normalizedCountryCode\":\"USA\",\"city\":\"Seattle\",\"countryIso3a\":\"USA\",\"countryIso2a\":\"US\",\"locationNonStemming\":\"United States, WA, Seattle\",\"coordinates\":\"47.60357,-122.32945\",\"normalizedCountyName\":\"King\",\"type\":\"ONSITE\",\"normalizedCountryName\":\"United States\",\"normalizedLocation\":\"Seattle, Washington, USA\",\"location\":\"US, WA, Seattle\",\"region\":\"WA\",\"buildingCodeList\":[\"SEA42\"],\"normalizedCityName\":\"Seattle\"}",
+    "{\"normalizedStateName\":\"California\",\"normalizedCountryCode\":\"USA\",\"city\":\"Cupertino\",\"countryIso3a\":\"USA\",\"countryIso2a\":\"US\",\"locationNonStemming\":\"United States, CA, Cupertino\",\"coordinates\":\"37.31912,-122.02932\",\"normalizedCountyName\":\"Santa Clara\",\"type\":\"ONSITE\",\"normalizedCountryName\":\"United States\",\"normalizedLocation\":\"Cupertino, California, USA\",\"location\":\"US, CA, Cupertino\",\"region\":\"CA\",\"buildingCodeList\":[\"SJC29\"],\"normalizedCityName\":\"Cupertino\"}"
+  ],
+  "location": "US, CA, Cupertino",
+  "country_code": "USA",
+  "business_category": "annapurna",
+  "basic_qualifications": "Currently enrolled in a Bachelor's or Master's degree program.",
+  "preferred_qualifications": "",
+  "description": "Design and verify integrated circuits."
+}

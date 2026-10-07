@@ -1,0 +1,30 @@
+name: Validate Amazon source
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      - name: Fetch and classify Amazon without sending or saving state
+        run: |
+          uv run --frozen --no-dev python - <<'PY'
+          from intern_alerts.classify import classify
+          from intern_alerts.config import Board
+          from intern_alerts.sources import new_client
+          from intern_alerts.sources.amazon import fetch_amazon
+
+          with new_client() as client:
+              postings = fetch_amazon(client, Board("amazon", "amazon", "Amazon"))
+          eligible = [posting for posting in postings if classify(posting).announce]
+          print(f"Amazon: {len(postings)} candidate postings, {len(eligible)} announceable")
+          for posting in eligible:
+              print(posting.job_id, posting.title, posting.locations, posting.posted_at.isoformat())
+          PY

@@ -21,6 +21,7 @@ from intern_alerts.models import CHANNELS, Posting
 from intern_alerts.post import PostError, send
 from intern_alerts.sources import SourceError, new_client
 from intern_alerts.sources.ashby import fetch_ashby
+from intern_alerts.sources.amazon import fetch_amazon, fetch_amazon_full_scan
 from intern_alerts.sources.greenhouse import fetch_greenhouse
 from intern_alerts.sources.lever import fetch_lever
 from intern_alerts.sources.meta import fetch_meta
@@ -37,20 +38,26 @@ BOARD_FETCHERS = {
     "smartrecruiters": fetch_smartrecruiters,
     "workday": fetch_workday,
     "meta": fetch_meta,
+    "amazon": fetch_amazon,
 }
 BOARD_WORKERS = 4
 
 
 def fetch_all(
-    client: httpx.Client, config: Config
+    client: httpx.Client, config: Config, *, unfiltered: bool = False
 ) -> list[tuple[str, set[str], list[Posting]]]:
     """Fetches boards concurrently in config order, then Simplify; omits failed sources.
 
     Returns (label, board keys the fetch covered, postings) for each successful fetch.
     A fetch covers a board even if it returned no postings for it.
     """
+    def fetch_board(board):
+        if unfiltered and board.source == "amazon":
+            return fetch_amazon_full_scan(client, board)
+        return BOARD_FETCHERS[board.source](client, board)
+
     jobs: list[tuple[str, set[str], Callable[[], list[Posting]]]] = [
-        (board.key, {board.key}, lambda board=board: BOARD_FETCHERS[board.source](client, board))
+        (board.key, {board.key}, lambda board=board: fetch_board(board))
         for board in config.boards
     ]
     simplify = (
@@ -98,6 +105,7 @@ def run(
     save: Callable[[], None],
     post: Callable[[httpx.Client, str, str], None] = send,
     backfill_since: datetime | None = None,  # first-poll postings newer than this are sent
+    unfiltered: bool = False,
 ) -> int:
     pruned = state.prune(now)
     if pruned:
@@ -108,7 +116,7 @@ def run(
     skipped: Counter[str] = Counter()
     unrecognized: Counter[str] = Counter()
 
-    for label, board_keys, postings in fetch_all(client, config):
+    for label, board_keys, postings in fetch_all(client, config, unfiltered=unfiltered):
         first_poll_keys = {key for key in board_keys if not state.is_board_polled(key)}
         new = silent = 0
         for posting in postings:
@@ -181,7 +189,7 @@ def main(argv: list[str] | None = None) -> int:
                              "ignoring and not saving state (running it twice sends twice)")
     parser.add_argument("--config", default="config.toml", type=Path)
     parser.add_argument("--unfiltered", action="store_true",
-                        help="ignore native source filters for a coverage check; requires --dry-run")
+                        help="use complete Workday and Amazon scans for a coverage check; requires --dry-run")
     args = parser.parse_args(argv)
     if args.unfiltered and not args.dry_run:
         parser.error("--unfiltered requires --dry-run")
@@ -207,4 +215,5 @@ def main(argv: list[str] | None = None) -> int:
 
     backfill_since = now - timedelta(days=args.backfill) if args.backfill else None
     with new_client() as client:
-        return run(config, state, client, now, webhooks, save, backfill_since=backfill_since)
+        return run(config, state, client, now, webhooks, save, backfill_since=backfill_since,
+                   unfiltered=args.unfiltered)

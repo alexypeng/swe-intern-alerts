@@ -155,7 +155,10 @@ def job_channels(posting: Posting) -> set[str]:
         channel = SIMPLIFY_CATEGORIES.get(posting.category or "")
         return {channel} if channel else set()
     title = normalize_text(posting.title)
-    channels = {channel for channel, pattern in CHANNEL_PATTERNS.items() if pattern.search(title)}
+    # Amazon's Business Developer role is sales/business development, not software.
+    swe_title = re.sub(r"\bbusiness developers?\b", "", title) if posting.source == "amazon" else title
+    channels = {channel for channel, pattern in CHANNEL_PATTERNS.items()
+                if pattern.search(swe_title if channel == "swe" else title)}
     # Meta's descriptions establish software infrastructure and manufacturing duties.
     if posting.source == "meta":
         if re.search(r"\bproduction engineers?\b", title):

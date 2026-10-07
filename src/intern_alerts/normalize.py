@@ -25,6 +25,9 @@ def normalize_url(url: str) -> str:
     meta = re.fullmatch(r"/(?:jobs|profile/job_details)/(\d+)", path)
     if host == "metacareers.com" and meta:
         return f"https://metacareers.com/profile/job_details/{meta[1]}"
+    amazon = re.fullmatch(r"/en/jobs/([A-Za-z0-9]+)(?:/[^/]+)?", path)
+    if host == "amazon.jobs" and amazon:
+        return f"https://amazon.jobs/en/jobs/{amazon[1]}"
     # Verified Workday copies differ by site, locale, title, and optional copy suffix.
     # Unknown requisition formats retain the ordinary URL comparison.
     tenant = re.fullmatch(r"([a-z0-9-]+)\.wd\d+\.myworkdayjobs\.com", host)

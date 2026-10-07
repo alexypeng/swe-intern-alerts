@@ -42,3 +42,19 @@ def test_unfiltered_requires_dry_run(capfd):
         pipeline.main(["--unfiltered"])
     assert error.value.code == 2
     assert "--unfiltered requires --dry-run" in capfd.readouterr().err
+
+
+@pytest.mark.parametrize('unfiltered', [False, True])
+def test_amazon_manual_full_scan_override_is_non_persisting(monkeypatch, tmp_path, unfiltered):
+    board = Board('amazon', 'amazon', 'Amazon')
+    config = Config('https://simplify.test/jobs', frozenset(), (board,))
+    monkeypatch.setenv('STATE_PATH', str(tmp_path / 'state.json'))
+    monkeypatch.setattr(pipeline, 'load_config', lambda path: config)
+    monkeypatch.setattr(pipeline, 'new_client', lambda: httpx.Client(
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, json=[]))))
+    called = []
+    monkeypatch.setitem(pipeline.BOARD_FETCHERS, 'amazon', lambda c, b: called.append('union') or [])
+    monkeypatch.setattr(pipeline, 'fetch_amazon_full_scan', lambda c, b: called.append('complete') or [])
+    assert pipeline.main(['--dry-run'] + (['--unfiltered'] if unfiltered else [])) == 0
+    assert called == ['complete' if unfiltered else 'union']
+    assert not (tmp_path / 'state.json').exists()

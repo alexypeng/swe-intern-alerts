@@ -13,7 +13,7 @@ Discord can be accessed here: https://discord.gg/hjb77xqxHP
 ```
 cron-job.org (every 20 min) → GitHub Actions
   → load state.json from the `state` branch
-  → fetch Greenhouse, Ashby, Lever, SmartRecruiters, and Workday boards, then Simplify (FAANG+ fallback)
+  → fetch company boards (including Meta and Amazon), then Simplify (FAANG+ fallback)
   → keep undergrad internships; pick channel(s) and region(s)
   → skip anything already announced (job ID → URL → company + title + location)
   → post to each channel's Discord webhook
@@ -21,7 +21,7 @@ cron-job.org (every 20 min) → GitHub Actions
 ```
 
 - **Sources:**
-  - Greenhouse, Ashby, Lever, SmartRecruiters, and Workday company boards, polled directly. This is the fast path. Workday coverage includes Salesforce's internship board and NVIDIA.
+  - Greenhouse, Ashby, Lever, SmartRecruiters, Workday, Meta, and Amazon, polled directly. Workday coverage includes Salesforce's internship board and NVIDIA.
   - Simplify's internship list for the companies in `faang_plus`. It's a slower fallback (Simplify lags company boards by hours) for companies with no supported board.
 - **Channels:** SWE, data/ML, hardware/firmware, quant, other engineering, product.
 - **Regions:** US, Canada, Europe, UK, Remote, and "Location not specified" for vague locations.
@@ -139,7 +139,7 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 ## Roadmap
 
-Meta is deployed and runner-validated. Next: investigate Amazon and Eightfold, followed by Apple, Google and custom sites. Native-filter expansion is deferred. Additional Workday boards require individual completeness checks. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.
+Meta is deployed and runner-validated. Amazon is implemented and locally validated; its runner check is pending. Next: Eightfold, followed by Apple, Google and custom sites. Native-filter expansion is deferred. Additional Workday boards require individual completeness checks. Microsoft blocks cloud IPs, so it needs a planned move to a Raspberry Pi on a home connection.
 
 ### Meta adapter
 
@@ -156,3 +156,21 @@ gh workflow run validate-meta.yml
 ```
 
 That workflow fetches Meta and fails on incomplete data without webhooks or state writes. Confirm its successful result and verified-search log. A normal poll workflow can succeed while skipping a failed source, so workflow success alone does not confirm Meta access.
+
+### Amazon adapter
+
+Amazon is enabled locally in `config.toml`. Regular polls combine its native internship filter with `intern`, `internship`, `co-op`, and `coop` searches. Every query is fully paginated with 100-row pages and four bounded workers, checked for stable counts, and deduplicated by ID. Count churn retries the union up to three passes. Failed/incomplete queries reject the board; a query reaching the 10,000 cap falls back to a complete business-partition scan.
+
+Basic qualifications determine degree eligibility. Amazon's Business Developer phrase does not by itself match SWE. Every location is retained, dates have day precision, and verified URL aliases deduplicate Simplify copies. The first successful poll silently records existing eligible postings.
+
+A local comparison returned identical 32 eligible internships in **9.21s**, versus **47.09s** for the complete scan, including the ASIC role omitted by the native filter. Future keyword coverage is unverified; count equality cannot detect every simultaneous removal/addition. Use `uv run python -m intern_alerts --dry-run --unfiltered` for a complete Amazon/Workday audit without sending or saving state. See [Amazon validation](docs/amazon-research.md).
+
+After pushing, run the read-only runner check and inspect its verified candidate-query log:
+
+```sh
+gh workflow run validate-amazon.yml --ref main
+gh run list --workflow validate-amazon.yml --limit 1
+gh run watch <RUN_ID> --exit-status
+```
+
+This validation fails if any required Amazon query is incomplete, and sends no Discord messages or state updates.

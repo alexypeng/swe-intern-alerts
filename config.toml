@@ -300,3 +300,9 @@ name = "NVIDIA"
 source = "meta"
 slug = "meta"
 name = "Meta"
+
+# Native internship + keyword union; --dry-run --unfiltered audits complete partitions.
+[[boards]]
+source = "amazon"
+slug = "amazon"
+name = "Amazon"
