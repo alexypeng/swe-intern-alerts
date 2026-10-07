@@ -1,6 +1,7 @@
 {
  "version": 1,
  "boards": {
+  "amazon:amazon": "2026-10-07T15:00:35Z",
   "ashby:cursor": "2026-10-05T00:07:28Z",
   "ashby:notion": "2026-10-05T00:07:28Z",
   "ashby:openai": "2026-10-05T00:07:28Z",
@@ -5833,6 +5834,206 @@
    "title": "software engineer intern",
    "location": "london uk",
    "first_seen": "2026-10-07T14:40:24Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10571575",
+   "url": "https://amazon.jobs/en/jobs/10571575",
+   "title": "data center infrastructure engineer internship 2027",
+   "location": "dublin ireland",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10571004",
+   "url": "https://amazon.jobs/en/jobs/10571004",
+   "title": "software development engineer intern mobile ios android summer 2027 usa",
+   "location": "austin texas united states; san francisco california united states; seattle washington united states; sunnyvale california united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10568017",
+   "url": "https://amazon.jobs/en/jobs/10568017",
+   "title": "2027 software dev engineer intern netherlands",
+   "location": "amsterdam north holland netherlands",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10565667",
+   "url": "https://amazon.jobs/en/jobs/10565667",
+   "title": "software development engineer intern aws database 2027 us",
+   "location": "austin texas united states; east palo alto california united states; seattle washington united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10567914",
+   "url": "https://amazon.jobs/en/jobs/10567914",
+   "title": "software development engineer intern embedded systems summer 2027 usa",
+   "location": "northridge california united states; redmond washington united states; santa clara california united states; seattle washington united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10564599",
+   "url": "https://amazon.jobs/en/jobs/10564599",
+   "title": "2027 applied science internship united states undergrad student science recruiting frontier ai robotics",
+   "location": "san francisco california united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10555873",
+   "url": "https://amazon.jobs/en/jobs/10555873",
+   "title": "2027 software dev engineer intern poland",
+   "location": "gdansk pomeranian voivodeship poland",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10555855",
+   "url": "https://amazon.jobs/en/jobs/10555855",
+   "title": "2027 software dev engineer intern spain",
+   "location": "madrid community of madrid spain",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10554669",
+   "url": "https://amazon.jobs/en/jobs/10554669",
+   "title": "2027 software dev engineer intern bucharest romania",
+   "location": "bucharest romania",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10554706",
+   "url": "https://amazon.jobs/en/jobs/10554706",
+   "title": "2027 software dev engineer intern luxembourg",
+   "location": "luxembourg",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10554652",
+   "url": "https://amazon.jobs/en/jobs/10554652",
+   "title": "2027 software dev engineer intern iasi romania",
+   "location": "iasi romania",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10554701",
+   "url": "https://amazon.jobs/en/jobs/10554701",
+   "title": "2027 software dev engineer intern germany",
+   "location": "berlin germany; munich bavaria germany",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10554586",
+   "url": "https://amazon.jobs/en/jobs/10554586",
+   "title": "2027 software dev engineer intern united kingdom",
+   "location": "cambridge england united kingdom; london england united kingdom",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10559762",
+   "url": "https://amazon.jobs/en/jobs/10559762",
+   "title": "software development engineer intern amazon leo summer 2027 usa",
+   "location": "redmond washington united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10536817",
+   "url": "https://amazon.jobs/en/jobs/10536817",
+   "title": "industrial development engineer intern co op robotics 2027",
+   "location": "arlington virginia united states; north reading massachusetts united states; westboro wisconsin united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10535280",
+   "url": "https://amazon.jobs/en/jobs/10535280",
+   "title": "software development engineer intern robotics 2027",
+   "location": "toronto ontario canada",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10535282",
+   "url": "https://amazon.jobs/en/jobs/10535282",
+   "title": "hardware development engineer intern co op robotics 2027",
+   "location": "north reading massachusetts united states; westboro wisconsin united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10517649",
+   "url": "https://amazon.jobs/en/jobs/10517649",
+   "title": "cloud hardware development engineer intern annapurna labs 2027",
+   "location": "austin texas united states; cupertino california united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10517149",
+   "url": "https://amazon.jobs/en/jobs/10517149",
+   "title": "robotics software development engineer fall intern co op 2026",
+   "location": "austin texas united states; bellevue washington united states; north reading massachusetts united states; westboro wisconsin united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10418355",
+   "url": "https://amazon.jobs/en/jobs/10418355",
+   "title": "2027 software dev engineer intern",
+   "location": "dublin ireland",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "3145033",
+   "url": "https://amazon.jobs/en/jobs/3145033",
+   "title": "robotics hardware development engineer intern co op 2026 robotics mechanical electrical hardware test reliability failure analysis operations and more",
+   "location": "boston massachusetts united states; north reading massachusetts united states; san francisco california united states; seattle washington united states; westboro wisconsin united states; westborough massachusetts united states",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "3136815",
+   "url": "https://amazon.jobs/en/jobs/3136815",
+   "title": "robotics software development engineer intern 2026 toronto",
+   "location": "toronto ontario canada",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "3134271",
+   "url": "https://amazon.jobs/en/jobs/3134271",
+   "title": "software dev engineer internship embedded development",
+   "location": "berlin germany; dresden saxony germany",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "3130528",
+   "url": "https://amazon.jobs/en/jobs/3130528",
+   "title": "software dev engineer internship embedded development linux",
+   "location": "berlin germany; dresden saxony germany",
+   "first_seen": "2026-10-07T15:00:35Z"
+  },
+  {
+   "company": "amazon",
+   "job_id": "10517535",
+   "url": "https://amazon.jobs/en/jobs/10517535",
+   "title": "asic engineer intern annapurna labs 2027",
+   "location": "austin texas united states; cupertino california united states; seattle washington united states",
+   "first_seen": "2026-10-07T15:00:35Z"
   }
  ]
 }
