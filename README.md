@@ -139,7 +139,7 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 ## Roadmap
 
-Meta and Amazon are deployed, with successful source fetches verified on GitHub runners. The Workday detail retry is pushed on `1c2f14d` and its GitHub tests passed; a scheduled poll on that commit remains to be checked.
+Meta and Amazon are deployed, with successful source fetches verified on GitHub runners. The Workday detail retry is deployed and its GitHub tests passed; [scheduled poll 37990727891](https://github.com/alexypeng/swe-intern-alerts/actions/runs/37990727891) verified a successful NVIDIA fetch with the retry code in 17.11 seconds.
 
 Remaining source work:
 
