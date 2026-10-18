@@ -6730,6 +6730,22 @@
    "title": "display engineering intern",
    "location": "sunnyvale ca",
    "first_seen": "2026-10-17T19:20:22Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "931408fb-5cb7-4179-8c33-35a242bbc266",
+   "url": "https://tesla.com/careers/search/job/286986",
+   "title": "advanced automation engineer intern cell engineering winter spring 2027",
+   "location": "fremont ca",
+   "first_seen": "2026-10-18T10:20:24Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "2d44df47-4fb1-4120-a4ac-7fbcc5f6c103",
+   "url": "https://tesla.com/careers/search/job/287024",
+   "title": "firmware intern soc firmware engineer si hardware infrastructure",
+   "location": "austin tx",
+   "first_seen": "2026-10-18T10:20:24Z"
   }
  ]
 }
