@@ -1,0 +1,38 @@
+{
+  "status": 200,
+  "error": {
+    "message": "",
+    "body": ""
+  },
+  "data": {
+    "count": 1,
+    "positions": [
+      {
+        "id": 274922258196,
+        "displayJobId": "R0137335",
+        "name": "Sr. Director, EU Payment Operations & Strategy",
+        "locations": [
+          "Luxembourg City, Luxembourg, Luxembourg"
+        ],
+        "standardizedLocations": [
+          "Luxembourg, Luxembourg, LU"
+        ],
+        "postedTs": 1791504000,
+        "solrScore": null,
+        "stars": 0,
+        "department": "Product Management",
+        "creationTs": 1789603200,
+        "isHot": 0,
+        "workLocationOption": "onsite",
+        "locationFlexibility": null,
+        "atsJobId": "R0137335",
+        "positionUrl": "/careers/job/274922258196"
+      }
+    ],
+    "resultsMetaData": {
+      "usedFuzzSearch": false,
+      "mocTitle": null
+    }
+  },
+  "metadata": null
+}

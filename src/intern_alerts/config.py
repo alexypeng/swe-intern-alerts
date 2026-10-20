@@ -9,7 +9,7 @@ from pathlib import Path
 
 from intern_alerts.models import CHANNELS
 
-BOARD_SOURCES = ("greenhouse", "ashby", "lever", "smartrecruiters", "workday", "meta", "amazon")
+BOARD_SOURCES = ("greenhouse", "ashby", "lever", "smartrecruiters", "workday", "meta", "amazon", "eightfold")
 
 
 class ConfigError(Exception):
@@ -69,6 +69,9 @@ def load_config(path: Path) -> Config:
         if board.source == "amazon" and (board.slug != "amazon" or board.name != "Amazon"
                                          or board.host is not None or board.partition_facet is not None):
             raise ConfigError(f"{path}: Amazon board requires slug 'amazon', name 'Amazon', and no host/partition")
+        if board.source == "eightfold" and (board.slug != "paypal" or board.name != "PayPal"
+                                           or board.host is not None or board.partition_facet is not None):
+            raise ConfigError(f"{path}: Eightfold board requires slug 'paypal', name 'PayPal', and no host/partition")
         if board.filter_facet is not None or board.filter_value is not None:
             if (board.source != "workday"
                     or board.filter_facet not in ("workerSubType", "jobFamilyGroup")

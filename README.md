@@ -143,7 +143,7 @@ Meta and Amazon are deployed, with successful source fetches verified on GitHub 
 
 Remaining source work:
 
-1. Research and implement Eightfold support.
+1. Validate the locally implemented PayPal Eightfold adapter on a GitHub runner, then enable its board. The manual **Validate PayPal source** workflow reads jobs without sending messages or saving state; see [Eightfold research](docs/eightfold-research.md).
 2. Add more Workday boards after validating each tenant's completeness and field mapping.
 3. Add Apple, followed by Google and other custom careers sites.
 4. Add Microsoft after the planned move to a Raspberry Pi on a home connection; its careers site blocks cloud IPs.

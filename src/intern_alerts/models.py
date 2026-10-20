@@ -11,7 +11,7 @@ CHANNELS = ("swe", "data_ml", "hardware", "quant", "other_eng", "product")
 class Posting:
     """One job posting, in the same shape regardless of which source it came from."""
 
-    source: str  # "simplify", "greenhouse", "ashby", "lever", "smartrecruiters", "workday", "meta", "amazon"
+    source: str  # configured board source, or "simplify"
     board_key: str  # e.g. "greenhouse:stripe", "simplify:stripe"
     job_id: str  # the source's own ID for this posting
     company: str

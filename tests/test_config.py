@@ -132,13 +132,14 @@ def test_webhooks_missing_names_each_missing_secret():
         load_webhooks(env)
 
 
-@pytest.mark.parametrize("source,name", [("meta", "Meta"), ("amazon", "Amazon")])
+@pytest.mark.parametrize("source,name", [("meta", "Meta"), ("amazon", "Amazon"), ("eightfold", "PayPal")])
 def test_custom_board_config(tmp_path, source, name):
+    slug = "paypal" if source == "eightfold" else source
     text = (
         'simplify_url = "u"\nfaang_plus = []\n[[boards]]\n'
-        f'source = "{source}"\nslug = "{source}"\nname = "{name}"\n'
+        f'source = "{source}"\nslug = "{slug}"\nname = "{name}"\n'
     )
-    assert load_config(write(tmp_path, text)).boards[0].key == f"{source}:{source}"
+    assert load_config(write(tmp_path, text)).boards[0].key == f"{source}:{slug}"
     for change in (
         'slug = "other"',
         'name = "Other"',
@@ -148,5 +149,6 @@ def test_custom_board_config(tmp_path, source, name):
         lines = text.splitlines()
         key = change.split(" = ")[0]
         modified = "\n".join(line for line in lines if not line.startswith(key + " = "))
-        with pytest.raises(ConfigError, match=f"{name} board requires"):
+        label = "Eightfold" if source == "eightfold" else name
+        with pytest.raises(ConfigError, match=f"{label} board requires"):
             load_config(write(tmp_path, modified + "\n" + change + "\n"))

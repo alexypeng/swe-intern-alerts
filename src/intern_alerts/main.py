@@ -24,6 +24,7 @@ from intern_alerts.sources import SourceError, new_client
 from intern_alerts.sources.ashby import fetch_ashby
 from intern_alerts.sources.amazon import fetch_amazon, fetch_amazon_full_scan
 from intern_alerts.sources.greenhouse import fetch_greenhouse
+from intern_alerts.sources.eightfold import fetch_eightfold
 from intern_alerts.sources.lever import fetch_lever
 from intern_alerts.sources.meta import fetch_meta, verify_meta_fallback
 from intern_alerts.sources.simplify import board_key as simplify_board_key
@@ -40,6 +41,7 @@ BOARD_FETCHERS = {
     "workday": fetch_workday,
     "meta": fetch_meta,
     "amazon": fetch_amazon,
+    "eightfold": fetch_eightfold,
 }
 BOARD_WORKERS = 4
 
