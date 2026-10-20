@@ -46,7 +46,7 @@ def test_pagination_and_posting_mapping():
         assert request.url.path == "/api/pcsx/search"
         assert dict(request.url.params) == {
             "domain": "paypal.com", "query": "", "location": "",
-            "start": request.url.params["start"], "sort_by": "timestamp",
+            "start": request.url.params["start"], "sort_by": "relevance",
         }
         start = int(request.url.params["start"])
         requested.append(start)
@@ -61,6 +61,25 @@ def test_pagination_and_posting_mapping():
     assert postings[0].posted_at == datetime(2026, 10, 9, tzinfo=UTC)
     assert postings[0].board_key == "eightfold:paypal"
     assert classify(postings[0]).announce
+
+
+def test_timestamp_ties_do_not_cause_overlapping_pages():
+    # Reproduces the live failure: a stable count, full pages, but the same
+    # dated job on two timestamp-sorted pages leaves another ID missing.
+    rows = [job(i + 1) for i in range(11)]
+
+    def handler(request):
+        start = int(request.url.params["start"])
+        sort = request.url.params["sort_by"]
+        page = rows[start:start + 10]
+        if sort == "timestamp" and start == 10:
+            page = [rows[9]]
+        response = envelope(page, 11)
+        response["data"]["sortBy"] = sort
+        return httpx.Response(200, json=response)
+
+    postings = fetch(handler)
+    assert {p.job_id for p in postings} == {str(i + 1) for i in range(11)}
 
 
 @pytest.mark.parametrize("change", [
@@ -94,7 +113,7 @@ def test_failed_later_page_discards_first_page(defect):
         fetch(handler)
 
 
-@pytest.mark.parametrize("defect", ["status", "error", "fuzzy", "count", "oversized", "rows"])
+@pytest.mark.parametrize("defect", ["status", "error", "fuzzy", "count", "oversized", "rows", "sort", "missing_sort"])
 def test_invalid_envelope_is_not_an_empty_success(defect):
     data = envelope([])
     if defect == "status":
@@ -107,6 +126,10 @@ def test_invalid_envelope_is_not_an_empty_success(defect):
         data["data"]["count"] = True
     elif defect == "oversized":
         data["data"]["count"] = 10001
+    elif defect == "sort":
+        data["data"]["sortBy"] = "timestamp"
+    elif defect == "missing_sort":
+        del data["data"]["sortBy"]
     else:
         data["data"]["positions"] = None
     with pytest.raises(SourceError):

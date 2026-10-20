@@ -22,7 +22,9 @@ MAX_PAGES = 1000
 def _page(client: httpx.Client, board: Board, start: int) -> tuple[int, list[dict]]:
     query = urlencode({
         "domain": "paypal.com", "query": "", "location": "",
-        "start": start, "sort_by": "timestamp",
+        # Timestamp order overlaps across pages of equal-dated postings.
+        # Relevance with an empty query was validated against complete scans.
+        "start": start, "sort_by": "relevance",
     })
     response = get_json(client, f"{BASE_URL}/api/pcsx/search?{query}", board.key)
     if not isinstance(response, dict) or response.get("status") != 200:
@@ -31,6 +33,8 @@ def _page(client: httpx.Client, board: Board, start: int) -> tuple[int, list[dic
     if not isinstance(error, dict) or error.get("message") or error.get("body"):
         raise ValueError("API error")
     data = response["data"]
+    if data["sortBy"] != "relevance":
+        raise ValueError("requested relevance sort was not applied")
     if data["resultsMetaData"]["usedFuzzSearch"] is not False:
         raise ValueError("unexpected fuzzy search")
     count, rows = data["count"], data["positions"]
@@ -100,8 +104,12 @@ def fetch_eightfold(client: httpx.Client, board: Board) -> list[Posting]:
                         raise ValueError("count changed during pagination")
                     rows.extend(page_rows)
         postings = [_posting(row, board) for row in rows]
-        if len(postings) != count or len({p.job_id for p in postings}) != count:
-            raise ValueError("missing or repeated position IDs")
+        unique_count = len({p.job_id for p in postings})
+        if len(postings) != count or unique_count != count:
+            raise ValueError(
+                f"missing or repeated position IDs: expected {count}, "
+                f"received {len(postings)} rows / {unique_count} unique IDs"
+            )
         final_count, final_rows = _page(client, board, 0)
         if final_count != count or [r["id"] for r in final_rows] != [r["id"] for r in first]:
             raise ValueError("search changed during scan")

@@ -66,3 +66,16 @@ Search supplies every required Posting field, so this implementation returns all
 Config accepts only `source="eightfold"`, `slug="paypal"`, `name="PayPal"` without host/partition/native-filter fields. The fetcher is registered in the existing pipeline; successful empty scans initialize silently, and failures do not initialize. The manual `.github/workflows/validate-paypal.yml` workflow fetches/classifies without webhooks or persistent state and fails on source errors. After committing/pushing, run it and inspect its source log before adding the PayPal board to `config.toml`.
 
 Verification: 405 tests passed in 1.77s, including 29 added cases across source/configuration tests. The adapter live read-only check verified 319 search rows in 4.17s, with zero announceable postings; no messages or state writes. Both implementation reviews found no runtime defects. GitHub-runner access and a live positive internship example remain unverified.
+
+
+## Runner pagination failure and sort correction (2026-10-20)
+
+The first runner validation failed the unique-ID check. A local run through the same adapter reproduced the exact error: timestamp-sorted search reported 329 jobs and returned 329 rows, but only 323 unique position IDs. Six IDs overlapped across pages, with identical posting dates. Repeating offsets 0/10/20 returned the same page contents and count. This establishes incomplete timestamp pagination; unstable tie ordering is consistent with the evidence, but the server-side mechanism is not proven. Earlier successful timestamp snapshots did not establish ongoing pagination reliability.
+
+Probes of `num=1000`, `limit=1000` and `size=1000` were ignored (ten rows); `page_size=1000` returned 400. `sort_by=id` and a compound timestamp/ID sort were ignored, with returned `sortBy=timestamp`. The current first-party frontend still passes `sort_by` and reads returned `sortBy`: [bundle](https://paypal.eightfold.ai/gen/js/pcsxPwa.1f12d9359931026a.js).
+
+Changing only the request to [empty-query relevance sorting](https://paypal.eightfold.ai/api/pcsx/search?domain=paypal.com&query=&location=&start=0&sort_by=relevance) produced three complete scans, each with the same 329 unique IDs in the same order (3.43/3.45/3.47s). The adapter now uses that sort and rejects responses whose returned `sortBy` does not confirm relevance. All previous count, length, uniqueness, metadata and final-first-page checks remain. Duplicate diagnostics now report expected rows, returned rows and unique IDs; no partial-result deduplication or retry was introduced. This is observed local coverage, not a guarantee against every same-count change or proof of runner success. Scheduled PayPal configuration remains disabled.
+
+A regression reproduces equal-date overlapping timestamp pages and verifies the alternate request returns the complete set; additional tests reject ignored/missing sort confirmation. The regression failed with the exact original SourceError before the change and passed afterward.
+
+Final verification: the original failing live harness passed three times through the fixed adapter (329 unique rows in 4.36/4.19/3.53s). All 408 tests passed in 1.72s; whitespace checks passed. A new GitHub validation run on the fix remains required. No Discord messages or production-state writes.

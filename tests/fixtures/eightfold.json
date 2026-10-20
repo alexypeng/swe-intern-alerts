@@ -32,7 +32,8 @@
     "resultsMetaData": {
       "usedFuzzSearch": false,
       "mocTitle": null
-    }
+    },
+    "sortBy": "relevance"
   },
   "metadata": null
 }
