@@ -141,12 +141,13 @@ A backfill ignores state and saves none. The scheduled bot has already recorded 
 
 Meta and Amazon are deployed, with successful source fetches verified on GitHub runners. The Workday detail retry is deployed and its GitHub tests passed; [scheduled poll 37990727891](https://github.com/alexypeng/swe-intern-alerts/actions/runs/37990727891) verified a successful NVIDIA fetch with the retry code in 17.11 seconds.
 
+[Validate PayPal source run 39452824983](https://github.com/alexypeng/swe-intern-alerts/actions/runs/39452824983) verified the Eightfold adapter on a GitHub runner (329 jobs in 4.14s). PayPal is enabled in the local configuration, ready to deploy; its first successful scheduled poll initializes silently. See [Eightfold research](docs/eightfold-research.md).
+
 Remaining source work:
 
-1. Validate the locally implemented PayPal Eightfold adapter on a GitHub runner, then enable its board. The manual **Validate PayPal source** workflow reads jobs without sending messages or saving state; see [Eightfold research](docs/eightfold-research.md).
-2. Add more Workday boards after validating each tenant's completeness and field mapping.
-3. Add Apple, followed by Google and other custom careers sites.
-4. Add Microsoft after the planned move to a Raspberry Pi on a home connection; its careers site blocks cloud IPs.
+1. Add more Workday boards after validating each tenant's completeness and field mapping.
+2. Add Apple, followed by Google and other custom careers sites.
+3. Add Microsoft after the planned move to a Raspberry Pi on a home connection; its careers site blocks cloud IPs.
 
 HubSpot's direct source remains unresolved; see below. Meta/Amazon publication latency and future internship coverage remain unverified. Native-filter expansion on other supported platforms is deferred.
 

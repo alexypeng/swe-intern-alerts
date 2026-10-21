@@ -1,10 +1,10 @@
 # Eightfold source research
 
-Research snapshot: 2026-10-09. Research is followed by a local PayPal-only adapter implementation (2026-10-12). Its board is not enabled pending runner validation; shared classification is unchanged.
+Research snapshot: 2026-10-09. Research is followed by a local PayPal-only adapter implementation (2026-10-12). Its board is now enabled locally after successful runner validation (2026-10-21); configuration deployment and scheduled initialization are pending. Shared classification is unchanged.
 
 ## Recommendation
 
-Start with **PayPal**, already approved in `config.toml`'s fallback company list, using its current public PCSx frontend search API. Anonymous search and field mapping work. A complete anonymous scan now validates pagination for this snapshot and finds zero internship-title candidates. One active role's detail and public page corroborate identity, URL and posted date. Positive internship eligibility, alternate URL aliases and GitHub-runner access remain unverified. Do not use the documented authenticated customer API for anonymous polling, and do not assume an old public endpoint or another tenant has the same access behavior.
+Start with **PayPal**, already approved in `config.toml`'s fallback company list, using its current public PCSx frontend search API. Anonymous search and field mapping work. A complete anonymous scan now validates pagination for this snapshot and finds zero internship-title candidates. One active role's detail and public page corroborate identity, URL and posted date. Positive internship eligibility and alternate URL aliases remain unverified; GitHub-runner access is now verified below. Do not use the documented authenticated customer API for anonymous polling, and do not assume an old public endpoint or another tenant has the same access behavior.
 
 ## Sources and access evidence
 
@@ -52,7 +52,7 @@ Supplementary keyword probes returned `intern=1` (Manager, Internal Controls), `
 
 Verified: current anonymous HTML access; first-party endpoint discovery; complete 303 unique-row scan with exact pages/stable counts in 3.709s; zero shared title candidates; numeric/requisition identities; separate posting/creation timestamps; raw/standardized locations; public URL shape; one inactive Simplify internship copy with a matching path-shaped URL; one active detail/public-page identity and date comparison; inactive internship detail404 versus HTML200 without JobPosting JSON-LD.
 
-Not yet verified: same-count churn handling, current internships lacking title signals, positive internship description/degree/employment semantics, native internship coverage, actual fallback duplicate aliases, details-stage runtime, source publication latency, and datacenter/GitHub-runner access. The complete-search timing is a local measurement only.
+Not yet verified: same-count churn handling, current internships lacking title signals, positive internship description/degree/employment semantics, native internship coverage, actual fallback duplicate aliases, details-stage runtime, source publication latency, and scheduled first-poll initialization. The complete-search timing is a local measurement only.
 
 The initial read-only audit execution approval was cancelled. After the user resumed validation, a bounded full audit was authorized and completed; local evidence is saved at `/private/tmp/eightfold-paypal-audit.json` (temporary, not a repository dependency). Search scan 3.709s, total audit 4.291s including Simplify fetch, zero candidate details and no recorded errors. The adapter is implemented locally; no scheduled board is enabled. A supplementary nine-request batch completed in 1.1s and is saved at `/private/tmp/eightfold-paypal-details.json`; active and inactive detail/page observations are recorded above. That timing mixes two details, two HTML pages and five keyword probes and is not a production adapter benchmark. With zero active internship candidates, undergraduate eligibility and title coverage cannot be validated against a current positive example. The user authorized implementing the PayPal adapter on 2026-10-12. Perform read-only GitHub validation before enabling its board. Broaden to other individually approved tenants only after separate evidence.
 
@@ -79,3 +79,10 @@ Changing only the request to [empty-query relevance sorting](https://paypal.eigh
 A regression reproduces equal-date overlapping timestamp pages and verifies the alternate request returns the complete set; additional tests reject ignored/missing sort confirmation. The regression failed with the exact original SourceError before the change and passed afterward.
 
 Final verification: the original failing live harness passed three times through the fixed adapter (329 unique rows in 4.36/4.19/3.53s). All 408 tests passed in 1.72s; whitespace checks passed. A new GitHub validation run on the fix remains required. No Discord messages or production-state writes.
+
+
+## Runner success and board enablement (2026-10-21)
+
+[Validate PayPal source run 39452824983](https://github.com/alexypeng/swe-intern-alerts/actions/runs/39452824983) succeeded on fix commit `e9b1317`: 329 verified search rows in 4.14s, zero announceable postings. Source logs were inspected independently after the user reported success. This confirms GitHub-runner fetch/classification access, not a live positive internship example or publication latency.
+
+Added `source="eightfold"`, `slug="paypal"`, `name="PayPal"` to local `config.toml`; Simplify PayPal fallback remains configured. Commit/push deploys the configuration. The next successful scheduled poll silently initializes `eightfold:paypal` using the existing state boundary, including when no eligible postings exist; later unseen eligible postings can announce. Scheduled execution and first initialization remain unverified. The 52 configuration/Eightfold tests pass; no runtime code was changed for enablement, and no messages or production-state writes occurred during this check.

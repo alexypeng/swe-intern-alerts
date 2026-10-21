@@ -306,3 +306,9 @@ name = "Meta"
 source = "amazon"
 slug = "amazon"
 name = "Amazon"
+
+# Complete public search with validated relevance sorting and count/ID checks.
+[[boards]]
+source = "eightfold"
+slug = "paypal"
+name = "PayPal"
