@@ -7579,6 +7579,22 @@
    "title": "research resident",
    "location": "nyc; sf",
    "first_seen": "2026-10-28T22:40:23Z"
+  },
+  {
+   "company": "microsoft",
+   "job_id": "cc95f424-ceae-43ca-95ba-0cc276090f2a",
+   "url": "https://apply.careers.microsoft.com/careers/job/1970393557050039",
+   "title": "research intern msr systems research group",
+   "location": "redmond wa",
+   "first_seen": "2026-10-28T23:20:24Z"
+  },
+  {
+   "company": "apple",
+   "job_id": "c0f30152-4316-4fe6-b4d9-f5e986c0fa3a",
+   "url": "https://jobs.apple.com/en-us/details/200692085",
+   "title": "design verification engineer intern",
+   "location": "beaverton or",
+   "first_seen": "2026-10-28T23:20:24Z"
   }
  ]
 }
