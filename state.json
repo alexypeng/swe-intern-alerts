@@ -8251,6 +8251,38 @@
    "title": "data science intern summer 2027",
    "location": "boston ma; foster city ca",
    "first_seen": "2026-11-06T23:40:24Z"
+  },
+  {
+   "company": "samsara",
+   "job_id": "0a166f66-2d80-4495-b1b9-2706d5329ded",
+   "url": "https://samsara.com/company/careers/roles/8358786?gh_jid=8358786",
+   "title": "software engineer intern",
+   "location": "sf",
+   "first_seen": "2026-11-07T00:20:24Z"
+  },
+  {
+   "company": "notion",
+   "job_id": "9da8ee81-7d41-47af-9cae-52f1be53bbcd",
+   "url": "https://jobs.ashbyhq.com/notion/43ffba97-b64a-4c6a-ac13-c803253c9413/application?embed=true",
+   "title": "software engineer intern frontend",
+   "location": "nyc",
+   "first_seen": "2026-11-07T00:20:24Z"
+  },
+  {
+   "company": "notion",
+   "job_id": "be4332c5-d83a-4a08-8665-0ca7425c43ad",
+   "url": "https://jobs.ashbyhq.com/notion/27090d0f-07d3-419b-adaa-837b5e22f947/application?embed=true",
+   "title": "software engineer intern ios",
+   "location": "nyc",
+   "first_seen": "2026-11-07T00:20:24Z"
+  },
+  {
+   "company": "tesla",
+   "job_id": "8c8362c9-f137-4db2-bae1-421d4b24b60c",
+   "url": "https://tesla.com/careers/search/job/289240",
+   "title": "software engineer intern si reinforcement learning",
+   "location": "palo alto ca",
+   "first_seen": "2026-11-07T00:20:24Z"
   }
  ]
 }
